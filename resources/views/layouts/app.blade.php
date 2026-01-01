@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('body')
-    <div class="flex min-h-screen flex-col bg-white dark:bg-gray-900">
+    <div class="flex min-h-screen flex-col bg-surface-950">
         <x-navbar />
 
         <main class="flex-1">

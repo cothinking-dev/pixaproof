@@ -16,17 +16,6 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-        <!-- Dark mode flash prevention - must run before CSS loads -->
-        <script>
-            (function() {
-                const mode = localStorage.getItem('colorMode') || 'system';
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (mode === 'dark' || (mode === 'system' && prefersDark)) {
-                    document.documentElement.classList.add('dark');
-                }
-            })();
-        </script>
-
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         @livewireScripts
