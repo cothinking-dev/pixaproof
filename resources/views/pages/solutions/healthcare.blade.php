@@ -5,8 +5,18 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="gradient" pattern="circuit" class="pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div class="max-w-4xl mx-auto text-center">
+    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
+        {{-- Background Image --}}
+        <div class="absolute inset-0 size-full">
+            <img
+                src="/images/heroes/hero-healthcare.webp"
+                alt=""
+                class="size-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/90 to-surface-950/70"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 mb-6">
                 <x-heroicon-s-heart class="w-4 h-4 text-brand-400" />
                 <span class="text-sm font-medium text-brand-400 uppercase tracking-wider">Healthcare & Telemedicine</span>
@@ -16,7 +26,7 @@
                 HIPAA-compliant patient verification
             </h1>
 
-            <p class="text-lg md:text-xl text-surface-300 mb-10 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
                 Secure patient identity in remote consultations with verified photo capture for telemedicine, clinical trials, and medical records.
             </p>
 
@@ -29,7 +39,7 @@
                 </x-button>
             </div>
         </div>
-    </x-section>
+    </section>
 
     {{-- The Challenge Section --}}
     <x-section bg="surface">

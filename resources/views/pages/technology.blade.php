@@ -4,25 +4,35 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="gradient" pattern="circuit" class="pt-24">
-        <div class="mx-auto max-w-4xl text-center">
+    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-24 pb-20">
+        {{-- Background Image --}}
+        <div class="absolute inset-0 size-full">
+            <img
+                src="/images/heroes/hero-technology.webp"
+                alt=""
+                class="size-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/85 to-surface-950/70"></div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-4xl text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-400">
                 Our Technology
             </p>
             <h1 class="mt-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Security That Begins at the <span class="text-brand-400">Shutter</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-surface-300 md:text-xl">
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
                 PixaProof's core innovation lies in our Photo Integrity Encoding Algorithm (PIEA™) - a proprietary
                 method that embeds authenticity data directly into a photo during live capture, without altering
                 its visual quality.
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-4">
                 <x-button href="{{ route('contact') }}" size="lg">Talk to Technical Team</x-button>
-                <x-button href="#how-it-works" variant="secondary" size="lg">Learn How It Works</x-button>
+                <x-button href="#how-it-works" variant="outline" size="lg">Learn How It Works</x-button>
             </div>
         </div>
-    </x-section>
+    </section>
 
     {{-- How Secure Capture Works --}}
     <x-section id="how-it-works" pattern="hexagonal" pattern-opacity="0.03">

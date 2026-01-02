@@ -5,15 +5,15 @@
 @section('content')
     {{-- Hero Section --}}
     <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-24">
-        {{-- Background Pattern --}}
+        {{-- Background Image --}}
         <div class="absolute inset-0 size-full">
             <img
-                src="/images/backgrounds/circuit-dark.svg"
+                src="/images/heroes/hero-home.webp"
                 alt=""
-                class="size-full object-cover object-center opacity-60"
+                class="size-full object-cover object-center"
             />
-            {{-- Gradient Overlay for depth --}}
-            <div class="absolute inset-0 bg-gradient-to-b from-surface-950/50 via-transparent to-surface-950"></div>
+            {{-- Gradient Overlay --}}
+            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/90 to-surface-950/60"></div>
         </div>
 
         {{-- Content --}}

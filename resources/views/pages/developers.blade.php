@@ -4,15 +4,25 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="gradient" pattern="circuit" class="pt-24">
-        <div class="mx-auto max-w-4xl text-center">
+    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-24 pb-20">
+        {{-- Background Image --}}
+        <div class="absolute inset-0 size-full">
+            <img
+                src="/images/heroes/hero-developers.webp"
+                alt=""
+                class="size-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/90 to-surface-950/70"></div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-4xl text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-400">
                 For Developers
             </p>
             <h1 class="mt-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Build with the industry's most secure <span class="text-brand-400">photo capture platform</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-surface-300 md:text-xl">
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
                 Simple integration, powerful protection. Add capture-level security to your app in hours, not weeks.
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-4">
@@ -20,7 +30,7 @@
                 <x-button href="#quick-start" variant="outline" size="lg">View Documentation</x-button>
             </div>
         </div>
-    </x-section>
+    </section>
 
     {{-- Quick Start --}}
     <x-section id="quick-start">
