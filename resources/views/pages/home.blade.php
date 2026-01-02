@@ -4,7 +4,7 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="gradient" pattern="waves" pattern-opacity="0.05" class="pt-24">
+    <x-section bg="gradient" bg-image="/images/backgrounds/hero-abstract.svg" bg-overlay="dark" class="pt-24">
         <div class="grid items-center gap-12 lg:grid-cols-2">
             {{-- Left: Text Content --}}
             <div class="text-center lg:text-left">
@@ -20,15 +20,29 @@
                         x-data="{
                             words: ['identity verification', 'insurance claims', 'document capture', 'product listings', 'citizen registration', 'medical records'],
                             currentIndex: 0,
+                            isAnimating: false,
                             init() {
-                                setInterval(() => {
-                                    this.currentIndex = (this.currentIndex + 1) % this.words.length
-                                }, 3000)
+                                setInterval(() => this.cycleWord(), 3000)
+                            },
+                            async cycleWord() {
+                                if (this.isAnimating || !window.Motion) return;
+                                this.isAnimating = true;
+
+                                const el = this.$refs.word;
+                                const nextIndex = (this.currentIndex + 1) % this.words.length;
+
+                                await window.Motion.textSwap(el, {
+                                    onMidpoint: () => {
+                                        this.currentIndex = nextIndex;
+                                    }
+                                });
+
+                                this.isAnimating = false;
                             }
                         }"
                         class="block text-brand-500 lg:inline"
                     >
-                        <span x-text="words[currentIndex]" class="transition-opacity duration-300"></span>
+                        <span x-ref="word" x-text="words[currentIndex]"></span>
                     </span>
                     <span class="block text-gray-400 lg:inline">in the age of deepfakes</span>
                 </h1>
@@ -106,7 +120,7 @@
     </x-section>
 
     {{-- Attack Vectors Section --}}
-    <x-section pattern="hexagonal" pattern-opacity="0.05">
+    <x-section bg-image="/images/backgrounds/circuit-dark.svg" bg-overlay="darker">
         <div class="text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-500">The Threat Landscape</p>
             <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">
@@ -217,7 +231,7 @@
     </x-section>
 
     {{-- How It Works Section --}}
-    <x-section id="how-it-works">
+    <x-section id="how-it-works" bg-image="/images/backgrounds/dots-subtle.svg" bg-overlay="radial">
         <div class="text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Integration</p>
             <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Three steps from capture to confidence</h2>
@@ -383,7 +397,7 @@
     </x-section>
 
     {{-- Industry Solutions Section --}}
-    <x-section pattern="grid" pattern-opacity="0.05">
+    <x-section bg-image="/images/backgrounds/dots-subtle.svg" bg-overlay="dark">
         <div class="text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Industries</p>
             <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Trusted across regulated industries</h2>
@@ -472,7 +486,7 @@
     </x-section>
 
     {{-- Final CTA Section --}}
-    <x-section bg="brand">
+    <x-section bg="brand" bg-image="/images/backgrounds/gradient-mesh.svg">
         <div class="text-center">
             <h2 class="text-3xl font-bold text-white md:text-4xl">Stop fraud before it starts</h2>
             <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
