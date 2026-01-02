@@ -5,32 +5,32 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="brand" class="pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <x-section bg="gradient" pattern="circuit" class="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-800/10 border border-white/20 mb-6">
-                <x-heroicon-s-building-library class="w-4 h-4 text-white" />
-                <span class="text-sm font-medium text-white uppercase tracking-wider">Banking & Financial Services</span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 mb-6">
+                <x-heroicon-s-building-library class="w-4 h-4 text-brand-400" />
+                <span class="text-sm font-medium text-brand-400 uppercase tracking-wider">Banking & Financial Services</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Stop identity fraud before it enters your system
             </h1>
 
-            <p class="text-lg md:text-xl text-brand-100 mb-8 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl text-surface-300 mb-8 max-w-3xl mx-auto">
                 Prevent gallery injections, fake IDs, and synthetic images in digital account opening, loan applications, and KYC verification with capture-level security.
             </p>
 
             {{-- Hero Stat --}}
-            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-surface-800/10 border border-white/20">
+            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-brand-500/10 border border-brand-500/20">
                 <span class="text-3xl font-bold text-white">85%</span>
-                <span class="text-brand-100 text-left text-sm">reduction in identity fraud<br>for banks using PixaProof</span>
+                <span class="text-surface-300 text-left text-sm">reduction in identity fraud<br>for banks using PixaProof</span>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                <x-button href="/contact" variant="white" size="lg">
+                <x-button href="/contact" size="lg">
                     Request Demo
                 </x-button>
-                <x-button href="#solution" variant="outline-white" size="lg">
+                <x-button href="#solution" variant="outline" size="lg">
                     See How It Works
                 </x-button>
             </div>

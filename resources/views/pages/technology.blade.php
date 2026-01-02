@@ -4,15 +4,15 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="brand" class="pt-24">
+    <x-section bg="gradient" pattern="circuit" class="pt-24">
         <div class="mx-auto max-w-4xl text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-100">
+            <p class="text-sm font-medium uppercase tracking-wider text-brand-400">
                 Our Technology
             </p>
             <h1 class="mt-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-                Security That Begins at the <span class="text-brand-100">Shutter</span>
+                Security That Begins at the <span class="text-brand-400">Shutter</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-brand-100 md:text-xl">
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-surface-300 md:text-xl">
                 PixaProof's core innovation lies in our Photo Integrity Encoding Algorithm (PIEA™) - a proprietary
                 method that embeds authenticity data directly into a photo during live capture, without altering
                 its visual quality.

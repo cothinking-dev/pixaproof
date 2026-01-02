@@ -4,7 +4,20 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="gradient" bg-image="/images/backgrounds/hero-abstract.svg" bg-overlay="dark" class="pt-24">
+    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-24">
+        {{-- Background Pattern --}}
+        <div class="absolute inset-0 size-full">
+            <img
+                src="/images/backgrounds/circuit-dark.svg"
+                alt=""
+                class="size-full object-cover object-center opacity-60"
+            />
+            {{-- Gradient Overlay for depth --}}
+            <div class="absolute inset-0 bg-gradient-to-b from-surface-950/50 via-transparent to-surface-950"></div>
+        </div>
+
+        {{-- Content --}}
+        <div class="relative z-10 mx-auto max-w-7xl py-20">
         <div class="grid items-center gap-12 lg:grid-cols-2">
             {{-- Left: Text Content --}}
             <div class="text-center lg:text-left">
@@ -92,7 +105,8 @@
         <div class="mt-16 lg:hidden">
             <x-graphics.hero-comparison />
         </div>
-    </x-section>
+        </div>
+    </section>
 
     {{-- Problem Statement Section --}}
     <x-section bg="surface">

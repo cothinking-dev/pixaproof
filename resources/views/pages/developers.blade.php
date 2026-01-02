@@ -4,20 +4,20 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="brand" class="pt-24">
+    <x-section bg="gradient" pattern="circuit" class="pt-24">
         <div class="mx-auto max-w-4xl text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-100">
+            <p class="text-sm font-medium uppercase tracking-wider text-brand-400">
                 For Developers
             </p>
             <h1 class="mt-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-                Build with the industry's most secure <span class="text-brand-100">photo capture platform</span>
+                Build with the industry's most secure <span class="text-brand-400">photo capture platform</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-brand-100 md:text-xl">
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-surface-300 md:text-xl">
                 Simple integration, powerful protection. Add capture-level security to your app in hours, not weeks.
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <x-button href="{{ route('contact') }}" variant="white" size="lg">Get API Key</x-button>
-                <x-button href="#quick-start" variant="outline-white" size="lg">View Documentation</x-button>
+                <x-button href="{{ route('contact') }}" size="lg">Get API Key</x-button>
+                <x-button href="#quick-start" variant="outline" size="lg">View Documentation</x-button>
             </div>
         </div>
     </x-section>

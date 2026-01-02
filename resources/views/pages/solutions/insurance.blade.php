@@ -5,8 +5,19 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <x-section bg="brand" class="pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div class="max-w-4xl mx-auto text-center">
+    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
+        {{-- Background Image --}}
+        <div class="absolute inset-0 size-full">
+            <img
+                src="/images/backgrounds/hero-insurance.webp"
+                alt=""
+                class="size-full object-cover object-center"
+            />
+            {{-- Gradient Overlay --}}
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-600/95 via-brand-600/85 to-brand-600/75"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-800/10 border border-white/20 mb-6">
                 <x-heroicon-s-shield-check class="w-4 h-4 text-white" />
                 <span class="text-sm font-medium text-white uppercase tracking-wider">Insurance Solutions</span>
@@ -35,7 +46,7 @@
                 </x-button>
             </div>
         </div>
-    </x-section>
+    </section>
 
     {{-- The Crisis Section --}}
     <x-section>
