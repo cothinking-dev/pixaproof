@@ -1,27 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.1" />
-      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.05" />
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.25" />
     </linearGradient>
     <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.08" />
-      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.03" />
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.35" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.2" />
     </linearGradient>
   </defs>
 
-  <!-- Abstract shapes -->
+  <!-- Abstract shapes - subtle background glow -->
   <circle cx="1200" cy="150" r="300" fill="url(#grad1)" />
   <circle cx="200" cy="600" r="250" fill="url(#grad2)" />
-  <ellipse cx="720" cy="400" rx="400" ry="200" fill="url(#grad1)" opacity="0.5" />
+  <ellipse cx="720" cy="400" rx="400" ry="200" fill="url(#grad1)" opacity="0.6" />
 
   <!-- Floating elements -->
-  <circle cx="1100" cy="500" r="80" fill="#dc2626" opacity="0.05" />
-  <circle cx="300" cy="200" r="60" fill="#dc2626" opacity="0.04" />
-  <circle cx="900" cy="700" r="100" fill="#7c3aed" opacity="0.03" />
+  <circle cx="1100" cy="500" r="80" fill="#dc2626" opacity="0.15" />
+  <circle cx="300" cy="200" r="60" fill="#dc2626" opacity="0.15" />
+  <circle cx="900" cy="700" r="100" fill="#7c3aed" opacity="0.12" />
 
-  <!-- Subtle grid lines -->
-  <g stroke="#dc2626" stroke-opacity="0.03" stroke-width="1">
+  <!-- Grid lines -->
+  <g stroke="#dc2626" stroke-opacity="0.08" stroke-width="1">
     <line x1="0" y1="200" x2="1440" y2="200" />
     <line x1="0" y1="400" x2="1440" y2="400" />
     <line x1="0" y1="600" x2="1440" y2="600" />

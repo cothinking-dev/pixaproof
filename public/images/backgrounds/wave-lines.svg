@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="waveGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Center glow -->
+  <ellipse cx="720" cy="400" rx="600" ry="350" fill="url(#waveGlow)"/>
+
+  <!-- Wave lines -->
+  <g stroke="#dc2626" fill="none" stroke-linecap="round">
+    <path d="M0 200 Q360 120 720 200 T1440 200" stroke-width="1" stroke-opacity="0.15"/>
+    <path d="M0 280 Q360 200 720 280 T1440 280" stroke-width="1.2" stroke-opacity="0.18"/>
+    <path d="M0 360 Q360 280 720 360 T1440 360" stroke-width="1.5" stroke-opacity="0.22"/>
+    <path d="M0 440 Q360 360 720 440 T1440 440" stroke-width="1.5" stroke-opacity="0.22"/>
+    <path d="M0 520 Q360 440 720 520 T1440 520" stroke-width="1.2" stroke-opacity="0.18"/>
+    <path d="M0 600 Q360 520 720 600 T1440 600" stroke-width="1" stroke-opacity="0.15"/>
+  </g>
+
+  <!-- Accent dots along center wave -->
+  <g fill="#dc2626">
+    <circle cx="360" cy="320" r="3" opacity="0.4"/>
+    <circle cx="720" cy="400" r="5" opacity="0.5"/>
+    <circle cx="1080" cy="320" r="3" opacity="0.4"/>
+  </g>
+</svg>

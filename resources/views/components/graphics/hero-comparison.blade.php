@@ -13,9 +13,9 @@ Shows three-panel comparison: Live Capture (Protected) vs Gallery Upload (Blocke
 
     <div class="grid gap-6 md:grid-cols-3">
         {{-- Live Capture - Protected --}}
-        <div class="group relative">
+        <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-green-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
+            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
                 {{-- Status Badge --}}
                 <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-green-500/20 px-2 py-1">
                     <svg class="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 24 24">
@@ -62,9 +62,9 @@ Shows three-panel comparison: Live Capture (Protected) vs Gallery Upload (Blocke
         </div>
 
         {{-- Gallery Upload - Blocked --}}
-        <div class="group relative">
+        <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-red-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
+            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
                 {{-- Status Badge --}}
                 <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-red-500/20 px-2 py-1">
                     <svg class="h-3 w-3 text-red-500" fill="currentColor" viewBox="0 0 24 24">
@@ -107,9 +107,9 @@ Shows three-panel comparison: Live Capture (Protected) vs Gallery Upload (Blocke
         </div>
 
         {{-- AI Generated - Detected --}}
-        <div class="group relative">
+        <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-yellow-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
+            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
                 {{-- Status Badge --}}
                 <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-yellow-500/20 px-2 py-1">
                     <svg class="h-3 w-3 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">

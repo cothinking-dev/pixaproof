@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="hexagons" x="0" y="0" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
+      <path
+        d="M28 0 L56 16.7 L56 50 L28 66.7 L0 50 L0 16.7 Z M28 66.7 L56 83.3 L56 116.7 L28 133.3 L0 116.7 L0 83.3 Z M56 16.7 L84 33.3 L84 66.7 L56 83.3 L28 66.7 L28 33.3 Z"
+        fill="none"
+        stroke="#dc2626"
+        stroke-width="0.5"
+        stroke-opacity="0.2"
+      />
+    </pattern>
+    <radialGradient id="hexGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.15"/>
+      <stop offset="70%" style="stop-color:#dc2626;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Hexagon pattern -->
+  <rect width="100%" height="100%" fill="url(#hexagons)"/>
+
+  <!-- Center glow -->
+  <ellipse cx="720" cy="400" rx="500" ry="300" fill="url(#hexGlow)"/>
+
+  <!-- Highlight hexagons -->
+  <path d="M720 320 L760 344 L760 392 L720 416 L680 392 L680 344 Z" fill="none" stroke="#dc2626" stroke-width="1" stroke-opacity="0.4"/>
+  <path d="M480 400 L520 424 L520 472 L480 496 L440 472 L440 424 Z" fill="none" stroke="#dc2626" stroke-width="0.8" stroke-opacity="0.25"/>
+  <path d="M960 360 L1000 384 L1000 432 L960 456 L920 432 L920 384 Z" fill="none" stroke="#dc2626" stroke-width="0.8" stroke-opacity="0.25"/>
+</svg>
