@@ -308,91 +308,15 @@
                 </div>
             </div>
 
-            {{-- Right: Visual comparison --}}
-            <div class="relative">
-                {{-- Comparison visual --}}
-                <div class="relative rounded-2xl border border-surface-700 bg-surface-800 p-6">
-                    <div class="mb-4 text-center text-sm font-medium text-gray-400">Prevention vs Detection</div>
-
-                    <div class="grid gap-4 md:grid-cols-2">
-                        {{-- Traditional (Detection) --}}
-                        <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
-                            <div class="mb-3 flex items-center gap-2">
-                                <div class="h-2 w-2 rounded-full bg-red-500"></div>
-                                <span class="text-sm font-medium text-red-400">Traditional</span>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                    <span>Post-submission analysis</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                    <span>Gallery uploads accepted</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                    <span>Reactive fraud detection</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                    <span>No capture verification</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- PixaProof (Prevention) --}}
-                        <div class="rounded-xl border border-green-500/20 bg-green-500/5 p-4">
-                            <div class="mb-3 flex items-center gap-2">
-                                <div class="h-2 w-2 rounded-full bg-green-500"></div>
-                                <span class="text-sm font-medium text-green-400">PixaProof</span>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                    </svg>
-                                    <span>At-capture security</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                    </svg>
-                                    <span>Gallery uploads blocked</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                    </svg>
-                                    <span>Proactive prevention</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-400">
-                                    <svg class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                    </svg>
-                                    <span>PIEA signature embedded</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Bottom indicator --}}
-                    <div class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-green-500/10 py-2 text-sm text-green-400">
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>100% Gallery Fraud Prevention</span>
-                    </div>
-                </div>
+            {{-- Right: Visual comparison with phone mockups --}}
+            <div class="hidden lg:block">
+                <x-graphics.prevention-visual />
             </div>
+        </div>
+
+        {{-- Mobile: Full width visual below content --}}
+        <div class="mt-12 lg:hidden">
+            <x-graphics.prevention-visual />
         </div>
     </x-section>
 

@@ -65,23 +65,24 @@ Patterns:
     };
 @endphp
 
-<section {{ $attributes->merge(['class' => "px-4 relative overflow-hidden {$bgClasses}"]) }}>
-    {{-- Background Image (behind everything) --}}
+<section {{ $attributes->merge(['class' => "px-4 relative isolate overflow-hidden {$bgClasses}"]) }}>
+    {{-- Background Image (layer 1 - bottom) --}}
     @if($bgImage)
         <img
             src="{{ $bgImage }}"
             alt=""
-            class="absolute inset-0 size-full object-cover -z-20"
+            class="absolute inset-0 z-0 h-full w-full object-cover"
         />
     @endif
 
-    {{-- Gradient Overlay (between image and content) --}}
+    {{-- Gradient Overlay (layer 2 - above image) --}}
     @if($bgOverlay)
-        <div class="absolute inset-0 size-full -z-10 {{ $overlayClasses }}"></div>
+        <div class="absolute inset-0 z-10 h-full w-full {{ $overlayClasses }}"></div>
     @endif
 
+    {{-- Pattern (layer 3 - above overlay) --}}
     @if($pattern)
-        <div class="absolute inset-0 {{ $textColor }}">
+        <div class="absolute inset-0 z-20 {{ $textColor }}">
             @switch($pattern)
                 @case('hexagonal')
                     <x-patterns.hexagonal :opacity="$patternOpacity" />
@@ -99,7 +100,8 @@ Patterns:
         </div>
     @endif
 
-    <div class="relative z-0 mx-auto max-w-7xl {{ $py }}">
+    {{-- Content (layer 4 - top) --}}
+    <div class="relative z-30 mx-auto max-w-7xl {{ $py }}">
         {{ $slot }}
     </div>
 </section>
