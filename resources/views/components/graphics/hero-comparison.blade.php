@@ -1,6 +1,6 @@
 {{--
 Hero Comparison Graphic
-Shows three-panel comparison: Live Capture (Protected) vs Gallery Upload (Blocked) vs AI Generated (Detected)
+Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Blocked) vs AI Generated (Detected)
 --}}
 
 <div class="relative">
@@ -61,7 +61,7 @@ Shows three-panel comparison: Live Capture (Protected) vs Gallery Upload (Blocke
             </div>
         </div>
 
-        {{-- Gallery Upload - Blocked --}}
+        {{-- Tampered Photos - Blocked --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-red-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
             <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
@@ -100,8 +100,8 @@ Shows three-panel comparison: Live Capture (Protected) vs Gallery Upload (Blocke
                 </div>
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-white">Gallery Upload</h4>
-                    <p class="mt-1 text-xs text-gray-400">Pre-staged photos rejected</p>
+                    <h4 class="font-semibold text-white">Tampered Photos</h4>
+                    <p class="mt-1 text-xs text-gray-400">Edited or manipulated images blocked</p>
                 </div>
             </div>
         </div>

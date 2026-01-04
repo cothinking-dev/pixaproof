@@ -1,8 +1,8 @@
 /* Import Tailwind CSS framework */
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Import devices.css for device mockups */
-@import 'devices.css/dist/devices.css';
+@import "devices.css/dist/devices.css";
 
 /* Source paths for Tailwind to scan */
 @source '../views/**/*.blade.php';
@@ -10,21 +10,22 @@
 
 /* Custom theme configuration */
 @theme {
-    --font-sans: 'Inter var', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans:
+        "Inter var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    /* Brand colors - red accent theme */
+    /* Brand colors - vibrant red accent theme */
     --color-brand-50: oklch(97% 0.02 25);
-    --color-brand-100: oklch(93% 0.04 25);
-    --color-brand-200: oklch(87% 0.08 25);
-    --color-brand-300: oklch(78% 0.12 25);
-    --color-brand-400: oklch(68% 0.16 25);
-    --color-brand-500: oklch(59% 0.20 25);
-    --color-brand-600: oklch(52% 0.22 25);
-    --color-brand-700: oklch(45% 0.20 25);
+    --color-brand-100: oklch(93% 0.06 25);
+    --color-brand-200: oklch(85% 0.12 25);
+    --color-brand-300: oklch(75% 0.16 25);
+    --color-brand-400: oklch(68% 0.18 25);
+    --color-brand-500: oklch(59% 0.2 25); /* Primary red */
+    --color-brand-600: oklch(52% 0.22 25); /* Hover state */
+    --color-brand-700: oklch(45% 0.2 25); /* Pressed state */
     --color-brand-800: oklch(38% 0.16 25);
     --color-brand-900: oklch(30% 0.12 25);
-    --color-brand-950: oklch(20% 0.08 25);
+    --color-brand-950: oklch(22% 0.08 25);
 
     /* Surface colors for light theme (inverted scale) */
     --color-surface-50: oklch(99% 0.005 260);
@@ -45,11 +46,17 @@
 @plugin '@tailwindcss/typography';
 
 /* Remove default red box-shadow on invalid form elements */
-input:invalid, textarea:invalid, select:invalid {
+input:invalid,
+textarea:invalid,
+select:invalid {
     box-shadow: none;
 }
 
 /* Hide elements with x-cloak attribute (used with Alpine.js) until JavaScript loads */
 [x-cloak] {
     display: none;
+}
+
+body {
+    background-color: var(--color-surface-950);
 }

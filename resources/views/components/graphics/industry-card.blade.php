@@ -28,8 +28,8 @@ Shows industry with placeholder image and use case description
             'pattern' => 'building',
         ],
         'ecommerce' => [
-            'gradient' => 'from-orange-500/20 to-amber-500/20',
-            'accent' => 'orange',
+            'gradient' => 'from-rose-500/20 to-red-500/20',
+            'accent' => 'rose',
             'pattern' => 'cart',
         ],
         'healthcare' => [
@@ -80,7 +80,7 @@ Shows industry with placeholder image and use case description
                     {{-- Grid/box pattern --}}
                     <svg class="h-full w-full" viewBox="0 0 100 100">
                         <pattern id="ecom-pattern" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse">
-                            <rect x="2" y="2" width="11" height="11" rx="2" stroke="currentColor" fill="none" stroke-width="1" class="text-orange-500"/>
+                            <rect x="2" y="2" width="11" height="11" rx="2" stroke="currentColor" fill="none" stroke-width="1" class="text-rose-500"/>
                         </pattern>
                         <rect x="0" y="0" width="100" height="100" fill="url(#ecom-pattern)"/>
                     </svg>
