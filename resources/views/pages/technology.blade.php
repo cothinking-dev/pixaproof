@@ -22,7 +22,7 @@
             <h1 class="mt-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Security That Begins at the <span class="text-brand-400">Shutter</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 text-pretty md:text-xl">
                 PixaProof's core innovation lies in our Photo Integrity Encoding Algorithm (PIEA™) - a proprietary
                 method that embeds authenticity data directly into a photo during live capture, without altering
                 its visual quality.
@@ -39,7 +39,7 @@
         <div class="text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-500">PIEA™ Technology</p>
             <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">How Secure Capture Works</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
                 When a user captures a photo via an app integrated with our SDK, three critical processes occur.
             </p>
         </div>
@@ -167,7 +167,7 @@
             <div>
                 <p class="text-sm font-medium uppercase tracking-wider text-brand-500">End-to-End Protection</p>
                 <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Secure Transmission Pipeline</h2>
-                <p class="mt-4 text-lg text-gray-300">
+                <p class="mt-4 text-lg text-gray-300 text-pretty">
                     From the moment of capture to verification, your images are protected by enterprise-grade security.
                 </p>
 
@@ -209,7 +209,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 rounded-lg border border-surface-700 bg-surface-800 p-4">
-                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-rose-500/10 text-rose-500">
                             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                             </svg>
@@ -276,7 +276,7 @@
         <div class="text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Detection Capabilities</p>
             <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">35+ Tamper Detection Tests</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
                 Our verification engine runs comprehensive analysis across four key categories to ensure photo authenticity.
             </p>
         </div>
@@ -429,7 +429,7 @@
             {{-- Metadata & Context --}}
             <x-card padding="lg">
                 <div class="flex items-center gap-4">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-rose-500/10 text-rose-500">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
                         </svg>
@@ -441,35 +441,35 @@
                 </div>
                 <ul class="mt-6 grid grid-cols-2 gap-2 text-sm text-gray-300">
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         EXIF data integrity
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Metadata consistency
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Reverse image search
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Duplicate detection
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Picture-of-picture
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Fraud pattern matching
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Historical database
                     </li>
                     <li class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                         Risk scoring
                     </li>
                 </ul>
@@ -482,7 +482,7 @@
         <div class="text-center">
             <p class="text-sm font-medium uppercase tracking-wider text-brand-500">SDK Features</p>
             <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">SDK Capabilities</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
                 A lightweight, powerful SDK designed for seamless integration into your mobile applications.
             </p>
         </div>
@@ -601,7 +601,7 @@
     <x-section bg="brand" bg-image="/images/backgrounds/gradient-mesh.svg">
         <div class="text-center">
             <h2 class="text-3xl font-bold text-white md:text-4xl">Ready to secure your photo capture?</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100 text-pretty">
                 Talk to our technical team to learn how PIEA™ technology can protect your verification workflows.
             </p>
             <div class="mt-8 flex flex-wrap justify-center gap-4">

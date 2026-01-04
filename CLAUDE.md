@@ -1,7 +1,16 @@
 # PixaProof Marketing Site
 
 ## Project Overview
-B2B marketing website for PixaProof - an enterprise image authenticity verification platform by MyNasional eKYC Sdn. Bhd.
+Marketing website for PixaProof - an image authenticity verification platform by MyNasional eKYC Sdn. Bhd.
+
+**Product Model:**
+| Edition | Target | Entry |
+|---------|--------|-------|
+| **Community Edition** | Individuals, small teams | App Store / Google Play |
+| **Enterprise Solutions** | Organizations | SDK integration |
+
+## Implementation Plan
+See **[IMPLEMENTATION.md](.claude/IMPLEMENTATION.md)** for detailed TODO items, component specs, and implementation guidelines.
 
 ## Documentation
 All project documentation is in `.claude/docs/`:
@@ -64,12 +73,21 @@ Three-way toggle (light/dark/system) in navbar. State in localStorage.
 
 ## Routes
 
-| Route | View |
-|-------|------|
-| `/` | pages.home |
-| `/about` | pages.about |
-| `/contact` | pages.contact |
-| `/privacy` | pages.privacy |
+| Route | View | Notes |
+|-------|------|-------|
+| `/` | pages.home | Community Edition landing |
+| `/technology` | pages.technology | PIEA explanation |
+| `/pricing` | pages.pricing | Consumer tiers |
+| `/enterprise` | pages.enterprise.index | Enterprise overview |
+| `/enterprise/banking` | pages.enterprise.banking | Banking solution |
+| `/enterprise/insurance` | pages.enterprise.insurance | Insurance solution |
+| `/enterprise/government` | pages.enterprise.government | Government solution |
+| `/enterprise/ecommerce` | pages.enterprise.ecommerce | E-commerce solution |
+| `/enterprise/healthcare` | pages.enterprise.healthcare | Healthcare solution |
+| `/enterprise/developers` | pages.enterprise.developers | SDK docs |
+| `/about` | pages.about | Company info |
+| `/contact` | pages.contact | Contact form |
+| `/privacy` | pages.privacy | Privacy policy |
 
 ## Environment Variables (Production)
 
