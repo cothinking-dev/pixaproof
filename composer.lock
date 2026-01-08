@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0524cda61fcfac9222b5e305ce5b841",
+    "content-hash": "0089042df37c57a59db6292db7f72b98",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -6359,22 +6359,23 @@
     "packages-dev": [
         {
             "name": "cothinking-dev/deployer-laravel-stack",
-            "version": "2026-01-08",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cothinking-dev/deployer-laravel-stack.git",
-                "reference": "3cf9b1c4653ca01b0584803049f7e0f40cea5ae6"
+                "reference": "8299d229a025c58cc4dfdcc29d1d5defe44c08a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/3cf9b1c4653ca01b0584803049f7e0f40cea5ae6",
-                "reference": "3cf9b1c4653ca01b0584803049f7e0f40cea5ae6",
+                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/8299d229a025c58cc4dfdcc29d1d5defe44c08a2",
+                "reference": "8299d229a025c58cc4dfdcc29d1d5defe44c08a2",
                 "shasum": ""
             },
             "require": {
                 "deployer/deployer": "^8.0@alpha",
                 "php": "^8.2"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "deployer": {
@@ -6407,10 +6408,10 @@
                 "redis"
             ],
             "support": {
-                "source": "https://github.com/cothinking-dev/deployer-laravel-stack/tree/2026-01-08",
+                "source": "https://github.com/cothinking-dev/deployer-laravel-stack/tree/20260108T155438",
                 "issues": "https://github.com/cothinking-dev/deployer-laravel-stack/issues"
             },
-            "time": "2026-01-08T07:14:12+00:00"
+            "time": "2026-01-08T07:49:38+00:00"
         },
         {
             "name": "deployer/deployer",
@@ -8843,6 +8844,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "cothinking-dev/deployer-laravel-stack": 20,
         "deployer/deployer": 15
     },
     "prefer-stable": true,
