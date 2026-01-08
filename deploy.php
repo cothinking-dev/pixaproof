@@ -73,6 +73,11 @@ set('shared_env', [
     // Database - SQLite (requires absolute path)
     'DB_DATABASE' => '{{deploy_path}}/shared/database/database.sqlite',
 
+    // Cache - Use file-based cache (no Redis)
+    'CACHE_STORE' => 'file',
+    'SESSION_DRIVER' => 'file',
+    'QUEUE_CONNECTION' => 'sync',
+
     // Filesystem
     'FILESYSTEM_DISK' => 'local',
 
