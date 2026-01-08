@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89484d9d2cf818b7f8ad9a43809bb9fb",
+    "content-hash": "b0524cda61fcfac9222b5e305ce5b841",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -1275,16 +1275,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.45.1",
+            "version": "v12.46.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1ca7e2a2ee17ae5bc435af7cb52d2f130148e2fa"
+                "reference": "9dcff48d25a632c1fadb713024c952fec489c4ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1ca7e2a2ee17ae5bc435af7cb52d2f130148e2fa",
-                "reference": "1ca7e2a2ee17ae5bc435af7cb52d2f130148e2fa",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9dcff48d25a632c1fadb713024c952fec489c4ae",
+                "reference": "9dcff48d25a632c1fadb713024c952fec489c4ae",
                 "shasum": ""
             },
             "require": {
@@ -1493,7 +1493,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-01-07T00:50:24+00:00"
+            "time": "2026-01-07T23:26:53+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -6359,16 +6359,16 @@
     "packages-dev": [
         {
             "name": "cothinking-dev/deployer-laravel-stack",
-            "version": "v2.4.1",
+            "version": "2026-01-08",
             "source": {
                 "type": "git",
-                "url": "git@github.com:cothinking-dev/deployer-laravel-stack.git",
-                "reference": "ecee76c5c0d4105af8035d1b5396120a77cd797e"
+                "url": "https://github.com/cothinking-dev/deployer-laravel-stack.git",
+                "reference": "3cf9b1c4653ca01b0584803049f7e0f40cea5ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/ecee76c5c0d4105af8035d1b5396120a77cd797e",
-                "reference": "ecee76c5c0d4105af8035d1b5396120a77cd797e",
+                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/3cf9b1c4653ca01b0584803049f7e0f40cea5ae6",
+                "reference": "3cf9b1c4653ca01b0584803049f7e0f40cea5ae6",
                 "shasum": ""
             },
             "require": {
@@ -6406,7 +6406,11 @@
                 "postgresql",
                 "redis"
             ],
-            "time": "2026-01-06T23:52:38+00:00"
+            "support": {
+                "source": "https://github.com/cothinking-dev/deployer-laravel-stack/tree/2026-01-08",
+                "issues": "https://github.com/cothinking-dev/deployer-laravel-stack/issues"
+            },
+            "time": "2026-01-08T07:14:12+00:00"
         },
         {
             "name": "deployer/deployer",

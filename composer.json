@@ -23,7 +23,7 @@
         "livewire/livewire": "^3.7"
     },
     "require-dev": {
-        "cothinking-dev/deployer-laravel-stack": "^2.4",
+        "cothinking-dev/deployer-laravel-stack": "2026-01-08",
         "deployer/deployer": "^8.0@alpha",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
