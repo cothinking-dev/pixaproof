@@ -9,21 +9,21 @@ require 'vendor/cothinking-dev/deployer-laravel-stack/src/recipe.php';
 // Application
 // ─────────────────────────────────────────────────────────────────────────────
 
-set('application', 'My Application');
-set('repository', 'git@github.com:your-org/your-repo.git');
+set('application', 'Pixaproof');
+set('repository', 'https://github.com/cothinking-dev/pixaproof');
 set('keep_releases', 5);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Server
 // ─────────────────────────────────────────────────────────────────────────────
 
-set('server_hostname', getenv('DEPLOYER_HOST') ?: 'your-server.example.com');
+set('server_hostname', getenv('DEPLOYER_HOST') ?: 'ssh.moojing-global.com');
 
 host('server')
     ->setHostname(get('server_hostname'))
     ->set('remote_user', 'root')
     ->set('labels', ['stage' => 'server'])
-    ->set('deploy_path', '/home/deployer/myapp');
+    ->set('deploy_path', '/home/deployer/pixaproof');
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared Resources
@@ -55,26 +55,15 @@ set('secrets', fn () => requireSecrets(
 // ─────────────────────────────────────────────────────────────────────────────
 
 environment('prod', [
-    'deploy_path' => '/home/deployer/myapp',
-    'domain' => 'myapp.example.com',
-    'db_name' => 'myapp',
+    'deploy_path' => '/home/deployer/pixaproof',
+    'domain' => 'pixaproof.cothink.ing',
+    'db_name' => 'pixaproof',
     'redis_db' => 0,
-    'env' => [
-        'GTM_ID' => 'GTM-XXXXXXX',
-    ],
-]);
-
-environment('staging', [
-    'deploy_path' => '/home/deployer/myapp-staging',
-    'domain' => 'staging.myapp.example.com',
-    'db_name' => 'myapp_staging',
-    'redis_db' => 1,
-    'app_debug' => true,
-    'log_level' => 'debug',
     'env' => [
         'GTM_ID' => '',
     ],
 ]);
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared Environment Variables
@@ -85,12 +74,15 @@ set('shared_env', [
     'FILESYSTEM_DISK' => 'local',
 
     // Mail
-    'MAIL_MAILER' => 'smtp',
-    'MAIL_FROM_ADDRESS' => 'hello@example.com',
-    'MAIL_FROM_NAME' => '${APP_NAME}',
+    // 'MAIL_MAILER' => 'smtp',
+    // 'MAIL_FROM_ADDRESS' => 'hello@example.com',
+    // 'MAIL_FROM_NAME' => '${APP_NAME}',
 
     // Third-party services (use {secret_key} for secrets)
-    'STRIPE_KEY' => '{stripe_key}',
+    // 'STRIPE_KEY' => '{stripe_key}',
+
+    'DB_CONNECTION' => 'sqlite',
+    'DB_DATABASE' => 'database/database.sqlite',
 ]);
 
 // ─────────────────────────────────────────────────────────────────────────────
