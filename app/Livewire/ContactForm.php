@@ -24,6 +24,15 @@ class ContactForm extends Component
     #[Validate('nullable|string|max:100')]
     public string $company = '';
 
+    #[Validate('nullable|string|max:100')]
+    public string $jobTitle = '';
+
+    #[Validate('nullable|in:banking,insurance,government,healthcare,ecommerce,real-estate,other')]
+    public string $industry = '';
+
+    #[Validate('required|in:demo,api-access,implementation,general')]
+    public string $inquiryType = 'demo';
+
     #[Validate('required|string|min:10|max:5000')]
     public string $message = '';
 
@@ -47,6 +56,9 @@ class ContactForm extends Component
             'email' => $this->email,
             'phone' => $this->phone ?: null,
             'company' => $this->company ?: null,
+            'job_title' => $this->jobTitle ?: null,
+            'industry' => $this->industry ?: null,
+            'inquiry_type' => $this->inquiryType,
             'message' => $this->message,
         ], request()->ip());
 
@@ -57,7 +69,7 @@ class ContactForm extends Component
         }
 
         $this->submitted = true;
-        $this->reset(['name', 'email', 'phone', 'company', 'message', 'error']);
+        $this->reset(['name', 'email', 'phone', 'company', 'jobTitle', 'industry', 'inquiryType', 'message', 'error']);
 
         // Dispatch browser event for tracking
         $this->dispatch('contact-form-submitted');

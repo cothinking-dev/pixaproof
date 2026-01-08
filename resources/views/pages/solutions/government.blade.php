@@ -5,7 +5,7 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section class="relative isolate overflow-hidden bg-white px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
         {{-- Background Image --}}
         <div class="absolute inset-0 size-full">
             <img
@@ -13,28 +13,28 @@
                 alt=""
                 class="size-full object-cover object-center"
             />
-            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/90 to-surface-950/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-900/95 via-primary-800/90 to-primary-900/85"></div>
         </div>
 
         <div class="relative z-10 max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 mb-6">
-                <x-heroicon-s-building-office-2 class="w-4 h-4 text-brand-400" />
-                <span class="text-sm font-medium text-brand-400 uppercase tracking-wider">Government & Public Sector</span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-400/30 mb-6">
+                <x-heroicon-s-building-office-2 class="w-4 h-4 text-primary-300" />
+                <span class="text-sm font-medium text-primary-200 uppercase tracking-wider">Government & Public Sector</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Secure citizen verification at scale
             </h1>
 
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl text-neutral-100 mb-10 max-w-3xl mx-auto">
                 Prevent duplicate registrations and fake citizen photos with verified document capture for national ID systems, immigration, and civil registration.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <x-button href="/contact" size="lg">
+                <x-button href="/contact" size="lg" variant="white">
                     Request Government Demo
                 </x-button>
-                <x-button href="#use-cases" variant="outline" size="lg">
+                <x-button href="#use-cases" variant="outline-white" size="lg">
                     View Use Cases
                 </x-button>
             </div>
@@ -44,11 +44,11 @@
     {{-- The Challenge Section --}}
     <x-section bg="surface">
         <div class="text-center mb-16">
-            <p class="text-brand-400 font-semibold uppercase tracking-wider text-sm mb-4">The Challenge</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">The Challenge</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Citizen photo fraud threatens database integrity
             </h2>
-            <p class="text-surface-300 text-lg max-w-2xl mx-auto">
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
                 Government systems handling citizen photos face sophisticated submission fraud that compromises national registries.
             </p>
         </div>
@@ -84,11 +84,11 @@
     {{-- The Solution Section --}}
     <x-section bg="default" bgImage="hexagon-pattern" bgOverlay="darker">
         <div class="text-center mb-16">
-            <p class="text-brand-400 font-semibold uppercase tracking-wider text-sm mb-4">The Solution</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">The Solution</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Authenticated capture for every citizen submission
             </h2>
-            <p class="text-surface-300 text-lg max-w-2xl mx-auto">
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
                 PixaProof ensures every citizen photo and document is captured live and verified authentic before entering government databases.
             </p>
         </div>
@@ -111,16 +111,16 @@
                         {{-- Arrow --}}
                         @if ($index < count($steps) - 1)
                             <div class="hidden md:block absolute top-8 -right-2 z-10">
-                                <x-heroicon-s-arrow-right class="w-4 h-4 text-brand-400" />
+                                <x-heroicon-s-arrow-right class="w-4 h-4 text-primary-600" />
                             </div>
                         @endif
 
-                        <div class="p-6 rounded-2xl bg-surface-900/80 border border-surface-700 hover:border-brand-500/50 transition-colors">
-                            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-500/10 flex items-center justify-center">
-                                <x-dynamic-component :component="'heroicon-s-' . $step['icon']" class="w-8 h-8 text-brand-400" />
+                        <div class="p-6 rounded-2xl bg-neutral-50/80 border border-neutral-200 hover:border-primary-500/50 transition-colors">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500/10 flex items-center justify-center">
+                                <x-dynamic-component :component="'heroicon-s-' . $step['icon']" class="w-8 h-8 text-primary-600" />
                             </div>
-                            <h3 class="font-semibold text-white mb-2">{{ $step['title'] }}</h3>
-                            <p class="text-sm text-surface-400">{{ $step['desc'] }}</p>
+                            <h3 class="font-semibold text-neutral-900 mb-2">{{ $step['title'] }}</h3>
+                            <p class="text-sm text-neutral-500">{{ $step['desc'] }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -131,8 +131,8 @@
     {{-- Use Cases Section --}}
     <x-section id="use-cases" bg="surface">
         <div class="text-center mb-16">
-            <p class="text-brand-400 font-semibold uppercase tracking-wider text-sm mb-4">Use Cases</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Use Cases</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Government applications
             </h2>
         </div>
@@ -184,18 +184,18 @@
             @endphp
 
             @foreach ($useCases as $useCase)
-                <div class="p-8 rounded-2xl bg-surface-800 border border-surface-700 hover:border-brand-500/50 transition-colors">
+                <div class="p-8 rounded-2xl bg-white border border-neutral-200 hover:border-primary-500/50 transition-colors">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center">
-                            <x-dynamic-component :component="'heroicon-s-' . $useCase['icon']" class="w-6 h-6 text-brand-400" />
+                        <div class="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center">
+                            <x-dynamic-component :component="'heroicon-s-' . $useCase['icon']" class="w-6 h-6 text-primary-600" />
                         </div>
-                        <h3 class="text-xl font-semibold text-white">{{ $useCase['title'] }}</h3>
+                        <h3 class="text-xl font-semibold text-neutral-900">{{ $useCase['title'] }}</h3>
                     </div>
                     <ul class="space-y-3">
                         @foreach ($useCase['features'] as $feature)
                             <li class="flex items-center gap-3">
-                                <x-heroicon-s-check-circle class="w-5 h-5 text-brand-400 flex-shrink-0" />
-                                <span class="text-surface-300">{{ $feature }}</span>
+                                <x-heroicon-s-check-circle class="w-5 h-5 text-primary-600 flex-shrink-0" />
+                                <span class="text-neutral-600">{{ $feature }}</span>
                             </li>
                         @endforeach
                     </ul>
@@ -207,8 +207,8 @@
     {{-- Compliance & Security Section --}}
     <x-section bg="default" bgImage="grid-tech" bgOverlay="dark">
         <div class="text-center mb-16">
-            <p class="text-brand-400 font-semibold uppercase tracking-wider text-sm mb-4">Security</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Security</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Government-grade security & compliance
             </h2>
         </div>
@@ -225,12 +225,12 @@
             @endphp
 
             @foreach ($compliance as $item)
-                <div class="text-center p-6 rounded-2xl bg-surface-900/80 border border-surface-700">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-500/10 flex items-center justify-center">
-                        <x-dynamic-component :component="'heroicon-s-' . $item['icon']" class="w-6 h-6 text-brand-400" />
+                <div class="text-center p-6 rounded-2xl bg-neutral-50/80 border border-neutral-200">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary-500/10 flex items-center justify-center">
+                        <x-dynamic-component :component="'heroicon-s-' . $item['icon']" class="w-6 h-6 text-primary-600" />
                     </div>
-                    <h3 class="font-semibold text-white mb-1">{{ $item['title'] }}</h3>
-                    <p class="text-sm text-surface-400">{{ $item['desc'] }}</p>
+                    <h3 class="font-semibold text-neutral-900 mb-1">{{ $item['title'] }}</h3>
+                    <p class="text-sm text-neutral-500">{{ $item['desc'] }}</p>
                 </div>
             @endforeach
         </div>
@@ -239,8 +239,8 @@
     {{-- Benefits Section --}}
     <x-section bg="surface">
         <div class="text-center mb-16">
-            <p class="text-brand-400 font-semibold uppercase tracking-wider text-sm mb-4">Benefits</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Benefits</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Transform citizen services
             </h2>
         </div>
@@ -259,11 +259,11 @@
                 @endphp
 
                 @foreach ($benefits as $benefit)
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-surface-800 border border-surface-700">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center">
-                            <x-dynamic-component :component="'heroicon-s-' . $benefit['icon']" class="w-5 h-5 text-brand-400" />
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-neutral-200">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center">
+                            <x-dynamic-component :component="'heroicon-s-' . $benefit['icon']" class="w-5 h-5 text-primary-600" />
                         </div>
-                        <p class="text-surface-300">{{ $benefit['text'] }}</p>
+                        <p class="text-neutral-600">{{ $benefit['text'] }}</p>
                     </div>
                 @endforeach
             </div>
@@ -273,10 +273,10 @@
     {{-- Final CTA Section --}}
     <x-section bg="brand">
         <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Ready to secure citizen services?
             </h2>
-            <p class="text-xl text-white/80 mb-8">
+            <p class="text-xl text-neutral-900/80 mb-8">
                 Join government agencies worldwide protecting citizen identity with PixaProof.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">

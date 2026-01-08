@@ -10,22 +10,30 @@ Props:
 - step: Step number (required)
 - title: Step title (required)
 - description: Step description (required)
+- variant: 'default' (for light bg) or 'light' (for dark bg)
 --}}
 
 @props([
     'step',
     'title',
     'description',
+    'variant' => 'default',
 ])
 
+@php
+    $titleColor = $variant === 'light' ? 'text-white' : 'text-neutral-900';
+    $descColor = $variant === 'light' ? 'text-gray-400' : 'text-neutral-600';
+    $stepBadge = $variant === 'light' ? 'bg-primary-500 text-white' : 'bg-primary-500 text-white';
+@endphp
+
 <x-card padding="lg" class="relative">
-    <div class="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+    <div class="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full {{ $stepBadge }} text-sm font-bold">
         {{ $step }}
     </div>
 
     <div class="mt-2">
-        <h3 class="text-xl font-semibold text-white">{{ $title }}</h3>
-        <p class="mt-2 text-gray-400">{{ $description }}</p>
+        <h3 class="text-xl font-semibold {{ $titleColor }}">{{ $title }}</h3>
+        <p class="mt-2 {{ $descColor }}">{{ $description }}</p>
     </div>
 
     {{ $slot }}

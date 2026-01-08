@@ -1,5 +1,5 @@
 {{--
-Card Component
+Card Component (Enterprise Design System)
 
 Usage:
 <x-card>Basic card content</x-card>
@@ -8,9 +8,10 @@ Usage:
 <x-card padding="lg">Card with large padding</x-card>
 
 Variants:
-- default: bg-surface-800 with border
-- elevated: bg-surface-700 (higher contrast)
-- ghost: transparent with border only
+- default: White bg with slate border
+- elevated: White bg with subtle shadow
+- ghost: Transparent with border only
+- primary: Sky-50 background (highlight sections)
 
 Padding:
 - sm: p-4
@@ -26,9 +27,10 @@ Padding:
 
 @php
     $variantClasses = match($variant) {
-        'elevated' => 'bg-surface-700 border-surface-600',
-        'ghost' => 'bg-transparent border-surface-700',
-        default => 'bg-surface-800 border-surface-700',
+        'elevated' => 'bg-white border-neutral-200 shadow-sm',
+        'ghost' => 'bg-transparent border-neutral-200',
+        'primary' => 'bg-primary-50 border-primary-200',
+        default => 'bg-white border-neutral-200',
     };
 
     $paddingClasses = match($padding) {
@@ -37,9 +39,9 @@ Padding:
         default => 'p-6',
     };
 
-    $hoverClasses = $hover ? 'transition hover:border-surface-600 hover:bg-surface-700' : '';
+    $hoverClasses = $hover ? 'transition hover:border-primary-300 hover:shadow-md' : '';
 @endphp
 
-<div {{ $attributes->merge(['class' => "rounded-xl border {$variantClasses} {$paddingClasses} {$hoverClasses}"]) }}>
+<div {{ $attributes->merge(['class' => "rounded border {$variantClasses} {$paddingClasses} {$hoverClasses}"]) }}>
     {{ $slot }}
 </div>

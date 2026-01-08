@@ -7,7 +7,7 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
     {{-- Background glow --}}
     <div class="absolute inset-0 -z-10">
         <div class="absolute left-1/4 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500/10 blur-3xl"></div>
-        <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-500/10 blur-3xl"></div>
+        <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-500/10 blur-3xl"></div>
         <div class="absolute left-3/4 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/10 blur-3xl"></div>
     </div>
 
@@ -15,7 +15,7 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
         {{-- Live Capture - Protected --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-green-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
+            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
                 {{-- Status Badge --}}
                 <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-green-500/20 px-2 py-1">
                     <svg class="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 24 24">
@@ -26,8 +26,8 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
 
                 {{-- Mini phone mockup --}}
                 <div class="mx-auto w-32">
-                    <div class="rounded-2xl border-2 border-surface-600 bg-surface-900 p-1">
-                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-surface-950">
+                    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
+                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
                             {{-- Camera UI --}}
                             <div class="flex h-full flex-col">
                                 <div class="flex-1 flex items-center justify-center p-2">
@@ -37,16 +37,16 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                                         <div class="absolute -bottom-0.5 -left-0.5 h-2 w-2 border-b border-l border-green-500"></div>
                                         <div class="absolute -bottom-0.5 -right-0.5 h-2 w-2 border-b border-r border-green-500"></div>
                                         {{-- ID card placeholder --}}
-                                        <div class="absolute inset-2 rounded bg-surface-700">
-                                            <div class="absolute left-1 top-1 h-2 w-4 rounded-sm bg-surface-600"></div>
+                                        <div class="absolute inset-2 rounded bg-neutral-100">
+                                            <div class="absolute left-1 top-1 h-2 w-4 rounded-sm bg-neutral-200"></div>
                                             <div class="absolute bottom-1 left-1 right-1 space-y-0.5">
-                                                <div class="h-0.5 w-3/4 rounded bg-surface-600"></div>
-                                                <div class="h-0.5 w-1/2 rounded bg-surface-600"></div>
+                                                <div class="h-0.5 w-3/4 rounded bg-neutral-200"></div>
+                                                <div class="h-0.5 w-1/2 rounded bg-neutral-200"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-center bg-surface-900 py-2">
+                                <div class="flex items-center justify-center bg-neutral-50 py-2">
                                     <div class="h-4 w-4 rounded-full border-2 border-white bg-white/20"></div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
         {{-- Tampered Photos - Blocked --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-red-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
+            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
                 {{-- Status Badge --}}
                 <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-red-500/20 px-2 py-1">
                     <svg class="h-3 w-3 text-red-500" fill="currentColor" viewBox="0 0 24 24">
@@ -75,14 +75,14 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
 
                 {{-- Mini phone mockup with gallery --}}
                 <div class="mx-auto w-32">
-                    <div class="rounded-2xl border-2 border-surface-600 bg-surface-900 p-1">
-                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-surface-950">
+                    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
+                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
                             {{-- Gallery grid --}}
                             <div class="flex h-full flex-col p-2">
                                 <div class="mb-2 text-center text-[8px] text-gray-500">Gallery</div>
                                 <div class="grid flex-1 grid-cols-3 gap-1">
                                     @for($i = 0; $i < 9; $i++)
-                                        <div class="rounded bg-surface-700"></div>
+                                        <div class="rounded bg-neutral-100"></div>
                                     @endfor
                                 </div>
                                 {{-- Block overlay --}}
@@ -109,7 +109,7 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
         {{-- AI Generated - Detected --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-yellow-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-surface-700 bg-surface-800 p-4">
+            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
                 {{-- Status Badge --}}
                 <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-yellow-500/20 px-2 py-1">
                     <svg class="h-3 w-3 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
@@ -120,22 +120,22 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
 
                 {{-- Mini mockup with AI image --}}
                 <div class="mx-auto w-32">
-                    <div class="rounded-2xl border-2 border-surface-600 bg-surface-900 p-1">
-                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-surface-950">
+                    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
+                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
                             {{-- Fake ID with AI warning --}}
                             <div class="flex h-full flex-col items-center justify-center p-2">
                                 {{-- Synthetic ID card --}}
-                                <div class="relative w-full rounded bg-surface-700 p-2">
+                                <div class="relative w-full rounded bg-neutral-100 p-2">
                                     {{-- Photo area with glitch effect --}}
-                                    <div class="relative mb-2 aspect-square w-8 overflow-hidden rounded bg-surface-600">
+                                    <div class="relative mb-2 aspect-square w-8 overflow-hidden rounded bg-neutral-200">
                                         <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20"></div>
                                         {{-- Glitch lines --}}
                                         <div class="absolute inset-x-0 top-1/3 h-0.5 bg-cyan-500/50"></div>
                                         <div class="absolute inset-x-0 top-2/3 h-0.5 bg-purple-500/50"></div>
                                     </div>
                                     <div class="space-y-1">
-                                        <div class="h-1 w-3/4 rounded bg-surface-600"></div>
-                                        <div class="h-1 w-1/2 rounded bg-surface-600"></div>
+                                        <div class="h-1 w-3/4 rounded bg-neutral-200"></div>
+                                        <div class="h-1 w-1/2 rounded bg-neutral-200"></div>
                                     </div>
 
                                     {{-- AI detection overlay --}}
