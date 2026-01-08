@@ -30,16 +30,16 @@ host('server')
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Laravel recipe already sets storage and .env
-// Add any custom shared directories here:
-// add('shared_dirs', ['custom-uploads']);
-// add('writable_dirs', ['custom-uploads']);
+// Add database directory for SQLite
+add('shared_dirs', ['database']);
+add('writable_dirs', ['database']);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Database
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Uncomment to create additional databases during provisioning:
-// set('additional_databases', ['myapp_staging']);
+// SQLite configuration
+set('db_connection', 'sqlite');
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Secrets (from 1Password via environment)
@@ -70,6 +70,9 @@ environment('prod', [
 // ─────────────────────────────────────────────────────────────────────────────
 
 set('shared_env', [
+    // Database - SQLite (requires absolute path)
+    'DB_DATABASE' => '{{deploy_path}}/shared/database/database.sqlite',
+
     // Filesystem
     'FILESYSTEM_DISK' => 'local',
 
@@ -80,9 +83,6 @@ set('shared_env', [
 
     // Third-party services (use {secret_key} for secrets)
     // 'STRIPE_KEY' => '{stripe_key}',
-
-    'DB_CONNECTION' => 'sqlite',
-    'DB_DATABASE' => 'database/database.sqlite',
 ]);
 
 // ─────────────────────────────────────────────────────────────────────────────
