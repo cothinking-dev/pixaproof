@@ -10,7 +10,7 @@ require 'vendor/cothinking-dev/deployer-laravel-stack/src/recipe.php';
 // ─────────────────────────────────────────────────────────────────────────────
 
 set('application', 'Pixaproof');
-set('repository', 'https://github.com/cothinking-dev/pixaproof');
+set('repository', 'git@github.com:cothinking-dev/pixaproof.git');
 set('keep_releases', 5);
 
 // ─────────────────────────────────────────────────────────────────────────────
