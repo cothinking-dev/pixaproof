@@ -5,7 +5,7 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section class="relative isolate overflow-hidden bg-white px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
         {{-- Background Image --}}
         <div class="absolute inset-0 size-full">
             <img
@@ -13,34 +13,34 @@
                 alt=""
                 class="size-full object-cover object-center"
             />
-            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/90 to-surface-950/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-900/95 via-primary-800/90 to-primary-900/85"></div>
         </div>
 
         <div class="relative z-10 max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 mb-6">
-                <x-heroicon-s-building-library class="w-4 h-4 text-brand-400" />
-                <span class="text-sm font-medium text-brand-400 uppercase tracking-wider">Banking & Financial Services</span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-400/30 mb-6">
+                <x-heroicon-s-building-library class="w-4 h-4 text-primary-300" />
+                <span class="text-sm font-medium text-primary-200 uppercase tracking-wider">Banking & Financial Services</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Stop identity fraud before it enters your system
             </h1>
 
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl text-neutral-100 mb-8 max-w-3xl mx-auto">
                 Prevent gallery injections, fake IDs, and synthetic images in digital account opening, loan applications, and KYC verification with capture-level security.
             </p>
 
             {{-- Hero Stat --}}
-            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-surface-800/80 border border-surface-700">
-                <span class="text-3xl font-bold text-white">85%</span>
-                <span class="text-gray-300 text-left text-sm">reduction in identity fraud<br>for banks using PixaProof</span>
+            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/80 border border-neutral-200">
+                <span class="text-3xl font-bold text-neutral-900">85%</span>
+                <span class="text-neutral-600 text-left text-sm">reduction in identity fraud<br>for banks using PixaProof</span>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                <x-button href="/contact" size="lg">
+                <x-button href="/contact" size="lg" variant="white">
                     Request Demo
                 </x-button>
-                <x-button href="#solution" variant="outline" size="lg">
+                <x-button href="#solution" variant="outline-white" size="lg">
                     See How It Works
                 </x-button>
             </div>
@@ -50,11 +50,11 @@
     {{-- The Challenge Section --}}
     <x-section>
         <div class="text-center mb-16">
-            <p class="text-brand-500 font-semibold uppercase tracking-wider text-sm mb-4">The Challenge</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">The Challenge</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Your digital channels are under attack
             </h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
                 Fraudsters exploit mobile banking apps and digital onboarding flows with sophisticated techniques.
             </p>
         </div>
@@ -90,11 +90,11 @@
     {{-- The Solution Section --}}
     <x-section id="solution" bg="surface">
         <div class="text-center mb-16">
-            <p class="text-brand-500 font-semibold uppercase tracking-wider text-sm mb-4">The Solution</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">The Solution</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Live capture enforcement for every KYC photo
             </h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
                 PixaProof ensures every identity document and selfie is captured live, blocking gallery uploads at the source.
             </p>
         </div>
@@ -114,14 +114,14 @@
                 @endphp
 
                 @foreach ($steps as $step)
-                    <div class="relative p-6 rounded-2xl bg-surface-800 border border-surface-700 hover:border-brand-300 hover:shadow-md transition-all">
+                    <div class="relative p-6 rounded-2xl bg-white border border-neutral-200 hover:border-primary-300 hover:shadow-md transition-all">
                         <div class="flex items-center gap-4 mb-4">
-                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-500 text-white font-bold text-lg">
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary-500 text-neutral-900 font-bold text-lg">
                                 {{ $step['num'] }}
                             </span>
-                            <h3 class="text-lg font-semibold text-white">{{ $step['title'] }}</h3>
+                            <h3 class="text-lg font-semibold text-neutral-900">{{ $step['title'] }}</h3>
                         </div>
-                        <p class="text-gray-300 text-sm">{{ $step['desc'] }}</p>
+                        <p class="text-neutral-600 text-sm">{{ $step['desc'] }}</p>
                     </div>
                 @endforeach
             </div>
@@ -131,8 +131,8 @@
     {{-- Capabilities Section --}}
     <x-section>
         <div class="text-center mb-16">
-            <p class="text-brand-500 font-semibold uppercase tracking-wider text-sm mb-4">Capabilities</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Capabilities</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Complete identity verification suite
             </h2>
         </div>
@@ -162,24 +162,24 @@
     {{-- Regulatory Compliance Section --}}
     <x-section bg="surface">
         <div class="text-center mb-16">
-            <p class="text-brand-500 font-semibold uppercase tracking-wider text-sm mb-4">Compliance</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Compliance</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Built for regulatory requirements
             </h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
                 PixaProof helps you meet global compliance standards with comprehensive documentation and controls.
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-surface-700 bg-surface-800">
+        <div class="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-neutral-200 bg-white">
             <table class="w-full">
-                <thead class="bg-surface-800/50">
+                <thead class="bg-white/50">
                     <tr>
-                        <th class="px-6 py-4 text-left text-sm font-semibold text-white">Framework</th>
-                        <th class="px-6 py-4 text-left text-sm font-semibold text-white">PixaProof Features</th>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-neutral-900">Framework</th>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-neutral-900">PixaProof Features</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-surface-200">
+                <tbody class="divide-y divide-neutral-200">
                     @php
                         $compliance = [
                             ['KYC/AML', 'Live verification, document authenticity, complete audit trail'],
@@ -191,9 +191,9 @@
                         ];
                     @endphp
                     @foreach ($compliance as $row)
-                        <tr class="hover:bg-surface-800 transition-colors">
-                            <td class="px-6 py-4 text-brand-500 font-medium">{{ $row[0] }}</td>
-                            <td class="px-6 py-4 text-gray-300">{{ $row[1] }}</td>
+                        <tr class="hover:bg-white transition-colors">
+                            <td class="px-6 py-4 text-primary-600 font-medium">{{ $row[0] }}</td>
+                            <td class="px-6 py-4 text-neutral-600">{{ $row[1] }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -205,8 +205,8 @@
     <x-section>
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <p class="text-brand-500 font-semibold uppercase tracking-wider text-sm mb-4">Customer Success</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Customer Success</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                     Proven results in production
                 </h2>
             </div>
@@ -214,44 +214,44 @@
             <div class="grid lg:grid-cols-2 gap-8 items-center">
                 {{-- Stats --}}
                 <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-white">Southeast Asian Bank</h3>
+                    <h3 class="text-2xl font-bold text-neutral-900">Southeast Asian Bank</h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="p-6 rounded-xl bg-surface-800 border border-surface-700 shadow-lg shadow-black/20">
-                            <div class="text-3xl font-bold text-brand-500 mb-1">85%</div>
-                            <div class="text-sm text-gray-300">Fraud reduction</div>
-                            <div class="text-xs text-gray-400 mt-1">15% → 2.2% fraud rate</div>
+                        <div class="p-6 rounded-xl bg-white border border-neutral-200 shadow-lg shadow-black/20">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">85%</div>
+                            <div class="text-sm text-neutral-600">Fraud reduction</div>
+                            <div class="text-xs text-neutral-500 mt-1">15% → 2.2% fraud rate</div>
                         </div>
-                        <div class="p-6 rounded-xl bg-surface-800 border border-surface-700 shadow-lg shadow-black/20">
-                            <div class="text-3xl font-bold text-brand-500 mb-1">$2.4M</div>
-                            <div class="text-sm text-gray-300">Annual savings</div>
-                            <div class="text-xs text-gray-400 mt-1">Fraud losses prevented</div>
+                        <div class="p-6 rounded-xl bg-white border border-neutral-200 shadow-lg shadow-black/20">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">$2.4M</div>
+                            <div class="text-sm text-neutral-600">Annual savings</div>
+                            <div class="text-xs text-neutral-500 mt-1">Fraud losses prevented</div>
                         </div>
-                        <div class="p-6 rounded-xl bg-surface-800 border border-surface-700 shadow-lg shadow-black/20">
-                            <div class="text-3xl font-bold text-brand-500 mb-1">65%</div>
-                            <div class="text-sm text-gray-300">Faster onboarding</div>
-                            <div class="text-xs text-gray-400 mt-1">48 hrs → 17 hrs</div>
+                        <div class="p-6 rounded-xl bg-white border border-neutral-200 shadow-lg shadow-black/20">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">65%</div>
+                            <div class="text-sm text-neutral-600">Faster onboarding</div>
+                            <div class="text-xs text-neutral-500 mt-1">48 hrs → 17 hrs</div>
                         </div>
-                        <div class="p-6 rounded-xl bg-surface-800 border border-surface-700 shadow-lg shadow-black/20">
-                            <div class="text-3xl font-bold text-brand-500 mb-1">40%</div>
-                            <div class="text-sm text-gray-300">Cost reduction</div>
-                            <div class="text-xs text-gray-400 mt-1">Manual review savings</div>
+                        <div class="p-6 rounded-xl bg-white border border-neutral-200 shadow-lg shadow-black/20">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">40%</div>
+                            <div class="text-sm text-neutral-600">Cost reduction</div>
+                            <div class="text-xs text-neutral-500 mt-1">Manual review savings</div>
                         </div>
                     </div>
                 </div>
 
                 {{-- Quote --}}
-                <div class="p-8 rounded-2xl bg-surface-800 border border-surface-700">
-                    <x-heroicon-s-chat-bubble-bottom-center-text class="w-10 h-10 text-brand-500 mb-6" />
-                    <blockquote class="text-xl text-white leading-relaxed mb-6">
+                <div class="p-8 rounded-2xl bg-white border border-neutral-200">
+                    <x-heroicon-s-chat-bubble-bottom-center-text class="w-10 h-10 text-primary-600 mb-6" />
+                    <blockquote class="text-xl text-neutral-900 leading-relaxed mb-6">
                         "PixaProof transformed our digital onboarding. Gallery uploads are completely blocked, so we know every ID was captured live."
                     </blockquote>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-surface-200 flex items-center justify-center">
-                            <x-heroicon-s-user class="w-6 h-6 text-gray-400" />
+                            <x-heroicon-s-user class="w-6 h-6 text-neutral-500" />
                         </div>
                         <div>
-                            <div class="font-medium text-white">Head of Digital Banking</div>
-                            <div class="text-sm text-gray-400">Southeast Asian Bank</div>
+                            <div class="font-medium text-neutral-900">Head of Digital Banking</div>
+                            <div class="text-sm text-neutral-500">Southeast Asian Bank</div>
                         </div>
                     </div>
                 </div>
@@ -262,10 +262,10 @@
     {{-- Final CTA Section --}}
     <x-section bg="brand">
         <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Ready to secure your digital banking?
             </h2>
-            <p class="text-xl text-white/80 mb-8">
+            <p class="text-xl text-neutral-900/80 mb-8">
                 Join leading banks protecting millions of customers with PixaProof.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">

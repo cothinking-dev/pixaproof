@@ -1,436 +1,413 @@
 @extends('layouts.app')
 
-@section('title', 'Prove Your Photos Are Real')
+@section('title', 'Enterprise Photo Verification - Stop Injection Attacks')
+@section('description', 'Enterprise-grade photo verification for compliance-critical applications. Prevent injection attacks, enforce live capture, and create tamper-proof audit trails. Built by ASEAN eKYC experts.')
 
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative isolate overflow-hidden bg-surface-950 px-4 pt-24">
-        {{-- Background Image --}}
-        <div class="absolute inset-0 size-full">
-            <img
-                src="/images/heroes/hero-home.webp"
-                alt=""
-                class="size-full object-cover object-center"
-            />
-            {{-- Gradient Overlay --}}
-            <div class="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/95 to-surface-950/70"></div>
+    <section class="relative isolate overflow-hidden bg-white px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
+        {{-- Background Pattern --}}
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-white"></div>
+            <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-primary-100/40 to-transparent"></div>
+            {{-- Subtle grid pattern --}}
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         </div>
 
-        {{-- Content --}}
-        <div class="relative z-10 mx-auto max-w-7xl py-16 md:py-24">
-            <div class="grid items-center gap-12 lg:grid-cols-2">
-                {{-- Left: Text Content --}}
-                <div class="text-center lg:text-left">
-                    {{-- Pre-headline --}}
-                    <p class="text-sm font-medium uppercase tracking-wider text-brand-500">
-                        Trusted by 500+ Enterprises
-                    </p>
-
-                    {{-- Headline --}}
-                    <h1 class="mt-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-                        Prove your photos are <x-rotating-text :words="['real', 'authentic', 'untampered']" class="text-brand-500" />
-                    </h1>
-
-                    {{-- Subheadline --}}
-                    <p class="mt-6 text-lg text-gray-300 text-pretty md:text-xl">
-                        Take photos that can't be faked. Verify photos that can't be forged.
-                        The PixaProof app captures authenticity at the moment of the shot.
-                    </p>
-
-                    {{-- App Store Badges --}}
-                    <div class="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
-                        <x-app-store-badges size="lg" />
-                    </div>
-
-                    {{-- Secondary CTA --}}
-                    <div class="mt-6">
-                        <a href="/enterprise" class="inline-flex items-center gap-2 text-sm font-medium text-brand-400 hover:text-brand-300 transition">
-                            Enterprise Solutions
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    {{-- Trust Badge Strip --}}
-                    <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-gray-400 lg:justify-start">
-                        <div class="flex items-center gap-2">
-                            <svg class="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                            </svg>
-                            <span>ISO 27001</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                            </svg>
-                            <span>End-to-End Encrypted</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                            </svg>
-                            <span>Free to Start</span>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Right: Hero Visual --}}
-                <div class="relative hidden lg:block">
-                    <x-graphics.hero-comparison />
-                </div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            {{-- Trust indicator --}}
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded bg-primary-50 border border-primary-200 mb-8">
+                <x-heroicon-s-shield-check class="w-4 h-4 text-primary-600" />
+                <span class="text-sm font-medium text-primary-700">Built by the team behind EMAS eKYC</span>
             </div>
 
-            {{-- Mobile: Hero Visual below text --}}
-            <div class="mt-16 lg:hidden">
-                <x-graphics.hero-comparison />
+            {{-- Headline --}}
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+                Stop Injection Attacks Before They Enter Your System
+            </h1>
+
+            {{-- Subheadline --}}
+            <p class="text-lg md:text-xl text-neutral-700 mb-10 max-w-3xl mx-auto">
+                Enterprise-grade photo verification for compliance-critical applications. Built by the team behind EMAS eKYC, trusted across ASEAN's most regulated industries.
+            </p>
+
+            {{-- CTAs --}}
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <x-button href="/contact" size="lg">
+                    Request Demo
+                </x-button>
+                <x-button href="#solutions" variant="secondary" size="lg">
+                    View Solutions
+                </x-button>
+            </div>
+
+            {{-- Trust Badges --}}
+            <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-neutral-600">
+                <div class="flex items-center gap-2">
+                    <x-heroicon-s-shield-check class="w-5 h-5 text-primary-600" />
+                    <span>ISO 27001</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <x-heroicon-s-shield-check class="w-5 h-5 text-primary-600" />
+                    <span>SOC 2 Type II</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <x-heroicon-s-shield-check class="w-5 h-5 text-primary-600" />
+                    <span>GDPR Compliant</span>
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- How It Works Section --}}
-    <x-section id="how-it-works" bg="surface">
-        <div class="text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-500">How It Works</p>
-            <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Two roles, one trusted photo</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
-                Whether you're capturing photos or verifying them, PixaProof keeps everyone honest.
+    {{-- Problem Section --}}
+    <x-section bg="neutral">
+        <div class="text-center mb-16">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">The Problem</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+                Injection Attacks Are the Gateway to Fraud
+            </h2>
+            <p class="text-neutral-700 text-lg max-w-2xl mx-auto">
+                Deepfakes, photoshopped documents, AI-generated images—all start with bypassing live capture. Your existing verification is failing at the first line of defense.
             </p>
         </div>
 
-        {{-- Two Column Bento --}}
-        <div class="mt-12 grid gap-8 md:grid-cols-2">
-            {{-- Submitter Flow --}}
-            <div class="rounded-2xl bg-surface-800 border border-surface-700 p-8">
-                <div class="flex gap-6">
-                    {{-- Phone Mockup --}}
-                    <div class="hidden shrink-0 sm:block">
-                        <x-graphics.phone-mockup variant="scanning" size="sm" />
+        {{-- Stat callout --}}
+        <div class="flex justify-center mb-12">
+            <div class="inline-flex items-center gap-4 px-8 py-4 rounded bg-white border border-neutral-200 shadow-sm">
+                <span class="text-4xl font-bold text-primary-600">15-20%</span>
+                <span class="text-neutral-700 text-left text-sm max-w-[180px]">of account applications use fraudulent or manipulated documents</span>
+            </div>
+        </div>
+
+        {{-- Problem Cards --}}
+        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {{-- Gallery Injection --}}
+            <div class="p-6 rounded border border-red-200 bg-red-50">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-red-100 text-red-600">
+                        <x-heroicon-s-photo class="w-5 h-5" />
                     </div>
-
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10">
-                                <svg class="h-5 w-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold text-white">Submit Photos</h3>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500 text-xs font-bold text-surface-950">1</div>
-                                <div>
-                                    <p class="font-medium text-white">Open PixaProof camera</p>
-                                    <p class="text-sm text-gray-400">Built-in camera captures security data</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500 text-xs font-bold text-surface-950">2</div>
-                                <div>
-                                    <p class="font-medium text-white">Take your photo</p>
-                                    <p class="text-sm text-gray-400">PIEA™ signature embedded instantly</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500 text-xs font-bold text-surface-950">3</div>
-                                <div>
-                                    <p class="font-medium text-white">Share anywhere</p>
-                                    <p class="text-sm text-gray-400">Send via any channel - verification travels with the photo</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <h3 class="font-semibold text-neutral-900">Gallery Injection</h3>
+                        <p class="mt-1 text-sm text-neutral-700">Users upload pre-edited photos from their gallery, bypassing live capture requirements entirely</p>
+                        <p class="mt-2 text-xs font-medium text-red-700">Exploits: Document submission, selfie verification</p>
                     </div>
                 </div>
             </div>
 
-            {{-- Verifier Flow --}}
-            <div class="rounded-2xl bg-surface-800 border border-surface-700 p-8">
-                <div class="flex gap-6">
-                    {{-- Phone Mockup --}}
-                    <div class="hidden shrink-0 sm:block">
-                        <x-graphics.phone-mockup variant="success" size="sm" />
+            {{-- Virtual Camera Attacks --}}
+            <div class="p-6 rounded border border-red-200 bg-red-50">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-red-100 text-red-600">
+                        <x-heroicon-s-video-camera class="w-5 h-5" />
                     </div>
+                    <div>
+                        <h3 class="font-semibold text-neutral-900">Virtual Camera Attacks</h3>
+                        <p class="mt-1 text-sm text-neutral-700">Software intercepts the camera feed, injecting pre-recorded or synthetic video streams</p>
+                        <p class="mt-2 text-xs font-medium text-red-700">Exploits: Liveness detection, video KYC</p>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-green-500/10">
-                                <svg class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold text-white">Verify Photos</h3>
-                        </div>
+            {{-- Deepfake Injection --}}
+            <div class="p-6 rounded border border-red-200 bg-red-50">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-red-100 text-red-600">
+                        <x-heroicon-s-cpu-chip class="w-5 h-5" />
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-neutral-900">Deepfake Injection</h3>
+                        <p class="mt-1 text-sm text-neutral-700">AI-generated faces and documents that pass traditional verification checks</p>
+                        <p class="mt-2 text-xs font-medium text-red-700">Exploits: Identity verification, biometric matching</p>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-surface-950">1</div>
-                                <div>
-                                    <p class="font-medium text-white">Receive any photo</p>
-                                    <p class="text-sm text-gray-400">Email, messaging, or direct transfer</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-surface-950">2</div>
-                                <div>
-                                    <p class="font-medium text-white">Open in PixaProof</p>
-                                    <p class="text-sm text-gray-400">App reads embedded signature</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-surface-950">3</div>
-                                <div>
-                                    <p class="font-medium text-white">See verification status</p>
-                                    <p class="text-sm text-gray-400">Authentic, tampered, or unknown - instantly</p>
-                                </div>
-                            </div>
-                        </div>
+            {{-- Document Forgery --}}
+            <div class="p-6 rounded border border-red-200 bg-red-50">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-red-100 text-red-600">
+                        <x-heroicon-s-document-text class="w-5 h-5" />
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-neutral-900">Document Forgery</h3>
+                        <p class="mt-1 text-sm text-neutral-700">Manipulated ID documents, bank statements, and official certificates</p>
+                        <p class="mt-2 text-xs font-medium text-red-700">Exploits: KYC onboarding, credit applications</p>
                     </div>
                 </div>
             </div>
         </div>
     </x-section>
 
-    {{-- Use Cases Section --}}
-    <x-section bg-image="/images/backgrounds/dots-subtle.svg" bg-overlay="radial">
-        <div class="text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Use Cases</p>
-            <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Photos that prove themselves</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
-                From selling secondhand items to documenting accidents, verified photos build trust.
+    {{-- Solution Section --}}
+    <x-section>
+        <div class="text-center mb-16">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">The Solution</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+                Live Capture Enforcement
+            </h2>
+            <p class="text-neutral-700 text-lg max-w-2xl mx-auto">
+                PixaProof prevents injection attacks at the source—before fraudulent images ever reach your system. Every photo is verified at the moment of capture.
             </p>
         </div>
 
-        <x-vertical-tabs
-            class="mt-12"
-            :tabs="[
-                [
-                    'title' => 'Secondhand Sales',
-                    'description' => 'Prove your product photos are real. Buyers trust verified listings more.',
-                    'icon' => 'M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z',
-                    'image' => '/images/use-cases/secondhand-sales.jpg',
-                ],
-                [
-                    'title' => 'Insurance Claims',
-                    'description' => 'Document damage with tamper-proof photos. Speed up your claims process.',
-                    'icon' => 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
-                    'image' => '/images/use-cases/insurance-claims.jpg',
-                ],
-                [
-                    'title' => 'Legal Evidence',
-                    'description' => 'Create admissible photo evidence with cryptographic proof of authenticity.',
-                    'icon' => 'M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z',
-                    'image' => '/images/use-cases/legal-evidence.jpg',
-                ],
-                [
-                    'title' => 'Real Estate',
-                    'description' => 'Verify property conditions for rentals, inspections, and move-in/out documentation.',
-                    'icon' => 'M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819',
-                    'image' => '/images/use-cases/real-estate.jpg',
-                ],
-                [
-                    'title' => 'Journalism',
-                    'description' => 'Prove your photos weren\'t AI-generated or manipulated. Maintain credibility.',
-                    'icon' => 'M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z',
-                    'image' => '/images/use-cases/journalism.jpg',
-                ],
-                [
-                    'title' => 'Personal Records',
-                    'description' => 'Keep verifiable records of belongings, conditions, or events for your own peace of mind.',
-                    'icon' => 'M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z',
-                    'image' => '/images/use-cases/personal-records.jpg',
-                ],
-            ]"
-        />
-    </x-section>
-
-    {{-- Technology Section --}}
-    <x-section bg="surface" pattern="circuit" pattern-opacity="0.03">
-        <div class="text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-500">PIEA™ Technology</p>
-            <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Security at the speed of a shutter</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
-                Our Photo Integrity Encoding Algorithm embeds cryptographic proof the instant you take a photo.
-            </p>
-        </div>
-
-        <div class="mt-12 grid gap-8 md:grid-cols-3">
-            <x-card.feature title="Capture-Level Security" description="Authenticity is embedded at the moment of capture. No chance for tampering.">
-                <x-slot:icon>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                    </svg>
-                </x-slot:icon>
-            </x-card.feature>
-
-            <x-card.feature title="Tamper Detection" description="35+ integrity checks detect any modification, from pixel edits to AI manipulation.">
-                <x-slot:icon>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
-                    </svg>
-                </x-slot:icon>
-            </x-card.feature>
-
-            <x-card.feature title="Instant Verification" description="Results in under 500ms. Works offline with sync when connected.">
-                <x-slot:icon>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                    </svg>
-                </x-slot:icon>
-            </x-card.feature>
-        </div>
-
-        <div class="mt-8 text-center">
-            <x-button href="/product" variant="secondary">
-                Learn More About PIEA™
-            </x-button>
-        </div>
-    </x-section>
-
-    {{-- Pricing Section --}}
-    <x-section id="pricing" bg-image="/images/backgrounds/gradient-mesh.svg" bg-overlay="darker">
-        <div class="text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Pricing</p>
-            <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Start free, scale as you grow</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300 text-pretty">
-                Verify photos for free. Upgrade when you need more.
-            </p>
-        </div>
-
-        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <x-pricing-card
-                tier="Free"
-                price="RM0"
-                description="For trying out PixaProof"
-                :features="[
-                    '3 verifications per month',
-                    'Capture unlimited photos',
-                    'Basic verification',
-                    'Share via any channel',
-                ]"
-                ctaText="Download Free"
-            />
-
-            <x-pricing-card
-                tier="Standard"
-                price="RM200"
-                description="For regular users"
-                :popular="true"
-                :features="[
-                    '25 verifications per month',
-                    'Capture unlimited photos',
-                    'Full verification suite',
-                    'Verification history',
-                    'Priority support',
-                ]"
-                ctaText="Get Started"
-            />
-
-            <x-pricing-card
-                tier="Pro"
-                price="RM600"
-                description="For power users"
-                :features="[
-                    '100 verifications per month',
-                    'Capture unlimited photos',
-                    'Full verification suite',
-                    'Verification history',
-                    'API access',
-                    'Priority support',
-                ]"
-                ctaText="Get Pro"
-            />
-
-            <x-pricing-card
-                tier="Enterprise"
-                :enterprise="true"
-                description="For organizations"
-                :features="[
-                    'Unlimited verifications',
-                    'SDK integration',
-                    'Custom branding',
-                    'SSO & team management',
-                    'Dedicated support',
-                    'SLA guarantee',
-                ]"
-            />
-        </div>
-    </x-section>
-
-    {{-- Enterprise CTA Section --}}
-    <x-section bg="surface">
-        <div class="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-                <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Enterprise Solutions</p>
-                <h2 class="mt-2 text-3xl font-bold text-white md:text-4xl">Building for your organization?</h2>
-                <p class="mt-4 text-lg text-gray-300 text-pretty">
-                    Integrate PixaProof directly into your apps with our SDK.
-                    Custom workflows, white-label UI, and dedicated support.
-                </p>
-
-                <ul class="mt-6 space-y-3">
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <svg class="h-5 w-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        iOS, Android, React Native, Flutter SDKs
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <svg class="h-5 w-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Banking, Insurance, Government, Healthcare solutions
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <svg class="h-5 w-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        ISO 27001, SOC 2 Type II, GDPR compliant
-                    </li>
-                </ul>
-
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <x-button href="/enterprise">Explore Enterprise</x-button>
-                    <x-button href="{{ route('contact') }}" variant="secondary">Contact Sales</x-button>
+        {{-- Feature Cards --}}
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {{-- Injection Attack Prevention --}}
+            <div class="p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600">
+                    <x-heroicon-s-shield-exclamation class="w-6 h-6" />
                 </div>
+                <h3 class="text-lg font-semibold text-neutral-900">Injection Attack Prevention</h3>
+                <p class="mt-2 text-neutral-700 text-sm">Block gallery uploads, virtual cameras, and synthetic media at the SDK level</p>
             </div>
 
-            <div class="hidden lg:block">
-                <div class="rounded-2xl bg-surface-800 border border-surface-700 p-8">
-                    <div class="grid grid-cols-2 gap-4">
-                        <a href="{{ route('solutions.banking') }}" class="flex items-center gap-3 rounded-xl bg-surface-700/50 p-4 hover:bg-surface-700 transition">
-                            <x-heroicon-o-building-library class="h-8 w-8 text-brand-500" />
-                            <span class="font-medium text-white">Banking</span>
-                        </a>
-                        <a href="{{ route('solutions.insurance') }}" class="flex items-center gap-3 rounded-xl bg-surface-700/50 p-4 hover:bg-surface-700 transition">
-                            <x-heroicon-o-shield-check class="h-8 w-8 text-brand-500" />
-                            <span class="font-medium text-white">Insurance</span>
-                        </a>
-                        <a href="{{ route('solutions.government') }}" class="flex items-center gap-3 rounded-xl bg-surface-700/50 p-4 hover:bg-surface-700 transition">
-                            <x-heroicon-o-building-office-2 class="h-8 w-8 text-brand-500" />
-                            <span class="font-medium text-white">Government</span>
-                        </a>
-                        <a href="{{ route('solutions.healthcare') }}" class="flex items-center gap-3 rounded-xl bg-surface-700/50 p-4 hover:bg-surface-700 transition">
-                            <x-heroicon-o-heart class="h-8 w-8 text-brand-500" />
-                            <span class="font-medium text-white">Healthcare</span>
-                        </a>
+            {{-- 35+ Tamper Detection Algorithms --}}
+            <div class="p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600">
+                    <x-heroicon-s-beaker class="w-6 h-6" />
+                </div>
+                <h3 class="text-lg font-semibold text-neutral-900">35+ Tamper Detection Algorithms</h3>
+                <p class="mt-2 text-neutral-700 text-sm">PIEA technology analyzes pixel-level integrity, metadata consistency, and AI manipulation markers</p>
+            </div>
+
+            {{-- Cryptographic Audit Trail --}}
+            <div class="p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600">
+                    <x-heroicon-s-finger-print class="w-6 h-6" />
+                </div>
+                <h3 class="text-lg font-semibold text-neutral-900">Cryptographic Audit Trail</h3>
+                <p class="mt-2 text-neutral-700 text-sm">Every capture includes tamper-evident signatures for regulatory compliance and dispute resolution</p>
+            </div>
+
+            {{-- Mobile-First Design --}}
+            <div class="p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600">
+                    <x-heroicon-s-device-phone-mobile class="w-6 h-6" />
+                </div>
+                <h3 class="text-lg font-semibold text-neutral-900">Mobile-First Design</h3>
+                <p class="mt-2 text-neutral-700 text-sm">Optimized for smartphone cameras where most customer interactions happen</p>
+            </div>
+        </div>
+    </x-section>
+
+    {{-- Industry Solutions Section --}}
+    <x-section id="solutions" bg="primary">
+        <div class="text-center mb-16">
+            <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">Industry Solutions</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+                Compliance-Critical Applications Across Industries
+            </h2>
+            <p class="text-neutral-700 text-lg max-w-2xl mx-auto">
+                PixaProof is deployed across ASEAN's most regulated industries, protecting organizations from injection-based fraud.
+            </p>
+        </div>
+
+        {{-- Industry Cards Grid --}}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {{-- Banking & Finance --}}
+            <a href="{{ route('solutions.banking') }}" class="group p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors">
+                        <x-heroicon-s-building-library class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">Banking & Finance</h3>
+                </div>
+                <p class="text-neutral-700 text-sm mb-4">Prevent account takeover and loan fraud with verified document capture for KYC onboarding.</p>
+                <span class="text-primary-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <x-heroicon-s-arrow-right class="w-4 h-4" />
+                </span>
+            </a>
+
+            {{-- Insurance --}}
+            <a href="{{ route('solutions.insurance') }}" class="group p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors">
+                        <x-heroicon-s-shield-check class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">Insurance</h3>
+                </div>
+                <p class="text-neutral-700 text-sm mb-4">Eliminate staged claims and document manipulation with live capture enforcement.</p>
+                <span class="text-primary-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <x-heroicon-s-arrow-right class="w-4 h-4" />
+                </span>
+            </a>
+
+            {{-- Government --}}
+            <a href="{{ route('solutions.government') }}" class="group p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors">
+                        <x-heroicon-s-building-office-2 class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">Government</h3>
+                </div>
+                <p class="text-neutral-700 text-sm mb-4">Secure citizen services and benefits distribution with tamper-proof identity verification.</p>
+                <span class="text-primary-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <x-heroicon-s-arrow-right class="w-4 h-4" />
+                </span>
+            </a>
+
+            {{-- Healthcare --}}
+            <a href="{{ route('solutions.healthcare') }}" class="group p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors">
+                        <x-heroicon-s-heart class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">Healthcare</h3>
+                </div>
+                <p class="text-neutral-700 text-sm mb-4">Protect patient identity and medical documentation with HIPAA-compliant verification.</p>
+                <span class="text-primary-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <x-heroicon-s-arrow-right class="w-4 h-4" />
+                </span>
+            </a>
+
+            {{-- E-commerce --}}
+            <a href="{{ route('solutions.ecommerce') }}" class="group p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors">
+                        <x-heroicon-s-shopping-cart class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">E-commerce</h3>
+                </div>
+                <p class="text-neutral-700 text-sm mb-4">Reduce chargebacks and seller fraud with verified product and delivery photos.</p>
+                <span class="text-primary-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <x-heroicon-s-arrow-right class="w-4 h-4" />
+                </span>
+            </a>
+
+            {{-- Real Estate --}}
+            <a href="{{ route('solutions.real-estate') }}" class="group p-6 rounded border border-neutral-200 bg-white hover:border-primary-300 hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors">
+                        <x-heroicon-s-home-modern class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">Real Estate</h3>
+                </div>
+                <p class="text-neutral-700 text-sm mb-4">Prevent title fraud and property misrepresentation with verified documentation.</p>
+                <span class="text-primary-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <x-heroicon-s-arrow-right class="w-4 h-4" />
+                </span>
+            </a>
+        </div>
+    </x-section>
+
+    {{-- Developer Section --}}
+    <x-section>
+        <div class="max-w-5xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                {{-- Content --}}
+                <div>
+                    <p class="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-4">For Developers</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+                        Built for Your Development Team
+                    </h2>
+                    <p class="text-neutral-700 text-lg mb-8">
+                        Integrate PixaProof into your existing workflows with our comprehensive SDK suite. RESTful API, WebSDK for browser-based capture, and native mobile SDKs for iOS and Android.
+                    </p>
+
+                    {{-- SDK Options --}}
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-8 w-8 items-center justify-center rounded bg-primary-50 text-primary-600">
+                                <x-heroicon-s-code-bracket class="w-4 h-4" />
+                            </div>
+                            <span class="text-neutral-700 font-medium">RESTful API</span>
+                            <span class="text-neutral-500 text-sm">— Server-side integration</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-8 w-8 items-center justify-center rounded bg-primary-50 text-primary-600">
+                                <x-heroicon-s-globe-alt class="w-4 h-4" />
+                            </div>
+                            <span class="text-neutral-700 font-medium">JavaScript WebSDK</span>
+                            <span class="text-neutral-500 text-sm">— Browser capture</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-8 w-8 items-center justify-center rounded bg-primary-50 text-primary-600">
+                                <x-heroicon-s-device-phone-mobile class="w-4 h-4" />
+                            </div>
+                            <span class="text-neutral-700 font-medium">iOS & Android SDKs</span>
+                            <span class="text-neutral-500 text-sm">— Native mobile apps</span>
+                        </div>
+                    </div>
+
+                    {{-- CTAs --}}
+                    <div class="flex flex-wrap gap-4">
+                        <x-button href="{{ route('product') }}">
+                            Learn More
+                        </x-button>
+                        <x-button href="/contact" variant="secondary">
+                            Request API Access
+                        </x-button>
+                    </div>
+                </div>
+
+                {{-- Code Preview --}}
+                <div class="hidden lg:block">
+                    <div class="rounded border border-neutral-200 bg-neutral-900 p-6 font-mono text-sm overflow-hidden">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-2 text-neutral-500 text-xs">pixaproof-integration.js</span>
+                        </div>
+                        <pre class="text-neutral-300 leading-relaxed"><code><span class="text-primary-400">import</span> { PixaProof } <span class="text-primary-400">from</span> <span class="text-green-400">'@pixaproof/sdk'</span>;
+
+<span class="text-primary-400">const</span> pixaproof = <span class="text-primary-400">new</span> <span class="text-yellow-400">PixaProof</span>({
+  apiKey: process.env.<span class="text-accent-400">PIXAPROOF_KEY</span>,
+  mode: <span class="text-green-400">'production'</span>
+});
+
+<span class="text-neutral-500">// Capture with injection prevention</span>
+<span class="text-primary-400">const</span> result = <span class="text-primary-400">await</span> pixaproof.<span class="text-yellow-400">capture</span>({
+  type: <span class="text-green-400">'document'</span>,
+  enforeLiveCapture: <span class="text-accent-400">true</span>
+});</code></pre>
                     </div>
                 </div>
             </div>
+        </div>
+    </x-section>
+
+    {{-- Client Logos Section --}}
+    <x-section bg="neutral">
+        <div class="text-center mb-12">
+            <p class="text-neutral-600 text-sm font-medium uppercase tracking-wider">
+                Trusted by leading enterprises across ASEAN
+            </p>
+        </div>
+
+        {{-- Logo Grid (Placeholders) --}}
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-5xl mx-auto items-center justify-items-center">
+            @for ($i = 0; $i < 6; $i++)
+                <div class="h-12 w-32 rounded bg-neutral-200 flex items-center justify-center">
+                    <span class="text-neutral-400 text-xs font-medium">Client Logo</span>
+                </div>
+            @endfor
         </div>
     </x-section>
 
     {{-- Final CTA Section --}}
-    <x-section bg="brand">
-        <div class="text-center">
-            <h2 class="text-3xl font-bold text-white md:text-4xl">Ready to prove your photos are real?</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100 text-pretty">
-                Download PixaProof free and start capturing verified photos today.
+    <x-section bg="dark">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Stop Injection Attacks?
+            </h2>
+            <p class="text-xl text-neutral-300 mb-8">
+                Join leading enterprises across ASEAN who trust PixaProof to protect their compliance-critical applications.
             </p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <x-app-store-badges size="lg" />
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <x-button href="/contact" size="lg">
+                    Request Demo
+                </x-button>
+                <x-button href="{{ route('product') }}" variant="outline" size="lg" class="border-white text-white hover:bg-white/10">
+                    View Technology
+                </x-button>
             </div>
         </div>
     </x-section>

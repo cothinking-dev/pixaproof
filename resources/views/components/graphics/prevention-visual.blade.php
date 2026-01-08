@@ -32,7 +32,7 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                                 <p class="mb-2 text-[8px] text-gray-500">Select Photo</p>
                                 <div class="grid grid-cols-3 gap-1">
                                     @for($i = 0; $i < 6; $i++)
-                                        <div class="aspect-square rounded bg-surface-800 {{ $i === 2 ? 'ring-1 ring-brand-500' : '' }}">
+                                        <div class="aspect-square rounded bg-white {{ $i === 2 ? 'ring-1 ring-primary-500' : '' }}">
                                             @if($i === 2)
                                                 {{-- Selected fake ID --}}
                                                 <div class="flex h-full items-center justify-center">
@@ -57,8 +57,8 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                             </div>
 
                             {{-- Upload button --}}
-                            <div class="bg-surface-900 p-2">
-                                <button class="w-full rounded bg-brand-500 py-1.5 text-[8px] font-medium text-white">
+                            <div class="bg-neutral-50 p-2">
+                                <button class="w-full rounded bg-primary-500 py-1.5 text-[8px] font-medium text-white">
                                     Upload Photo
                                 </button>
                             </div>
@@ -140,9 +140,9 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                             </div>
 
                             {{-- SDK badge --}}
-                            <div class="bg-surface-900 p-2">
+                            <div class="bg-neutral-50 p-2">
                                 <div class="flex items-center justify-center gap-1 text-[7px] text-gray-400">
-                                    <svg class="h-2.5 w-2.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <svg class="h-2.5 w-2.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                                     </svg>
                                     <span>PixaProof SDK</span>

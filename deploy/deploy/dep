@@ -1,0 +1,31 @@
+#!/bin/bash
+# Thin wrapper that delegates to the package's deployer script
+# Customize DEPLOYER_* env vars here if your setup differs from defaults
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Colors
+# ─────────────────────────────────────────────────────────────────────────────
+
+if [[ -t 1 ]] && [[ "${TERM:-}" != "dumb" ]]; then
+    CYAN='\033[0;36m'
+    DIM='\033[2m'
+    NC='\033[0m'
+else
+    CYAN='' DIM='' NC=''
+fi
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Project Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+export DEPLOYER_SECRETS_FILE="${DEPLOYER_SECRETS_FILE:-deploy/secrets.tpl}"
+export DEPLOYER_ENVIRONMENTS="${DEPLOYER_ENVIRONMENTS:-prod staging server}"
+export DEPLOYER_PROD_ENVIRONMENTS="${DEPLOYER_PROD_ENVIRONMENTS:-prod staging}"
+export DEPLOYER_APP_NAME="${DEPLOYER_APP_NAME:-My Application}"
+export DEPLOYER_HOST="${DEPLOYER_HOST:-your-server.example.com}"
+
+echo -e "${DIM}──────────────────────────────────────────${NC}"
+echo -e "${CYAN}${DEPLOYER_APP_NAME}${NC}"
+echo -e "${DIM}──────────────────────────────────────────${NC}"
+
+exec vendor/cothinking-dev/deployer-laravel-stack/bin/dep "$@"

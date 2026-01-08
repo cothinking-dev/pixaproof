@@ -38,7 +38,7 @@ Shows industry with placeholder image and use case description
             'pattern' => 'heart',
         ],
         'default' => [
-            'gradient' => 'from-brand-500/20 to-red-500/20',
+            'gradient' => 'from-primary-500/20 to-red-500/20',
             'accent' => 'brand',
             'pattern' => 'default',
         ],
@@ -47,7 +47,7 @@ Shows industry with placeholder image and use case description
 @endphp
 
 <a href="{{ $href }}" class="group block">
-    <div class="relative overflow-hidden rounded-2xl border border-surface-700 bg-surface-800 transition hover:border-surface-600">
+    <div class="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white transition hover:border-neutral-300">
         {{-- Image placeholder area --}}
         <div class="relative aspect-[16/9] overflow-hidden bg-gradient-to-br {{ $config['gradient'] }}">
             {{-- Pattern overlay --}}
@@ -95,7 +95,7 @@ Shows industry with placeholder image and use case description
                 @else
                     <svg class="h-full w-full" viewBox="0 0 100 100">
                         <pattern id="default-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <circle cx="10" cy="10" r="1" fill="currentColor" class="text-brand-500"/>
+                            <circle cx="10" cy="10" r="1" fill="currentColor" class="text-primary-600"/>
                         </pattern>
                         <rect x="0" y="0" width="100" height="100" fill="url(#default-pattern)"/>
                     </svg>
@@ -104,24 +104,24 @@ Shows industry with placeholder image and use case description
 
             {{-- Center icon --}}
             <div class="absolute inset-0 flex items-center justify-center">
-                <div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-surface-800/80 backdrop-blur transition group-hover:scale-110">
+                <div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/80 backdrop-blur transition group-hover:scale-110">
                     {{ $icon ?? '' }}
                 </div>
             </div>
 
             {{-- Image placeholder indicator --}}
-            <div class="absolute bottom-2 right-2 rounded-full bg-surface-800/80 px-2 py-1 text-[10px] text-gray-400">
+            <div class="absolute bottom-2 right-2 rounded-full bg-white/80 px-2 py-1 text-[10px] text-gray-400">
                 Image placeholder
             </div>
         </div>
 
         {{-- Content --}}
         <div class="p-6">
-            <h3 class="text-lg font-semibold text-white transition group-hover:text-brand-400">{{ $title }}</h3>
+            <h3 class="text-lg font-semibold text-white transition group-hover:text-primary-600">{{ $title }}</h3>
             <p class="mt-2 text-sm text-gray-400">{{ $description }}</p>
 
             {{-- Learn more link --}}
-            <div class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-500 transition group-hover:gap-2">
+            <div class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-600 transition group-hover:gap-2">
                 Learn more
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

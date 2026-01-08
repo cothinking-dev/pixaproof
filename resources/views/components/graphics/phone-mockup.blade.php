@@ -28,17 +28,17 @@ Props:
 
 <div {{ $attributes->merge(['class' => $sizeClass]) }}>
     {{-- Phone frame --}}
-    <div class="rounded-2xl border-2 border-surface-600 bg-surface-900 p-1">
+    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
         {{-- Screen --}}
-        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-surface-950">
+        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
             @if($slot->isEmpty())
                 {{-- Default placeholder content based on variant --}}
                 @if($variant === 'scanning')
                     <div class="flex h-full flex-col items-center justify-center p-4">
-                        <div class="relative mb-3 h-12 w-12 rounded-full border-2 border-brand-500">
-                            <div class="absolute inset-0 animate-ping rounded-full border-2 border-brand-500 opacity-20"></div>
+                        <div class="relative mb-3 h-12 w-12 rounded-full border-2 border-primary-500">
+                            <div class="absolute inset-0 animate-ping rounded-full border-2 border-primary-500 opacity-20"></div>
                             <div class="flex h-full items-center justify-center">
-                                <svg class="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <svg class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                                 </svg>
@@ -81,12 +81,12 @@ Props:
 
                         {{-- Camera viewfinder area --}}
                         <div class="flex flex-1 items-center justify-center p-2">
-                            <div class="relative h-16 w-24 rounded border border-dashed border-brand-500/50">
+                            <div class="relative h-16 w-24 rounded border border-dashed border-primary-500/50">
                                 {{-- Corner brackets --}}
-                                <div class="absolute -left-0.5 -top-0.5 h-2 w-2 border-l border-t border-brand-500"></div>
-                                <div class="absolute -right-0.5 -top-0.5 h-2 w-2 border-r border-t border-brand-500"></div>
-                                <div class="absolute -bottom-0.5 -left-0.5 h-2 w-2 border-b border-l border-brand-500"></div>
-                                <div class="absolute -bottom-0.5 -right-0.5 h-2 w-2 border-b border-r border-brand-500"></div>
+                                <div class="absolute -left-0.5 -top-0.5 h-2 w-2 border-l border-t border-primary-500"></div>
+                                <div class="absolute -right-0.5 -top-0.5 h-2 w-2 border-r border-t border-primary-500"></div>
+                                <div class="absolute -bottom-0.5 -left-0.5 h-2 w-2 border-b border-l border-primary-500"></div>
+                                <div class="absolute -bottom-0.5 -right-0.5 h-2 w-2 border-b border-r border-primary-500"></div>
 
                                 <div class="flex h-full flex-col items-center justify-center">
                                     <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -98,7 +98,7 @@ Props:
                         </div>
 
                         {{-- Capture button --}}
-                        <div class="flex items-center justify-center bg-surface-900 py-2">
+                        <div class="flex items-center justify-center bg-neutral-50 py-2">
                             <div class="h-4 w-4 rounded-full border-2 border-white bg-white/20"></div>
                         </div>
                     </div>

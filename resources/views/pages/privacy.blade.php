@@ -41,7 +41,7 @@
 
                 <h2 class="mt-8 text-2xl font-semibold text-white">Contact Us</h2>
                 <p class="text-gray-300">
-                    If you have questions about this Privacy Policy, please <a href="{{ route('contact') }}" class="text-brand-400 hover:text-brand-300">contact us</a>.
+                    If you have questions about this Privacy Policy, please <a href="{{ route('contact') }}" class="text-primary-400 hover:text-primary-300">contact us</a>.
                 </p>
             </div>
         </div>

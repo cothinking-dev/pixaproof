@@ -4,11 +4,11 @@
 
 @section('content')
     {{-- Header --}}
-    <x-section bg="gradient" class="pt-24">
+    <x-section bg="dark" class="pt-24">
         <div class="text-center">
-            <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Design System</p>
+            <p class="text-sm font-medium uppercase tracking-wider text-primary-500">Design System</p>
             <h1 class="mt-2 text-4xl font-bold text-white md:text-5xl">Component Library</h1>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
                 Preview of all available components for the PixaProof website.
             </p>
         </div>
@@ -35,14 +35,14 @@
         <p class="mt-2 text-gray-400">Brand and surface color palettes.</p>
 
         <div class="mt-8 space-y-8">
-            {{-- Brand Colors --}}
+            {{-- Primary Colors --}}
             <div>
-                <h3 class="text-lg font-semibold text-white">Brand (Red)</h3>
+                <h3 class="text-lg font-semibold text-neutral-900">Primary (Sky Blue)</h3>
                 <div class="mt-4 grid grid-cols-5 gap-2 md:grid-cols-11">
                     @foreach([50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as $shade)
                         <div class="text-center">
-                            <div class="h-12 w-full rounded-lg bg-brand-{{ $shade }}"></div>
-                            <p class="mt-1 text-xs text-gray-400">{{ $shade }}</p>
+                            <div class="h-12 w-full rounded-lg bg-primary-{{ $shade }}"></div>
+                            <p class="mt-1 text-xs text-neutral-600">{{ $shade }}</p>
                         </div>
                     @endforeach
                 </div>
