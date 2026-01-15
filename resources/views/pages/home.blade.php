@@ -18,17 +18,59 @@
             {{-- Trust indicator --}}
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded bg-primary-50 border border-primary-200 mb-8">
                 <x-heroicon-s-shield-check class="w-4 h-4 text-primary-600" />
-                <span class="text-sm font-medium text-primary-700">Built by the team behind EMAS eKYC</span>
+                <span class="text-sm font-medium text-primary-700">Built by ASEAN's leading eKYC provider</span>
             </div>
 
-            {{-- Headline --}}
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-                Stop Injection Attacks Before They Enter Your System
-            </h1>
+            {{-- Headline with cycling text --}}
+            <div
+                x-data="{
+                    phrases: [
+                        'Detect Deepfakes, Tampered & Fraudulent Images',
+                        'Stop Injection Attacks Before They Enter Your System',
+                        'Build Trust in User-Submitted Media'
+                    ],
+                    currentIndex: 0
+                }"
+                x-init="setInterval(() => { currentIndex = (currentIndex + 1) % phrases.length }, 3000)"
+                class="mb-6 block"
+            >
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight relative h-[5.5rem] md:h-[8rem] lg:h-[9.5rem] overflow-hidden">
+                    <span
+                        x-show="currentIndex === 0"
+                        x-transition:enter="transition-transform ease-in-out duration-500"
+                        x-transition:enter-start="translate-y-[120%]"
+                        x-transition:enter-end="translate-y-0"
+                        x-transition:leave="transition-transform ease-in-out duration-500"
+                        x-transition:leave-start="translate-y-0"
+                        x-transition:leave-end="-translate-y-[120%]"
+                        class="absolute inset-0"
+                    >Detect Deepfakes, Tampered & Fraudulent Images</span>
+                    <span
+                        x-show="currentIndex === 1"
+                        x-transition:enter="transition-transform ease-in-out duration-500"
+                        x-transition:enter-start="translate-y-[120%]"
+                        x-transition:enter-end="translate-y-0"
+                        x-transition:leave="transition-transform ease-in-out duration-500"
+                        x-transition:leave-start="translate-y-0"
+                        x-transition:leave-end="-translate-y-[120%]"
+                        class="absolute inset-0"
+                    >Stop Injection Attacks Before They Enter Your System</span>
+                    <span
+                        x-show="currentIndex === 2"
+                        x-transition:enter="transition-transform ease-in-out duration-500"
+                        x-transition:enter-start="translate-y-[120%]"
+                        x-transition:enter-end="translate-y-0"
+                        x-transition:leave="transition-transform ease-in-out duration-500"
+                        x-transition:leave-start="translate-y-0"
+                        x-transition:leave-end="-translate-y-[120%]"
+                        class="absolute inset-0"
+                    >Build Trust in User-Submitted Media</span>
+                </h1>
+            </div>
 
             {{-- Subheadline --}}
             <p class="text-lg md:text-xl text-neutral-700 mb-10 max-w-3xl mx-auto">
-                Enterprise-grade photo verification for compliance-critical applications. Built by the team behind EMAS eKYC, trusted across ASEAN's most regulated industries.
+                Enterprise-grade photo verification for compliance-critical applications. From the team behind EMAS eKYC, trusted across ASEAN's most regulated industries.
             </p>
 
             {{-- CTAs --}}
