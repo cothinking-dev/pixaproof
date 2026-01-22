@@ -44,6 +44,7 @@ add('writable_dirs', ['database']);
 
 // SQLite configuration
 set('db_connection', 'sqlite');
+set('env_required', ['APP_KEY']); // Override default - SQLite doesn't need DB_PASSWORD
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Secrets (from 1Password via environment)
