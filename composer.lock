@@ -6363,17 +6363,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cothinking-dev/deployer-laravel-stack.git",
-                "reference": "1da680ae764db4009623013bfc07a4d4405a6d74"
+                "reference": "baffe09fd2972e8d06b2b87ecc648c13d7c9cecc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/1da680ae764db4009623013bfc07a4d4405a6d74",
-                "reference": "1da680ae764db4009623013bfc07a4d4405a6d74",
+                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/baffe09fd2972e8d06b2b87ecc648c13d7c9cecc",
+                "reference": "baffe09fd2972e8d06b2b87ecc648c13d7c9cecc",
                 "shasum": ""
             },
             "require": {
                 "deployer/deployer": "^8.0@alpha",
                 "php": "^8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.0"
             },
             "default-branch": true,
             "type": "library",
@@ -6386,7 +6389,18 @@
             },
             "autoload": {
                 "files": [
+                    "src/constants.php",
                     "src/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Deployer\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
                 ]
             },
             "license": [
@@ -6408,10 +6422,10 @@
                 "redis"
             ],
             "support": {
-                "source": "https://github.com/cothinking-dev/deployer-laravel-stack/tree/v2.5.0",
+                "source": "https://github.com/cothinking-dev/deployer-laravel-stack/tree/v2.6.3",
                 "issues": "https://github.com/cothinking-dev/deployer-laravel-stack/issues"
             },
-            "time": "2026-01-15T14:52:16+00:00"
+            "time": "2026-01-20T09:10:24+00:00"
         },
         {
             "name": "deployer/deployer",

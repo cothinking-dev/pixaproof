@@ -13,6 +13,10 @@ set('application', 'Pixaproof');
 set('repository', 'git@github.com:cothinking-dev/pixaproof.git');
 set('keep_releases', 5);
 
+set('php_version', '8.4');
+set('node_version', '22');
+set('web_server', 'fpm');
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Server
 // ─────────────────────────────────────────────────────────────────────────────
@@ -46,7 +50,7 @@ set('db_connection', 'sqlite');
 // ─────────────────────────────────────────────────────────────────────────────
 
 set('secrets', fn () => requireSecrets(
-    required: ['DEPLOYER_SUDO_PASS', 'DEPLOYER_DB_PASSWORD', 'DEPLOYER_APP_KEY'],
+    required: ['DEPLOYER_SUDO_PASS', 'DEPLOYER_APP_KEY'],
     optional: ['DEPLOYER_STRIPE_KEY' => '']
 ));
 
@@ -63,7 +67,6 @@ environment('prod', [
         'GTM_ID' => '',
     ],
 ]);
-
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared Environment Variables
