@@ -1,6 +1,6 @@
 # Epic: Migrate Deployer Laravel Stack to v2.0
 
-**Status:** in_progress
+**Status:** completed
 **Priority:** high
 **Created:** 2026-01-22
 
@@ -92,17 +92,18 @@ Migrate from 1Password-based secrets management to GitHub CLI/Actions CI/CD pipe
   - [x] Set `DEPLOYER_SUDO_PASS` secret for production
   - [x] Set `DEPLOYER_APP_KEY` secret for production
   - [x] Set all secrets for staging environment
+  - [x] Set `APP_KEY` repo secret for CI tests
   - [ ] Configure protection rules for production (optional)
 
 ### 8. Test deployment pipeline
-- **Status:** pending
+- **Status:** completed
 - **Priority:** high
 - **Depends on:** Task 7
 - **Description:** Verify the new CI/CD pipeline works correctly
 - **Checklist:**
-  - [ ] Push a test commit to trigger workflow
-  - [ ] Verify tests pass in CI
-  - [ ] Verify deployment succeeds
+  - [x] Push a test commit to trigger workflow
+  - [x] Verify tests pass in CI
+  - [x] Verify deployment succeeds (release 13 deployed)
   - [ ] Run `./deploy/dep deploy:verify prod` to health check
   - [ ] Check application is running correctly
 
