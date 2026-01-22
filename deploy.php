@@ -74,7 +74,9 @@ environment('prod', [
 
 set('shared_env', [
     // Database - SQLite (requires absolute path)
+    'DB_CONNECTION' => 'sqlite',
     'DB_DATABASE' => '{{deploy_path}}/shared/database/database.sqlite',
+    'DB_PASSWORD' => '', // Not needed for SQLite but required by recipe
 
     // Cache - Use file-based cache (no Redis)
     'CACHE_STORE' => 'file',
