@@ -41,12 +41,7 @@ jobs:
       - name: Build assets
         run: npm run build
 
-      - name: Prepare Laravel
-        run: cp .env.example .env
-        
       - name: Run tests
-        env:
-          APP_KEY: ${{ secrets.APP_KEY }}
         run: vendor/bin/phpunit
 
   deploy-staging:
