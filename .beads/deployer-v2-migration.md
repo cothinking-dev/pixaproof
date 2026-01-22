@@ -81,16 +81,17 @@ Migrate from 1Password-based secrets management to GitHub CLI/Actions CI/CD pipe
   - [ ] Get private key from server: `ssh root@ssh.moojing-global.com cat /home/deployer/.ssh/github_actions`
 
 ### 7. Configure GitHub environments and secrets
-- **Status:** pending
+- **Status:** completed
 - **Priority:** high
 - **Depends on:** Task 6
 - **Description:** Set up GitHub environments with required secrets
 - **Checklist:**
-  - [ ] Create `production` environment in GitHub repo settings
-  - [ ] Create `staging` environment in GitHub repo settings (if needed)
-  - [ ] Set `SSH_PRIVATE_KEY` secret for production
-  - [ ] Set `DEPLOYER_SUDO_PASS` secret for production
-  - [ ] Set `DEPLOYER_APP_KEY` secret for production
+  - [x] Create `production` environment in GitHub repo settings
+  - [x] Create `staging` environment in GitHub repo settings
+  - [x] Set `SSH_PRIVATE_KEY` secret for production
+  - [x] Set `DEPLOYER_SUDO_PASS` secret for production
+  - [x] Set `DEPLOYER_APP_KEY` secret for production
+  - [x] Set all secrets for staging environment
   - [ ] Configure protection rules for production (optional)
 
 ### 8. Test deployment pipeline
