@@ -1,0 +1,546 @@
+#+TITLE: Laravel Deployment Guide
+#+AUTHOR:
+#+OPTIONS: toc:2 num:nil
+
+This guide covers deploying Laravel applications with PHP-FPM, SQLite, Supervisor queue workers, and Caddy.
+
+*Prerequisites:*
+- Server provisioned with PHP 8.4+, Composer
+- =deployer= user created with SSH access
+- Basic server security configured
+- SSH key from your local machine added to server's =deployer= user
+
+*Setup Order:*
+1. Server Configuration (as root) - sudoers, node, redis, supervisor, caddy
+2. Project Setup (as deployer) - directories, .env files
+3. Supervisor Workers (as root) - queue workers (requires directories from step 2)
+4. First Deploy (from local machine)
+
+* Pre-Flight Checklist
+
+Before your first deployment, verify:
+
+- [ ] SSH works: =ssh deployer@YOUR_SERVER_IP=
+- [ ] deploy.php placeholders replaced (search for ={{= in the file)
+- [ ] Sudoers configured (step 1.1)
+- [ ] Node.js installed (step 1.2)
+- [ ] Redis & Supervisor installed (step 1.3)
+- [ ] Caddy site block added (step 1.5)
+- [ ] Directory structure created (step 2.1)
+- [ ] .env file created with APP_KEY (step 2.2-2.3)
+- [ ] Supervisor worker configured (step 3)
+- [ ] Repository accessible from server: =ssh -T git@github.com= (as deployer)
+
+* Server Configuration (run as root)
+
+** 1. Configure Sudoers for Passwordless Deploy Commands
+
+The deployer user needs to restart PHP-FPM and Supervisor without entering a password. Run once per server.
+
+#+begin_src bash :caption "Run as: root"
+read -p "PHP version [8.4]: " PHP_VER && PHP_VER=${PHP_VER:-8.4} && cat > /etc/sudoers.d/deployer << EOF
+deployer ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart php${PHP_VER}-fpm
+deployer ALL=(ALL) NOPASSWD: /usr/bin/systemctl reload php${PHP_VER}-fpm
+deployer ALL=(ALL) NOPASSWD: /usr/bin/supervisorctl restart *
+deployer ALL=(ALL) NOPASSWD: /usr/bin/supervisorctl status *
+deployer ALL=(ALL) NOPASSWD: /usr/bin/supervisorctl reread
+deployer ALL=(ALL) NOPASSWD: /usr/bin/supervisorctl update
+EOF
+chmod 440 /etc/sudoers.d/deployer && echo "Sudoers configured for PHP ${PHP_VER}"
+#+end_src
+
+** 2. Install Node.js (via NodeSource)
+
+Run once per server.
+
+#+begin_src bash :caption "Run as: root"
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt install -y nodejs && node -v && npm -v && echo "Node.js installed"
+#+end_src
+
+** 3. Install Redis & Supervisor
+
+Run once per server.
+
+#+begin_src bash :caption "Run as: root"
+apt install -y redis-server supervisor && systemctl enable redis-server supervisor && echo "Redis & Supervisor installed"
+#+end_src
+
+** 4. Configure PHP Upload Limits
+
+Filament/Livewire file uploads require larger PHP limits. Run once per server.
+
+#+begin_src bash :caption "Run as: root"
+read -p "PHP version [8.4]: " PHP_VER && PHP_VER=${PHP_VER:-8.4} && cat > /etc/php/${PHP_VER}/fpm/conf.d/99-uploads.ini << 'EOF'
+; Custom upload limits for Filament/Livewire
+upload_max_filesize = 128M
+post_max_size = 130M
+memory_limit = 256M
+max_execution_time = 300
+max_input_time = 300
+EOF
+systemctl restart php${PHP_VER}-fpm && echo "PHP upload limits configured (128MB)"
+#+end_src
+
+To verify the settings:
+
+#+begin_src bash :caption "Run as: root"
+php -i | grep -E 'upload_max_filesize|post_max_size'
+#+end_src
+
+** 5. Add Caddy Site Block
+
+Run once per domain (production and staging each need their own block).
+
+*Important:* The =@notStatic= rule determines which paths are served as static files vs routed through PHP. Include:
+- All public asset directories (=/build/*=, =/storage/*=, =/media/*=)
+- All static file extensions including =*.pdf=, =*.webp=, =*.mp4=, etc.
+
+#+begin_src bash :caption "Run as: root - Production"
+read -p "Domain (e.g., example.com): " DOMAIN && read -p "Deploy path name (e.g., myapp): " APP && read -p "PHP version [8.4]: " PHP_VER && PHP_VER=${PHP_VER:-8.4} && cat >> /etc/caddy/Caddyfile << EOF
+
+${DOMAIN} {
+    root * /home/deployer/${APP}/current/public
+    php_fastcgi unix//run/php/php${PHP_VER}-fpm.sock
+    file_server
+    encode gzip
+    @notStatic not path /build/* /storage/* /media/* *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.webp *.woff *.woff2 *.pdf *.mp4 *.mp3 *.zip
+    rewrite @notStatic /index.php
+}
+EOF
+systemctl reload caddy && echo "Caddy configured for ${DOMAIN}"
+#+end_src
+
+#+begin_src bash :caption "Run as: root - Staging"
+read -p "Domain (e.g., staging.example.com): " DOMAIN && read -p "Deploy path name (e.g., myapp-staging): " APP && read -p "PHP version [8.4]: " PHP_VER && PHP_VER=${PHP_VER:-8.4} && cat >> /etc/caddy/Caddyfile << EOF
+
+${DOMAIN} {
+    root * /home/deployer/${APP}/current/public
+    php_fastcgi unix//run/php/php${PHP_VER}-fpm.sock
+    file_server
+    encode gzip
+    @notStatic not path /build/* /storage/* /media/* *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.webp *.woff *.woff2 *.pdf *.mp4 *.mp3 *.zip
+    rewrite @notStatic /index.php
+}
+EOF
+systemctl reload caddy && echo "Caddy configured for ${DOMAIN}"
+#+end_src
+
+** 6. Create Caddy Log Directory
+
+Caddy runs as the =caddy= user and needs its own writable log directory. Run once per environment.
+
+#+begin_src bash :caption "Run as: root - Production"
+read -p "Deploy path name [myapp]: " APP && APP=${APP:-myapp} && mkdir -p /home/deployer/${APP}/log && chown caddy:caddy /home/deployer/${APP}/log && echo "Caddy log directory created for ${APP}"
+#+end_src
+
+#+begin_src bash :caption "Run as: root - Staging"
+read -p "Deploy path name [myapp-staging]: " APP && APP=${APP:-myapp-staging} && mkdir -p /home/deployer/${APP}/log && chown caddy:caddy /home/deployer/${APP}/log && echo "Caddy log directory created for ${APP}"
+#+end_src
+
+* Project Setup (run as deployer)
+
+** 1. Create Directory Structure
+
+The shared directory uses a hierarchical structure:
+
+#+begin_example
+shared/
+├── .env
+├── storage/                      # Laravel storage (managed by recipe)
+│   ├── app/
+│   │   └── private/
+│   │       └── livewire-tmp/    # Livewire temporary uploads
+│   ├── framework/{cache,sessions,views}/
+│   └── logs/
+├── data/
+│   ├── sqlite/database.sqlite    # SQLite database
+│   ├── media/                    # User uploads (symlinked to public/moojing-media)
+│   └── backups/                  # Database backups
+└── cache/
+    └── npm/                      # NPM dependency cache
+#+end_example
+
+Run once per environment.
+
+#+begin_src bash :caption "Run as: deployer - Production"
+read -p "Deploy path name [myapp]: " APP && APP=${APP:-myapp} && \
+mkdir -p ~/${APP}/{shared,releases} && \
+mkdir -p ~/${APP}/shared/storage/{app/private/livewire-tmp,framework/{cache,sessions,views},logs} && \
+mkdir -p ~/${APP}/shared/data/{sqlite,media,backups} && \
+mkdir -p ~/${APP}/shared/cache/npm && \
+chmod -R 775 ~/${APP}/shared/storage ~/${APP}/shared/data && \
+touch ~/${APP}/shared/data/sqlite/database.sqlite && \
+chmod 664 ~/${APP}/shared/data/sqlite/database.sqlite && \
+echo "Directory structure created at ~/${APP}"
+#+end_src
+
+#+begin_src bash :caption "Run as: deployer - Staging"
+read -p "Deploy path name [myapp-staging]: " APP && APP=${APP:-myapp-staging} && \
+mkdir -p ~/${APP}/{shared,releases} && \
+mkdir -p ~/${APP}/shared/storage/{app/private/livewire-tmp,framework/{cache,sessions,views},logs} && \
+mkdir -p ~/${APP}/shared/data/{sqlite,media,backups} && \
+mkdir -p ~/${APP}/shared/cache/npm && \
+chmod -R 775 ~/${APP}/shared/storage ~/${APP}/shared/data && \
+touch ~/${APP}/shared/data/sqlite/database.sqlite && \
+chmod 664 ~/${APP}/shared/data/sqlite/database.sqlite && \
+echo "Directory structure created at ~/${APP}"
+#+end_src
+
+** 2. Generate APP_KEY
+
+Generate a Laravel application key on your local machine:
+
+#+begin_src bash :caption "Run as: local"
+php artisan key:generate --show
+#+end_src
+
+Copy the output (e.g., =base64:aBcDeFgHiJkLmNoPqRsTuVwXyZ...=) for the .env file.
+
+** 3. Create .env File
+
+Run once per environment.
+
+#+begin_src bash :caption "Run as: deployer - Production"
+read -p "Deploy path name [myapp]: " APP && APP=${APP:-myapp} && \
+read -p "App name for display: " APP_NAME && \
+read -p "Domain (e.g., example.com): " DOMAIN && \
+read -p "APP_KEY (from previous step): " APP_KEY && \
+cat > ~/${APP}/shared/.env << EOF
+APP_NAME="${APP_NAME}"
+APP_ENV=production
+APP_KEY=${APP_KEY}
+APP_DEBUG=false
+APP_URL=https://${DOMAIN}
+
+DB_CONNECTION=sqlite
+DB_DATABASE=/home/deployer/${APP}/shared/data/sqlite/database.sqlite
+
+CACHE_STORE=redis
+SESSION_DRIVER=redis
+QUEUE_CONNECTION=redis
+REDIS_HOST=127.0.0.1
+
+FILESYSTEM_DISK=local
+
+# Mail (configure as needed)
+MAIL_MAILER=log
+
+# Add other app-specific variables below...
+EOF
+echo "Created ~/${APP}/shared/.env"
+#+end_src
+
+#+begin_src bash :caption "Run as: deployer - Staging"
+read -p "Deploy path name [myapp-staging]: " APP && APP=${APP:-myapp-staging} && \
+read -p "App name for display: " APP_NAME && \
+read -p "Domain (e.g., staging.example.com): " DOMAIN && \
+read -p "APP_KEY (from previous step): " APP_KEY && \
+cat > ~/${APP}/shared/.env << EOF
+APP_NAME="${APP_NAME}"
+APP_ENV=staging
+APP_KEY=${APP_KEY}
+APP_DEBUG=true
+APP_URL=https://${DOMAIN}
+
+DB_CONNECTION=sqlite
+DB_DATABASE=/home/deployer/${APP}/shared/data/sqlite/database.sqlite
+
+CACHE_STORE=redis
+SESSION_DRIVER=redis
+QUEUE_CONNECTION=redis
+REDIS_HOST=127.0.0.1
+
+FILESYSTEM_DISK=local
+
+# Mail (configure as needed)
+MAIL_MAILER=log
+
+# Add other app-specific variables below...
+EOF
+echo "Created ~/${APP}/shared/.env"
+#+end_src
+
+* Supervisor Queue Workers (run as root)
+
+** Add Supervisor Queue Worker
+
+Run once per environment. The worker name follows the pattern ={prefix}-{stage}-worker= (e.g., =myapp-prod-worker=, =myapp-staging-worker=).
+
+#+begin_src bash :caption "Run as: root - Production"
+read -p "Deploy path name (e.g., myapp): " APP && \
+read -p "Worker prefix (e.g., myapp): " PREFIX && PREFIX=${PREFIX:-$APP} && \
+read -p "Number of workers [2]: " WORKERS && WORKERS=${WORKERS:-2} && \
+DEPLOY_PATH="/home/deployer/${APP}" && \
+cat > /etc/supervisor/conf.d/${PREFIX}-prod-worker.conf << EOF
+[program:${PREFIX}-prod-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php ${DEPLOY_PATH}/current/artisan queue:work --sleep=3 --tries=3 --max-time=3600
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+user=deployer
+numprocs=${WORKERS}
+redirect_stderr=true
+stdout_logfile=${DEPLOY_PATH}/shared/storage/logs/queue-worker.log
+stopwaitsecs=3600
+EOF
+supervisorctl reread && supervisorctl update && \
+echo "Supervisor worker ${PREFIX}-prod-worker configured with ${WORKERS} processes"
+#+end_src
+
+#+begin_src bash :caption "Run as: root - Staging"
+read -p "Deploy path name (e.g., myapp-staging): " APP && \
+read -p "Worker prefix (e.g., myapp): " PREFIX && PREFIX=${PREFIX:-${APP%-staging}} && \
+read -p "Number of workers [1]: " WORKERS && WORKERS=${WORKERS:-1} && \
+DEPLOY_PATH="/home/deployer/${APP}" && \
+cat > /etc/supervisor/conf.d/${PREFIX}-staging-worker.conf << EOF
+[program:${PREFIX}-staging-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php ${DEPLOY_PATH}/current/artisan queue:work --sleep=3 --tries=3 --max-time=3600
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+user=deployer
+numprocs=${WORKERS}
+redirect_stderr=true
+stdout_logfile=${DEPLOY_PATH}/shared/storage/logs/queue-worker.log
+stopwaitsecs=3600
+EOF
+supervisorctl reread && supervisorctl update && \
+echo "Supervisor worker ${PREFIX}-staging-worker configured with ${WORKERS} processes"
+#+end_src
+
+* First Deployment
+
+** Configure deploy.php
+
+Replace all placeholders in =deploy.php=:
+
+| Placeholder         | Example Value                              |
+|---------------------+--------------------------------------------|
+| ={{APP_NAME}}=      | My Laravel App                             |
+| ={{REPOSITORY}}=    | git@github.com:username/repo.git           |
+| ={{SERVER_IP}}=     | 192.168.1.100                              |
+| ={{DEPLOY_PATH}}=   | /home/deployer/myapp                       |
+| ={{STAGING_PATH}}=  | /home/deployer/myapp-staging               |
+| ={{PROD_URL}}=      | https://example.com                        |
+| ={{STAGING_URL}}=   | https://staging.example.com                |
+| ={{WORKER_PREFIX}}= | myapp                                      |
+
+** Run First Deploy
+
+#+begin_src bash :caption "Run as: local"
+# Test connection first
+vendor/bin/dep ssh prod
+
+# Deploy (use -vvv for verbose output on first deploy)
+vendor/bin/dep deploy prod -vvv
+#+end_src
+
+If the first deploy fails before creating =current= symlink, you may need to:
+
+#+begin_src bash :caption "Run as: deployer (on server)"
+# Check what releases exist
+ls -la ~/myapp/releases/
+
+# Manually create symlink to latest release if needed
+cd ~/myapp && ln -sfn releases/1 current
+#+end_src
+
+* Regular Deployments (run from local machine)
+
+#+begin_src bash :caption "Run as: local"
+# Deploy
+vendor/bin/dep deploy prod
+vendor/bin/dep deploy staging
+
+# Rollback
+vendor/bin/dep rollback prod
+vendor/bin/dep rollback staging
+
+# View logs
+vendor/bin/dep artisan:log prod
+vendor/bin/dep artisan:log staging
+
+# Check queue status
+vendor/bin/dep queue:status prod
+vendor/bin/dep queue:status staging
+
+# List/restore backups
+vendor/bin/dep db:backups prod
+vendor/bin/dep db:restore prod
+vendor/bin/dep db:backups staging
+vendor/bin/dep db:restore staging
+
+# SSH to server
+vendor/bin/dep ssh prod
+vendor/bin/dep ssh staging
+#+end_src
+
+* Troubleshooting
+
+** Deploy hangs at PHP-FPM restart
+
+Sudoers not configured. Check =/etc/sudoers.d/deployer= exists with correct permissions.
+
+** Queue workers not starting
+
+#+begin_src bash :caption "Run as: root"
+supervisorctl status
+supervisorctl reread
+supervisorctl update
+#+end_src
+
+** Health check failing (HTTP errors)
+
+#+begin_src bash :caption "Run as: local"
+vendor/bin/dep artisan:log prod
+curl -I https://example.com
+#+end_src
+
+** HTTP 521 Error (Cloudflare: Web Server Down)
+
+Cloudflare can't connect to your origin server. Check Caddy status:
+
+#+begin_src bash :caption "Run as: root"
+systemctl status caddy
+journalctl -xeu caddy.service | tail -30
+#+end_src
+
+Common causes:
+- Caddy failed to start (check logs above)
+- PHP-FPM socket not available
+
+** Caddy config syntax errors
+
+#+begin_src bash :caption "Run as: root"
+caddy validate --config /etc/caddy/Caddyfile
+caddy fmt --overwrite /etc/caddy/Caddyfile
+systemctl restart caddy
+#+end_src
+
+** "Database is empty, skipping backup"
+
+Normal for first deployment. If you expect data, check file:
+
+#+begin_src bash :caption "Run as: deployer"
+ls -la ~/myapp/shared/data/sqlite/database.sqlite
+#+end_src
+
+** Media files returning 404 after deploy
+
+If =public/moojing-media= is a directory instead of a symlink, the =storage:link-custom= task didn't run properly or the directory was committed to git.
+
+Check if it's a symlink:
+
+#+begin_src bash :caption "Run as: deployer"
+ls -la ~/myapp/current/public/moojing-media
+# Should show: moojing-media -> /home/deployer/myapp/shared/data/media
+#+end_src
+
+If it's a directory, fix manually:
+
+#+begin_src bash :caption "Run as: deployer"
+# Remove the directory and create symlink
+rm -rf ~/myapp/current/public/moojing-media
+ln -s ~/myapp/shared/data/media ~/myapp/current/public/moojing-media
+
+# Verify
+ls -la ~/myapp/current/public/moojing-media
+#+end_src
+
+*Prevention:* Don't commit media upload directories to git. Add to =.gitignore=:
+
+#+begin_example
+/public/moojing-media
+#+end_example
+
+** First deploy fails with "No current release"
+
+The =artisan:down= task runs before =current= symlink exists on first deploy. This is normal - check if the deploy actually created files:
+
+#+begin_src bash :caption "Run as: deployer"
+ls -la ~/myapp/releases/
+#+end_src
+
+If a release exists, manually create the symlink and redeploy:
+
+#+begin_src bash :caption "Run as: deployer"
+cd ~/myapp && ln -sfn releases/1 current
+#+end_src
+
+** Livewire/Filament file uploads returning 500 error
+
+If file uploads in Filament fail with a 500 error and browser console shows "POST /livewire-.../update 500", the livewire-tmp directory may be missing or Livewire assets are out of date.
+
+Fix with this one-liner (as deployer):
+
+#+begin_src bash :caption "Run as: deployer"
+cd ~/myapp/current && rm -rf ../shared/storage/app/private/livewire-tmp && mkdir -p ../shared/storage/app/private/livewire-tmp && chmod 775 ../shared/storage/app/private/livewire-tmp && php artisan livewire:publish --assets && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan config:cache && php artisan view:cache && echo "Livewire fixed"
+#+end_src
+
+*Note:* The =rm -rf= removes any corrupted livewire-tmp (which may be a file instead of directory) before recreating it properly.
+
+For staging, replace =myapp= with =myapp-staging=.
+
+To check the actual error, view Laravel logs:
+
+#+begin_src bash :caption "Run as: deployer"
+tail -100 ~/myapp/shared/storage/logs/laravel.log
+#+end_src
+
+** Static files (PDF, images) returning 404
+
+If static files in =/media/*= or other public directories return 404, the Caddy =@notStatic= rule may be missing the path or file extension.
+
+Check if the file exists and symlink is correct:
+
+#+begin_src bash :caption "Run as: deployer"
+# Verify file exists
+ls -la ~/myapp/current/public/media/yourfile.pdf
+
+# Check symlink
+ls -la ~/myapp/current/public/media
+# Should show: media -> /home/deployer/myapp/shared/data/media
+#+end_src
+
+If files exist but still 404, update Caddy config (as root):
+
+#+begin_src bash :caption "Run as: root"
+# Edit /etc/caddy/Caddyfile
+# Find your domain block and ensure @notStatic includes:
+# - The directory path (e.g., /media/*)
+# - The file extension (e.g., *.pdf)
+
+# Example complete rule:
+# @notStatic not path /build/* /storage/* /media/* *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.webp *.woff *.woff2 *.pdf *.mp4 *.mp3 *.zip
+
+# After editing, reload Caddy:
+systemctl reload caddy
+#+end_src
+
+* Operations
+
+** Copy Database Between Environments
+
+#+begin_src bash :caption "Run as: deployer"
+# Copy prod to staging
+cp ~/myapp/shared/data/sqlite/database.sqlite ~/myapp-staging/shared/data/sqlite/database.sqlite
+
+# Copy staging to prod (be careful!)
+cp ~/myapp-staging/shared/data/sqlite/database.sqlite ~/myapp/shared/data/sqlite/database.sqlite
+#+end_src
+
+** View Backup Files
+
+#+begin_src bash :caption "Run as: deployer"
+ls -lh ~/myapp/shared/data/backups/
+#+end_src
+
+** Manual Database Backup
+
+#+begin_src bash :caption "Run as: deployer"
+cp ~/myapp/shared/data/sqlite/database.sqlite ~/myapp/shared/data/backups/database_prod_$(date +%Y-%m-%d-%H%M%S).sqlite
+#+end_src

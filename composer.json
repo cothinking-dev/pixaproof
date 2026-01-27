@@ -8,12 +8,6 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/cothinking-dev/deployer-laravel-stack.git"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.6",
@@ -23,8 +17,7 @@
         "livewire/livewire": "^3.7"
     },
     "require-dev": {
-        "cothinking-dev/deployer-laravel-stack": "dev-main",
-        "deployer/deployer": "^8.0@alpha",
+        "deployer/deployer": "^7.5",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.24",
