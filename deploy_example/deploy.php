@@ -20,8 +20,8 @@ require 'recipe/laravel.php';
 //
 // ═══════════════════════════════════════════════════════════════════════════
 
-set('application', 'Pixaproof');
-set('repository', 'git@github.com:cothinking-dev/pixaproof.git');
+set('application', '{{APP_NAME}}');
+set('repository', '{{REPOSITORY}}');
 set('keep_releases', 5);
 set('php_version', '8.4');
 
@@ -39,20 +39,20 @@ set('forward_agent', false);
 // ═══════════════════════════════════════════════════════════════════════════
 
 host('prod')
-    ->setHostname('ssh.moojing-global.com')
+    ->setHostname('{{SERVER_IP}}')
     ->set('remote_user', 'deployer')
-    ->set('deploy_path', '/home/deployer/pixaproof')
+    ->set('deploy_path', '{{DEPLOY_PATH}}')
     ->set('branch', 'main')
     ->set('labels', ['stage' => 'prod'])
-    ->set('url', 'pixaproof.cothink.ing');
+    ->set('url', '{{PROD_URL}}');
 
 host('staging')
-    ->setHostname('ssh.moojing-global.com')
+    ->setHostname('{{SERVER_IP}}')
     ->set('remote_user', 'deployer')
-    ->set('deploy_path', '/home/deployer/pixaproof-staging')
+    ->set('deploy_path', '{{STAGING_PATH}}')
     ->set('branch', 'develop')
     ->set('labels', ['stage' => 'staging'])
-    ->set('url', 'staging-pixaproof.cothink.ing');
+    ->set('url', '{{STAGING_URL}}');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SHARED RESOURCES
@@ -79,7 +79,7 @@ set('storage_links', [
 ]);
 
 // Queue worker name for Supervisor
-set('queue_worker_name', fn () => 'pixaproof-staging'.getStage().'-worker');
+set('queue_worker_name', fn () => '{{WORKER_PREFIX}}-'.getStage().'-worker');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // DATABASE PATHS

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0089042df37c57a59db6292db7f72b98",
+    "content-hash": "030b3fc79cb09194c677b5d5e7c481d9",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -6358,97 +6358,25 @@
     ],
     "packages-dev": [
         {
-            "name": "cothinking-dev/deployer-laravel-stack",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cothinking-dev/deployer-laravel-stack.git",
-                "reference": "baffe09fd2972e8d06b2b87ecc648c13d7c9cecc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cothinking-dev/deployer-laravel-stack/zipball/baffe09fd2972e8d06b2b87ecc648c13d7c9cecc",
-                "reference": "baffe09fd2972e8d06b2b87ecc648c13d7c9cecc",
-                "shasum": ""
-            },
-            "require": {
-                "deployer/deployer": "^8.0@alpha",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^11.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "deployer": {
-                    "recipes": [
-                        "src/recipe.php"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/constants.php",
-                    "src/helpers.php"
-                ]
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Deployer\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "phpunit"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cothinking Dev",
-                    "email": "dev@cothinking.com"
-                }
-            ],
-            "description": "Deployer recipe for Laravel applications with PostgreSQL, Redis, and Caddy on Ubuntu",
-            "keywords": [
-                "caddy",
-                "deployer",
-                "deployment",
-                "laravel",
-                "postgresql",
-                "redis"
-            ],
-            "support": {
-                "source": "https://github.com/cothinking-dev/deployer-laravel-stack/tree/v2.6.3",
-                "issues": "https://github.com/cothinking-dev/deployer-laravel-stack/issues"
-            },
-            "time": "2026-01-20T09:10:24+00:00"
-        },
-        {
             "name": "deployer/deployer",
-            "version": "v8.0.0-alpha.3",
+            "version": "v7.5.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deployphp/deployer.git",
-                "reference": "b4dba6852af10223224f4fdbb223598dfff0d378"
+                "reference": "efc71dac9ccc86b3f9946e75d50cb106b775aae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deployphp/deployer/zipball/b4dba6852af10223224f4fdbb223598dfff0d378",
-                "reference": "b4dba6852af10223224f4fdbb223598dfff0d378",
+                "url": "https://api.github.com/repos/deployphp/deployer/zipball/efc71dac9ccc86b3f9946e75d50cb106b775aae2",
+                "reference": "efc71dac9ccc86b3f9946e75d50cb106b775aae2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2",
-                "symfony/console": "^7.2",
-                "symfony/process": "^7.2",
-                "symfony/yaml": "^7.2"
+                "ext-json": "*",
+                "php": "^8.0|^7.3"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.68",
+                "friendsofphp/php-cs-fixer": "^3.64",
                 "pestphp/pest": "^3.3",
                 "phpstan/phpstan": "^1.4",
                 "phpunit/php-code-coverage": "^11.0",
@@ -6458,15 +6386,6 @@
                 "bin/dep"
             ],
             "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions.php",
-                    "src/Support/helpers.php"
-                ],
-                "psr-4": {
-                    "Deployer\\": "src/"
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -6490,7 +6409,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-10-28T10:45:41+00:00"
+            "time": "2025-02-19T16:45:27+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -8857,10 +8776,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cothinking-dev/deployer-laravel-stack": 20,
-        "deployer/deployer": 15
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
