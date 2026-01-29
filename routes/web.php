@@ -6,42 +6,40 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'pages.home')->name('home');
 Route::view('/privacy', 'pages.privacy')->name('privacy');
 
-// Company pages
-Route::prefix('company')->name('company.')->group(function () {
-    Route::view('/about', 'pages.company.about')->name('about');
-    Route::view('/contact', 'pages.company.contact')->name('contact');
-});
-
-// Legacy routes (keep for compatibility)
-Route::view('/about', 'pages.company.about')->name('about');
+// Contact page (demo request form - kept as separate page)
 Route::view('/contact', 'pages.company.contact')->name('contact');
 
-// Technology page (PIEA)
-Route::view('/technology', 'pages.technology')->name('product');
+// Anchor redirects for single-page sections
+Route::redirect('/technology', '/#technology', 301);
+Route::redirect('/about', '/#about', 301);
+Route::redirect('/company/about', '/#about', 301);
+Route::redirect('/company/contact', '/contact', 301);
 
-// Solutions pages (Enterprise - 6 industries)
-Route::prefix('solutions')->name('solutions.')->group(function () {
-    Route::view('/banking', 'pages.solutions.banking')->name('banking');
-    Route::view('/insurance', 'pages.solutions.insurance')->name('insurance');
-    Route::view('/government', 'pages.solutions.government')->name('government');
-    Route::view('/ecommerce', 'pages.solutions.ecommerce')->name('ecommerce');
-    Route::view('/healthcare', 'pages.solutions.healthcare')->name('healthcare');
-    Route::view('/real-estate', 'pages.solutions.real-estate')->name('real-estate');
-});
+// Legacy 301 redirects for old solution pages (all redirect to homepage use cases section)
+Route::redirect('/solutions/loan-draw-inspections', '/#solutions', 301);
+Route::redirect('/solutions/insurance-claims', '/#solutions', 301);
+Route::redirect('/solutions/kyc-onboarding', '/#solutions', 301);
+Route::redirect('/solutions/asset-verification', '/#solutions', 301);
+Route::redirect('/solutions/banking', '/#solutions', 301);
+Route::redirect('/solutions/insurance', '/#solutions', 301);
+Route::redirect('/solutions/real-estate', '/#solutions', 301);
+Route::redirect('/solutions/government', '/', 301);
+Route::redirect('/solutions/ecommerce', '/', 301);
+Route::redirect('/solutions/healthcare', '/', 301);
 
-// Resources pages (4 articles)
-Route::prefix('resources')->name('resources.')->group(function () {
-    Route::view('/injection-attacks', 'pages.resources.injection-attacks')->name('injection-attacks');
-    Route::view('/fraud-statistics', 'pages.resources.fraud-statistics')->name('fraud-statistics');
-    Route::view('/compliance', 'pages.resources.compliance')->name('compliance');
-    Route::view('/case-studies', 'pages.resources.case-studies')->name('case-studies');
-});
+// Legacy 301 redirects for old resource pages
+Route::redirect('/resources/injection-attacks', '/', 301);
+Route::redirect('/resources/fraud-statistics', '/', 301);
+Route::redirect('/resources/compliance', '/', 301);
+Route::redirect('/resources/case-studies', '/', 301);
 
 // 301 Redirects (SEO preservation for removed B2C pages)
-// These ensure old URLs redirect to new enterprise-focused structure
-Route::permanentRedirect('/pricing', '/company/contact');
-Route::permanentRedirect('/how-it-works', '/technology');
-Route::permanentRedirect('/enterprise', '/solutions/banking');  // Redirect to primary solution page
+Route::permanentRedirect('/pricing', '/contact');
+Route::permanentRedirect('/how-it-works', '/#technology');
+Route::permanentRedirect('/enterprise', '/#solutions');
+
+// Legacy route alias for technology page
+Route::redirect('/product', '/#technology', 301);
 
 // Development only routes
 if (app()->environment('local')) {

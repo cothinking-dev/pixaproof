@@ -83,3 +83,8 @@ body {
     background-color: white;
     color: var(--color-neutral-700);
 }
+
+/* Account for fixed navbar when scrolling to anchor sections */
+section[id] {
+    scroll-margin-top: 5rem; /* 80px - matches navbar height (h-16 = 64px) plus padding */
+}
