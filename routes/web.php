@@ -7,7 +7,7 @@ Route::view('/', 'pages.home')->name('home');
 Route::view('/privacy', 'pages.privacy')->name('privacy');
 
 // Contact page (demo request form - kept as separate page)
-Route::view('/contact', 'pages.company.contact')->name('contact');
+Route::view('/contact', 'pages.contact')->name('contact');
 
 // Anchor redirects for single-page sections
 Route::redirect('/technology', '/#technology', 301);
