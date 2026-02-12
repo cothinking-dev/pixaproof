@@ -46,8 +46,6 @@ Props:
 
         {{-- Screen --}}
         <div class="relative aspect-[9/19.5] overflow-hidden rounded-[1.5rem] bg-neutral-950">
-            {{-- Dynamic Island --}}
-            <div class="absolute left-1/2 top-2 z-30 h-[0.65rem] w-[4.5rem] -translate-x-1/2 rounded-full bg-neutral-900"></div>
 
             {{-- Screen content --}}
             @if($slot->isEmpty())
