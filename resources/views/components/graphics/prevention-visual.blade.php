@@ -22,27 +22,27 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                     <x-graphics.phone-mockup size="lg" image="images/mockups/prevention-gallery-fraud.webp" imageAlt="Gallery photo upload - fraud succeeds">
                         <div class="flex h-full flex-col">
                             {{-- Status bar --}}
-                            <div class="flex items-center justify-between px-16 py-10 text-4xl text-neutral-600">
+                            <div class="flex items-center justify-between px-3 pt-5 pb-1 text-[0.5rem] text-neutral-400">
                                 <span>9:41</span>
-                                <span class="text-3xl">Gallery</span>
+                                <span>Gallery</span>
                             </div>
 
                             {{-- Semi-transparent overlay on real image --}}
-                            <div class="flex-1 flex items-end px-12 pb-12">
+                            <div class="flex flex-1 items-end px-2 pb-2">
                                 {{-- Warning badge --}}
-                                <div class="w-full rounded-2xl border-4 border-yellow-500/30 bg-yellow-500/10 backdrop-blur-sm p-8">
-                                    <div class="flex items-center gap-4">
-                                        <svg class="h-12 w-12 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <div class="w-full rounded-md border border-yellow-500/30 bg-yellow-500/10 p-1.5 backdrop-blur-sm">
+                                    <div class="flex items-center gap-1">
+                                        <svg class="h-3 w-3 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                                         </svg>
-                                        <span class="text-2xl text-yellow-600">Pre-edited photo</span>
+                                        <span class="text-[0.45rem] text-yellow-600">Pre-edited photo</span>
                                     </div>
                                 </div>
                             </div>
 
                             {{-- Upload button --}}
-                            <div class="bg-neutral-100 p-12">
-                                <button class="w-full rounded-2xl bg-primary-500 py-8 text-3xl font-medium text-white">
+                            <div class="bg-neutral-100 p-2">
+                                <button class="w-full rounded-md bg-primary-500 py-1.5 text-[0.5rem] font-medium text-white">
                                     Upload Photo
                                 </button>
                             </div>
@@ -97,36 +97,36 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                     <x-graphics.phone-mockup size="lg" image="images/mockups/prevention-camera-live.webp" imageAlt="PixaProof live camera capture">
                         <div class="flex h-full flex-col">
                             {{-- Status bar --}}
-                            <div class="flex items-center justify-between px-16 py-10 text-4xl text-neutral-600">
+                            <div class="flex items-center justify-between px-3 pt-5 pb-1 text-[0.5rem] text-neutral-400">
                                 <span>9:41</span>
-                                <div class="flex items-center gap-4">
-                                    <svg class="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <div class="flex items-center gap-1">
+                                    <svg class="h-2.5 w-2.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                                     </svg>
-                                    <span class="text-3xl text-green-600">Secured</span>
+                                    <span class="text-[0.45rem] text-green-500">Secured</span>
                                 </div>
                             </div>
 
                             {{-- Blocked overlay --}}
-                            <div class="flex flex-1 flex-col items-center justify-center bg-neutral-900/60 backdrop-blur-sm p-16">
-                                <div class="mb-12 flex h-48 w-48 items-center justify-center rounded-full bg-red-500/20">
-                                    <svg class="h-24 w-24 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <div class="flex flex-1 flex-col items-center justify-center bg-neutral-900/60 backdrop-blur-sm p-3">
+                                <div class="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
+                                    <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                                     </svg>
                                 </div>
-                                <p class="text-center text-5xl font-semibold text-white">Gallery Blocked</p>
-                                <p class="mt-4 text-center text-3xl text-neutral-400">Live camera only</p>
+                                <p class="text-center text-[0.6rem] font-semibold text-white">Gallery Blocked</p>
+                                <p class="mt-0.5 text-center text-[0.45rem] text-neutral-400">Live camera only</p>
 
                                 {{-- Action button --}}
-                                <button class="mt-16 rounded-2xl bg-green-500 px-16 py-6 text-3xl font-medium text-white">
+                                <button class="mt-2 rounded-md bg-green-500 px-3 py-1 text-[0.45rem] font-medium text-white">
                                     Use Camera
                                 </button>
                             </div>
 
                             {{-- SDK badge --}}
-                            <div class="bg-neutral-100 p-12">
-                                <div class="flex items-center justify-center gap-4 text-2xl text-neutral-600">
-                                    <svg class="h-12 w-12 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <div class="bg-neutral-100 p-2">
+                                <div class="flex items-center justify-center gap-1 text-[0.4rem] text-neutral-600">
+                                    <svg class="h-2.5 w-2.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                                     </svg>
                                     <span>PixaProof SDK</span>

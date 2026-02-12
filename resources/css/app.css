@@ -1,8 +1,6 @@
 /* Import Tailwind CSS framework */
 @import "tailwindcss";
 
-/* Import devices.css for device mockups */
-@import "devices.css/dist/devices.css";
 
 /* Source paths for Tailwind to scan */
 @source '../views/**/*.blade.php';
