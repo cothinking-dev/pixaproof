@@ -23,7 +23,7 @@ Props:
 
 @php
     $titleColor = $variant === 'light' ? 'text-white' : 'text-neutral-900';
-    $descColor = $variant === 'light' ? 'text-gray-300' : 'text-neutral-600';
+    $descColor = $variant === 'light' ? 'text-neutral-300' : 'text-neutral-600';
     $iconBg = $variant === 'light' ? 'bg-primary-500/10' : 'bg-primary-50';
     $iconColor = $variant === 'light' ? 'text-primary-400' : 'text-primary-600';
 @endphp

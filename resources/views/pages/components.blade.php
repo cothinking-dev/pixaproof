@@ -19,12 +19,12 @@
         <div class="rounded-xl border border-surface-700 bg-surface-800 p-6">
             <h2 class="text-lg font-semibold text-white">Contents</h2>
             <div class="mt-4 flex flex-wrap gap-2">
-                <a href="#colors" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-gray-300 transition hover:bg-surface-600 hover:text-white">Colors</a>
-                <a href="#typography" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-gray-300 transition hover:bg-surface-600 hover:text-white">Typography</a>
-                <a href="#buttons" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-gray-300 transition hover:bg-surface-600 hover:text-white">Buttons</a>
-                <a href="#cards" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-gray-300 transition hover:bg-surface-600 hover:text-white">Cards</a>
-                <a href="#sections" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-gray-300 transition hover:bg-surface-600 hover:text-white">Sections</a>
-                <a href="#patterns" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-gray-300 transition hover:bg-surface-600 hover:text-white">Patterns</a>
+                <a href="#colors" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-neutral-300 transition hover:bg-surface-600 hover:text-white">Colors</a>
+                <a href="#typography" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-neutral-300 transition hover:bg-surface-600 hover:text-white">Typography</a>
+                <a href="#buttons" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-neutral-300 transition hover:bg-surface-600 hover:text-white">Buttons</a>
+                <a href="#cards" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-neutral-300 transition hover:bg-surface-600 hover:text-white">Cards</a>
+                <a href="#sections" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-neutral-300 transition hover:bg-surface-600 hover:text-white">Sections</a>
+                <a href="#patterns" class="rounded-lg bg-surface-700 px-3 py-1.5 text-sm text-neutral-300 transition hover:bg-surface-600 hover:text-white">Patterns</a>
             </div>
         </div>
     </x-section>
@@ -32,7 +32,7 @@
     {{-- Colors --}}
     <x-section id="colors">
         <h2 class="text-2xl font-bold text-white">Colors</h2>
-        <p class="mt-2 text-gray-400">Brand and surface color palettes.</p>
+        <p class="mt-2 text-neutral-400">Brand and surface color palettes.</p>
 
         <div class="mt-8 space-y-8">
             {{-- Primary Colors --}}
@@ -55,7 +55,7 @@
                     @foreach([50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as $shade)
                         <div class="text-center">
                             <div class="h-12 w-full rounded-lg border border-surface-600 bg-surface-{{ $shade }}"></div>
-                            <p class="mt-1 text-xs text-gray-400">{{ $shade }}</p>
+                            <p class="mt-1 text-xs text-neutral-400">{{ $shade }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -66,32 +66,32 @@
     {{-- Typography --}}
     <x-section id="typography" bg="surface">
         <h2 class="text-2xl font-bold text-white">Typography</h2>
-        <p class="mt-2 text-gray-400">Text styles and hierarchy.</p>
+        <p class="mt-2 text-neutral-400">Text styles and hierarchy.</p>
 
         <div class="mt-8 space-y-6">
             <div>
-                <p class="text-sm text-gray-400">Hero H1</p>
+                <p class="text-sm text-neutral-400">Hero H1</p>
                 <h1 class="text-4xl font-bold text-white md:text-5xl lg:text-6xl">Verify Photo Authenticity</h1>
             </div>
             <div>
-                <p class="text-sm text-gray-400">Section H2</p>
+                <p class="text-sm text-neutral-400">Section H2</p>
                 <h2 class="text-3xl font-bold text-white md:text-4xl">Why PixaProof?</h2>
             </div>
             <div>
-                <p class="text-sm text-gray-400">Card H3</p>
+                <p class="text-sm text-neutral-400">Card H3</p>
                 <h3 class="text-xl font-semibold text-white md:text-2xl">AI Detection</h3>
             </div>
             <div>
-                <p class="text-sm text-gray-400">Label</p>
+                <p class="text-sm text-neutral-400">Label</p>
                 <p class="text-sm font-medium uppercase tracking-wider text-brand-500">Enterprise Solutions</p>
             </div>
             <div>
-                <p class="text-sm text-gray-400">Body</p>
-                <p class="text-base text-gray-300 md:text-lg">Instantly verify if photos are real or AI-generated. Protect yourself from deepfakes and manipulated images.</p>
+                <p class="text-sm text-neutral-400">Body</p>
+                <p class="text-base text-neutral-300 md:text-lg">Instantly verify if photos are real or AI-generated. Protect yourself from deepfakes and manipulated images.</p>
             </div>
             <div>
-                <p class="text-sm text-gray-400">Small/Muted</p>
-                <p class="text-sm text-gray-400">Last updated: January 1, 2026</p>
+                <p class="text-sm text-neutral-400">Small/Muted</p>
+                <p class="text-sm text-neutral-400">Last updated: January 1, 2026</p>
             </div>
         </div>
     </x-section>
@@ -99,7 +99,7 @@
     {{-- Buttons --}}
     <x-section id="buttons">
         <h2 class="text-2xl font-bold text-white">Buttons</h2>
-        <p class="mt-2 text-gray-400">Button variants and sizes.</p>
+        <p class="mt-2 text-neutral-400">Button variants and sizes.</p>
 
         <div class="mt-8 space-y-8">
             {{-- Variants --}}
@@ -142,7 +142,7 @@
     {{-- Cards --}}
     <x-section id="cards" bg="surface">
         <h2 class="text-2xl font-bold text-white">Cards</h2>
-        <p class="mt-2 text-gray-400">Card variants for different content types.</p>
+        <p class="mt-2 text-neutral-400">Card variants for different content types.</p>
 
         <div class="mt-8 space-y-12">
             {{-- Base Cards --}}
@@ -150,13 +150,13 @@
                 <h3 class="mb-4 text-lg font-semibold text-white">Base Card</h3>
                 <div class="grid gap-4 md:grid-cols-3">
                     <x-card>
-                        <p class="text-gray-300">Default card with standard padding.</p>
+                        <p class="text-neutral-300">Default card with standard padding.</p>
                     </x-card>
                     <x-card variant="elevated">
-                        <p class="text-gray-300">Elevated variant for higher contrast.</p>
+                        <p class="text-neutral-300">Elevated variant for higher contrast.</p>
                     </x-card>
                     <x-card hover>
-                        <p class="text-gray-300">Card with hover effect.</p>
+                        <p class="text-neutral-300">Card with hover effect.</p>
                     </x-card>
                 </div>
             </div>
@@ -253,24 +253,24 @@
     {{-- Sections --}}
     <x-section id="sections">
         <h2 class="text-2xl font-bold text-white">Section Backgrounds</h2>
-        <p class="mt-2 text-gray-400">Different section background variants.</p>
+        <p class="mt-2 text-neutral-400">Different section background variants.</p>
     </x-section>
 
     <x-section>
         <div class="rounded-lg border border-surface-700 p-4">
-            <p class="text-sm text-gray-400">Default (bg-surface-950)</p>
+            <p class="text-sm text-neutral-400">Default (bg-surface-950)</p>
         </div>
     </x-section>
 
     <x-section bg="surface">
         <div class="rounded-lg border border-surface-700 p-4">
-            <p class="text-sm text-gray-400">Surface (bg-surface-900)</p>
+            <p class="text-sm text-neutral-400">Surface (bg-surface-900)</p>
         </div>
     </x-section>
 
     <x-section bg="gradient">
         <div class="rounded-lg border border-surface-700 p-4">
-            <p class="text-sm text-gray-400">Gradient (from-surface-900 to-surface-950)</p>
+            <p class="text-sm text-neutral-400">Gradient (from-surface-900 to-surface-950)</p>
         </div>
     </x-section>
 
@@ -283,41 +283,41 @@
     {{-- Patterns --}}
     <x-section id="patterns" py="py-8">
         <h2 class="text-2xl font-bold text-white">Background Patterns</h2>
-        <p class="mt-2 text-gray-400">SVG pattern overlays for sections.</p>
+        <p class="mt-2 text-neutral-400">SVG pattern overlays for sections.</p>
     </x-section>
 
     <x-section pattern="hexagonal" pattern-opacity="0.1" py="py-16">
         <div class="text-center">
             <p class="text-lg font-semibold text-white">Hexagonal Pattern</p>
-            <p class="text-sm text-gray-400">For tech/platform sections</p>
+            <p class="text-sm text-neutral-400">For tech/platform sections</p>
         </div>
     </x-section>
 
     <x-section bg="surface" pattern="circuit" pattern-opacity="0.1" py="py-16">
         <div class="text-center">
             <p class="text-lg font-semibold text-white">Circuit Pattern</p>
-            <p class="text-sm text-gray-400">For developer sections</p>
+            <p class="text-sm text-neutral-400">For developer sections</p>
         </div>
     </x-section>
 
     <x-section pattern="waves" pattern-opacity="0.1" py="py-16">
         <div class="text-center">
             <p class="text-lg font-semibold text-white">Waves Pattern</p>
-            <p class="text-sm text-gray-400">For hero sections</p>
+            <p class="text-sm text-neutral-400">For hero sections</p>
         </div>
     </x-section>
 
     <x-section bg="surface" pattern="grid" pattern-opacity="0.15" py="py-16">
         <div class="text-center">
             <p class="text-lg font-semibold text-white">Grid Pattern</p>
-            <p class="text-sm text-gray-400">For general sections</p>
+            <p class="text-sm text-neutral-400">For general sections</p>
         </div>
     </x-section>
 
     {{-- Footer spacer --}}
     <x-section py="py-12">
         <div class="text-center">
-            <p class="text-sm text-gray-400">End of Component Library</p>
+            <p class="text-sm text-neutral-400">End of Component Library</p>
         </div>
     </x-section>
 @endsection

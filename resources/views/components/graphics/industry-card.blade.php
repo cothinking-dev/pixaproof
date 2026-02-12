@@ -110,15 +110,15 @@ Shows industry with placeholder image and use case description
             </div>
 
             {{-- Image placeholder indicator --}}
-            <div class="absolute bottom-2 right-2 rounded-full bg-white/80 px-2 py-1 text-[10px] text-gray-400">
+            <div class="absolute bottom-2 right-2 rounded-full bg-white/80 px-2 py-1 text-[10px] text-neutral-400">
                 Image placeholder
             </div>
         </div>
 
         {{-- Content --}}
         <div class="p-6">
-            <h3 class="text-lg font-semibold text-white transition group-hover:text-primary-600">{{ $title }}</h3>
-            <p class="mt-2 text-sm text-gray-400">{{ $description }}</p>
+            <h3 class="text-lg font-semibold text-neutral-900 transition group-hover:text-primary-600">{{ $title }}</h3>
+            <p class="mt-2 text-sm text-neutral-600">{{ $description }}</p>
 
             {{-- Learn more link --}}
             <div class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-600 transition group-hover:gap-2">

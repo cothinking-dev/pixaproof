@@ -32,51 +32,21 @@ Shows the three-pillar flow: Secure Capture → Reliable Transmission → Instan
         {{-- Step 1: Secure Capture --}}
         <div class="flex flex-col items-center text-center">
             {{-- Visual --}}
-            <div class="relative mb-6">
-                {{-- Phone with camera --}}
-                <div class="relative h-48 w-36 rounded-[1.5rem] border-2 border-neutral-300 bg-white p-2 shadow-xl">
-                    {{-- Notch --}}
-                    <div class="absolute left-1/2 top-0 h-4 w-14 -translate-x-1/2 rounded-b-xl bg-neutral-200"></div>
-                    {{-- Screen --}}
-                    <div class="flex h-full flex-col overflow-hidden rounded-[1rem] bg-neutral-100">
-                        {{-- Camera UI --}}
-                        <div class="flex flex-1 items-center justify-center p-3">
-                            {{-- Viewfinder --}}
-                            <div class="relative h-20 w-28 rounded border border-dashed border-green-500/60">
-                                {{-- Corner brackets --}}
-                                <div class="absolute -left-0.5 -top-0.5 h-3 w-3 border-l-2 border-t-2 border-green-500"></div>
-                                <div class="absolute -right-0.5 -top-0.5 h-3 w-3 border-r-2 border-t-2 border-green-500"></div>
-                                <div class="absolute -bottom-0.5 -left-0.5 h-3 w-3 border-b-2 border-l-2 border-green-500"></div>
-                                <div class="absolute -bottom-0.5 -right-0.5 h-3 w-3 border-b-2 border-r-2 border-green-500"></div>
-                                {{-- ID Card placeholder --}}
-                                <div class="absolute inset-2 flex items-center justify-center rounded bg-neutral-100">
-                                    <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- Capture button --}}
-                        <div class="flex items-center justify-center bg-neutral-50 py-3">
-                            <div class="h-8 w-8 rounded-full border-2 border-white bg-white/20">
-                                <div class="m-1 h-5 w-5 rounded-full bg-white"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="relative mb-6 flex justify-center">
+                <x-graphics.phone-mockup size="md" image="images/mockups/solution-flow-capture.webp" imageAlt="Document capture with phone" variant="default" />
                 {{-- Gallery block indicator --}}
-                <div class="absolute -bottom-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 shadow-lg">
+                <div class="absolute -bottom-2 -right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 shadow-lg">
                     <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                     </svg>
                 </div>
             </div>
             {{-- Label --}}
-            <div class="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-sm font-medium text-green-500">
+            <div class="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-sm font-medium text-green-600">
                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white">1</span>
                 Secure Capture
             </div>
-            <p class="mt-3 text-sm text-gray-400">SDK enforces live-only capture</p>
+            <p class="mt-3 text-sm text-neutral-600">SDK enforces live-only capture</p>
         </div>
 
         {{-- Step 2: Reliable Transmission --}}
@@ -117,7 +87,7 @@ Shows the three-pillar flow: Secure Capture → Reliable Transmission → Instan
                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-xs text-white">2</span>
                 Reliable Transmission
             </div>
-            <p class="mt-3 text-sm text-gray-400">E2E encrypted with PIEA signature</p>
+            <p class="mt-3 text-sm text-neutral-600">E2E encrypted with PIEA signature</p>
         </div>
 
         {{-- Step 3: Instant Verification --}}
@@ -142,26 +112,26 @@ Shows the three-pillar flow: Secure Capture → Reliable Transmission → Instan
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                 </svg>
                             </div>
-                            <p class="mt-1 text-xs font-medium text-green-500">VERIFIED</p>
+                            <p class="mt-1 text-xs font-medium text-green-600">VERIFIED</p>
                         </div>
                         {{-- Speed indicator --}}
-                        <div class="absolute -right-2 top-2 rounded-full bg-neutral-100 px-2 py-1 text-[10px] font-medium text-gray-300">
+                        <div class="absolute -right-2 top-2 rounded-full bg-neutral-100 px-2 py-1 text-[10px] font-medium text-neutral-700">
                             &lt;500ms
                         </div>
                     </div>
                     {{-- Detection badges --}}
                     <div class="absolute -bottom-2 left-1/2 flex -translate-x-1/2 gap-1">
-                        <div class="rounded-full bg-neutral-100 px-2 py-0.5 text-[8px] text-gray-400">35+ Tests</div>
-                        <div class="rounded-full bg-neutral-100 px-2 py-0.5 text-[8px] text-gray-400">AI Scan</div>
+                        <div class="rounded-full bg-neutral-100 px-2 py-0.5 text-[8px] text-neutral-700">35+ Tests</div>
+                        <div class="rounded-full bg-neutral-100 px-2 py-0.5 text-[8px] text-neutral-700">AI Scan</div>
                     </div>
                 </div>
             </div>
             {{-- Label --}}
-            <div class="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-sm font-medium text-green-500">
+            <div class="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-sm font-medium text-green-600">
                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white">3</span>
                 Instant Verification
             </div>
-            <p class="mt-3 text-sm text-gray-400">35+ tamper tests in real-time</p>
+            <p class="mt-3 text-sm text-neutral-600">35+ tamper tests in real-time</p>
         </div>
     </div>
 </div>

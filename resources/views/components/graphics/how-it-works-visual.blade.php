@@ -26,23 +26,23 @@ Shows three steps with device mockups: Integrate → Capture → Verify
                     <div class="h-3 w-3 rounded-full bg-red-500/60"></div>
                     <div class="h-3 w-3 rounded-full bg-yellow-500/60"></div>
                     <div class="h-3 w-3 rounded-full bg-green-500/60"></div>
-                    <span class="ml-2 text-xs text-gray-500">app.swift</span>
+                    <span class="ml-2 text-xs text-neutral-500">app.swift</span>
                 </div>
                 {{-- Code lines --}}
                 <div class="space-y-2 font-mono text-xs">
-                    <div><span class="text-purple-400">import</span> <span class="text-green-400">PixaProof</span></div>
-                    <div class="text-gray-500">// Initialize SDK</div>
+                    <div><span class="text-purple-400">import</span> <span class="text-green-600">PixaProof</span></div>
+                    <div class="text-neutral-500">// Initialize SDK</div>
                     <div>
                         <span class="text-blue-400">let</span>
-                        <span class="text-white">pixaproof</span>
-                        <span class="text-gray-400">=</span>
-                        <span class="text-yellow-400">PixaProof</span><span class="text-gray-400">(</span>
+                        <span class="text-neutral-700">pixaproof</span>
+                        <span class="text-neutral-400">=</span>
+                        <span class="text-yellow-600">PixaProof</span><span class="text-neutral-400">(</span>
                     </div>
                     <div class="pl-4">
-                        <span class="text-gray-400">apiKey:</span>
-                        <span class="text-green-400">"pk_live_..."</span>
+                        <span class="text-neutral-400">apiKey:</span>
+                        <span class="text-green-600">"pk_live_..."</span>
                     </div>
-                    <div><span class="text-gray-400">)</span></div>
+                    <div><span class="text-neutral-400">)</span></div>
                 </div>
                 {{-- Integration time badge --}}
                 <div class="mt-4 inline-flex items-center gap-1 rounded-full bg-primary-500/10 px-2 py-1 text-xs text-primary-600">
@@ -54,26 +54,26 @@ Shows three steps with device mockups: Integrate → Capture → Verify
             </div>
 
             {{-- Content --}}
-            <h3 class="text-xl font-semibold text-white">Integrate Our SDK</h3>
-            <p class="mt-2 text-gray-400">
+            <h3 class="text-xl font-semibold text-neutral-900">Integrate Our SDK</h3>
+            <p class="mt-2 text-neutral-600">
                 Add PixaProof SDK to your iOS or Android app. Comprehensive documentation and sample code included.
             </p>
 
             {{-- Platform badges --}}
             <div class="mt-4 flex gap-2">
-                <div class="flex items-center gap-1 rounded bg-neutral-100 px-2 py-1 text-xs text-gray-300">
+                <div class="flex items-center gap-1 rounded bg-neutral-100 px-2 py-1 text-xs text-neutral-600">
                     <svg class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
                     </svg>
                     iOS
                 </div>
-                <div class="flex items-center gap-1 rounded bg-neutral-100 px-2 py-1 text-xs text-gray-300">
+                <div class="flex items-center gap-1 rounded bg-neutral-100 px-2 py-1 text-xs text-neutral-600">
                     <svg class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.523 15.341c-.563-.203-.934-.653-.934-1.241 0-.594.388-1.075.988-1.275.488-.166.869-.59.869-1.125 0-.622-.447-1.134-.989-1.275-.575-.15-.988-.628-.988-1.219s.413-1.069.988-1.219c.542-.141.989-.653.989-1.275 0-.535-.381-.959-.869-1.125-.6-.2-.988-.681-.988-1.275 0-.588.371-1.038.934-1.241.675-.244 1.166-.797 1.166-1.453 0-.916-.794-1.659-1.775-1.659-.566 0-1.072.256-1.406.656-.281.338-.516.75-.516 1.203 0 .375.175.706.447.919-.272.213-.447.544-.447.919 0 .453.235.865.516 1.203.334.4.84.656 1.406.656.981 0 1.775.743 1.775 1.659 0 .656-.491 1.209-1.166 1.453zm-11.046 0c.563-.203.934-.653.934-1.241 0-.594-.388-1.075-.988-1.275-.488-.166-.869-.59-.869-1.125 0-.622.447-1.134.989-1.275.575-.15.988-.628.988-1.219s-.413-1.069-.988-1.219c-.542-.141-.989-.653-.989-1.275 0-.535.381-.959.869-1.125.6-.2.988-.681.988-1.275 0-.588-.371-1.038-.934-1.241C5.802 1.072 5.311.519 5.311-.137c0-.916.794-1.659 1.775-1.659.566 0 1.072.256 1.406.656.281.338.516.75.516 1.203 0 .375-.175.706-.447.919.272.213.447.544.447.919 0 .453-.235.865-.516 1.203-.334.4-.84.656-1.406.656-.981 0-1.775.743-1.775 1.659 0 .656.491 1.209 1.166 1.453z"/>
                     </svg>
                     Android
                 </div>
-                <div class="flex items-center gap-1 rounded bg-neutral-100 px-2 py-1 text-xs text-gray-300">
+                <div class="flex items-center gap-1 rounded bg-neutral-100 px-2 py-1 text-xs text-neutral-600">
                     <svg class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
@@ -107,12 +107,12 @@ Shows three steps with device mockups: Integrate → Capture → Verify
                             {{-- Camera UI --}}
                             <div class="flex h-full flex-col">
                                 {{-- Status bar --}}
-                                <div class="flex items-center justify-between bg-neutral-50 px-3 py-1 text-[8px] text-gray-500">
+                                <div class="flex items-center justify-between bg-neutral-50 px-3 py-1 text-[8px] text-neutral-500">
                                     <span>9:41</span>
                                     <div class="flex gap-1">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-gray-500"></div>
-                                        <div class="h-1.5 w-1.5 rounded-full bg-gray-500"></div>
-                                        <div class="h-1.5 w-1.5 rounded-full bg-gray-500"></div>
+                                        <div class="h-1.5 w-1.5 rounded-full bg-neutral-500"></div>
+                                        <div class="h-1.5 w-1.5 rounded-full bg-neutral-500"></div>
+                                        <div class="h-1.5 w-1.5 rounded-full bg-neutral-500"></div>
                                     </div>
                                 </div>
                                 {{-- Viewfinder --}}
@@ -147,7 +147,7 @@ Shows three steps with device mockups: Integrate → Capture → Verify
                     </div>
                     {{-- Encryption indicator --}}
                     <div class="absolute -right-4 top-1/2 -translate-y-1/2">
-                        <div class="flex items-center gap-1 rounded-full bg-green-500/20 px-2 py-1 text-[8px] text-green-400">
+                        <div class="flex items-center gap-1 rounded-full bg-green-500/20 px-2 py-1 text-[8px] text-green-600">
                             <svg class="h-2 w-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
@@ -158,14 +158,14 @@ Shows three steps with device mockups: Integrate → Capture → Verify
             </div>
 
             {{-- Content --}}
-            <h3 class="text-xl font-semibold text-white">Capture & Transmit</h3>
-            <p class="mt-2 text-gray-400">
+            <h3 class="text-xl font-semibold text-neutral-900">Capture & Transmit</h3>
+            <p class="mt-2 text-neutral-600">
                 PIEA embeds cryptographic signature at capture. End-to-end encryption ensures secure transmission.
             </p>
 
             {{-- Feature badges --}}
             <div class="mt-4 flex flex-wrap gap-2">
-                <div class="rounded-full bg-green-500/10 px-2 py-1 text-xs text-green-400">Live-only capture</div>
+                <div class="rounded-full bg-green-500/10 px-2 py-1 text-xs text-green-600">Live-only capture</div>
                 <div class="rounded-full bg-primary-500/10 px-2 py-1 text-xs text-primary-600">PIEA signature</div>
             </div>
         </div>
@@ -183,8 +183,8 @@ Shows three steps with device mockups: Integrate → Capture → Verify
             <div class="relative mb-6 overflow-hidden rounded-lg bg-neutral-100 p-4">
                 {{-- Header --}}
                 <div class="mb-3 flex items-center justify-between">
-                    <span class="text-xs font-medium text-white">Verification Result</span>
-                    <span class="rounded-full bg-green-500/20 px-2 py-0.5 text-[10px] font-medium text-green-400">&lt;500ms</span>
+                    <span class="text-xs font-medium text-neutral-700">Verification Result</span>
+                    <span class="rounded-full bg-green-500/20 px-2 py-0.5 text-[10px] font-medium text-green-600">&lt;500ms</span>
                 </div>
                 {{-- Result card --}}
                 <div class="rounded-lg border border-green-500/30 bg-green-500/10 p-3">
@@ -195,39 +195,39 @@ Shows three steps with device mockups: Integrate → Capture → Verify
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm font-medium text-green-400">AUTHENTIC</p>
-                            <p class="text-[10px] text-gray-400">All 35 tests passed</p>
+                            <p class="text-sm font-medium text-green-600">AUTHENTIC</p>
+                            <p class="text-[10px] text-neutral-500">All 35 tests passed</p>
                         </div>
                     </div>
                 </div>
                 {{-- Test categories --}}
                 <div class="mt-3 grid grid-cols-3 gap-2">
                     <div class="rounded bg-white p-2 text-center">
-                        <div class="text-xs font-medium text-green-400">PIEA</div>
-                        <div class="text-[8px] text-gray-500">Valid</div>
+                        <div class="text-xs font-medium text-green-600">PIEA</div>
+                        <div class="text-[8px] text-neutral-500">Valid</div>
                     </div>
                     <div class="rounded bg-white p-2 text-center">
-                        <div class="text-xs font-medium text-green-400">AI Scan</div>
-                        <div class="text-[8px] text-gray-500">Clear</div>
+                        <div class="text-xs font-medium text-green-600">AI Scan</div>
+                        <div class="text-[8px] text-neutral-500">Clear</div>
                     </div>
                     <div class="rounded bg-white p-2 text-center">
-                        <div class="text-xs font-medium text-green-400">Tamper</div>
-                        <div class="text-[8px] text-gray-500">None</div>
+                        <div class="text-xs font-medium text-green-600">Tamper</div>
+                        <div class="text-[8px] text-neutral-500">None</div>
                     </div>
                 </div>
             </div>
 
             {{-- Content --}}
-            <h3 class="text-xl font-semibold text-white">Verify Instantly</h3>
-            <p class="mt-2 text-gray-400">
+            <h3 class="text-xl font-semibold text-neutral-900">Verify Instantly</h3>
+            <p class="mt-2 text-neutral-600">
                 35+ tamper detection tests, AI manipulation scan, all completed in under 500ms.
             </p>
 
             {{-- API response badge --}}
             <div class="mt-4">
                 <div class="inline-flex items-center gap-2 rounded-lg bg-neutral-100 px-3 py-2 text-xs">
-                    <span class="text-gray-400">Response:</span>
-                    <code class="text-green-400">{"authentic": true}</code>
+                    <span class="text-neutral-500">Response:</span>
+                    <code class="text-green-600">{"authentic": true}</code>
                 </div>
             </div>
         </div>

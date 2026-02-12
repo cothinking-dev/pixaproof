@@ -27,24 +27,24 @@
                                 {{ $isActive ? 'bg-primary-500/20 border-2 border-primary-500' : 'bg-white border-2 border-neutral-300' }}
                                 {{ $isCurrent ? 'ring-4 ring-primary-500/20' : '' }}">
                         @if(isset($step['icon']))
-                            <span class="{{ $isActive ? 'text-primary-600' : 'text-gray-400' }}">
+                            <span class="{{ $isActive ? 'text-primary-600' : 'text-neutral-400' }}">
                                 {!! $step['icon'] !!}
                             </span>
                         @else
-                            <span class="text-sm font-semibold {{ $isActive ? 'text-primary-600' : 'text-gray-400' }}">
+                            <span class="text-sm font-semibold {{ $isActive ? 'text-primary-600' : 'text-neutral-400' }}">
                                 {{ $index + 1 }}
                             </span>
                         @endif
                     </div>
 
                     {{-- Title --}}
-                    <h4 class="text-sm font-semibold {{ $isActive ? 'text-white' : 'text-gray-400' }}">
+                    <h4 class="text-sm font-semibold {{ $isActive ? 'text-neutral-900' : 'text-neutral-400' }}">
                         {{ $step['title'] }}
                     </h4>
 
                     {{-- Description --}}
                     @if(isset($step['description']))
-                        <p class="text-xs text-gray-500 mt-1 max-w-28">
+                        <p class="text-xs text-neutral-500 mt-1 max-w-28">
                             {{ $step['description'] }}
                         </p>
                     @endif
@@ -64,22 +64,22 @@
                 <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0
                             {{ $isActive ? 'bg-primary-500/20 border-2 border-primary-500' : 'bg-white border-2 border-neutral-300' }}">
                     @if(isset($step['icon']))
-                        <span class="{{ $isActive ? 'text-primary-600' : 'text-gray-400' }}">
+                        <span class="{{ $isActive ? 'text-primary-600' : 'text-neutral-400' }}">
                             {!! $step['icon'] !!}
                         </span>
                     @else
-                        <span class="text-sm font-semibold {{ $isActive ? 'text-primary-600' : 'text-gray-400' }}">
+                        <span class="text-sm font-semibold {{ $isActive ? 'text-primary-600' : 'text-neutral-400' }}">
                             {{ $index + 1 }}
                         </span>
                     @endif
                 </div>
 
                 <div>
-                    <h4 class="text-sm font-semibold {{ $isActive ? 'text-white' : 'text-gray-400' }}">
+                    <h4 class="text-sm font-semibold {{ $isActive ? 'text-neutral-900' : 'text-neutral-400' }}">
                         {{ $step['title'] }}
                     </h4>
                     @if(isset($step['description']))
-                        <p class="text-xs text-gray-500 mt-0.5">
+                        <p class="text-xs text-neutral-500 mt-0.5">
                             {{ $step['description'] }}
                         </p>
                     @endif

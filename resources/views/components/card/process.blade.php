@@ -22,7 +22,7 @@ Props:
 
 @php
     $titleColor = $variant === 'light' ? 'text-white' : 'text-neutral-900';
-    $descColor = $variant === 'light' ? 'text-gray-400' : 'text-neutral-600';
+    $descColor = $variant === 'light' ? 'text-neutral-400' : 'text-neutral-600';
     $stepBadge = $variant === 'light' ? 'bg-primary-500 text-white' : 'bg-primary-500 text-white';
 @endphp
 

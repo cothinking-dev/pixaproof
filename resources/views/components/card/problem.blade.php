@@ -27,7 +27,7 @@ Props:
         $iconBg = 'bg-red-500/10';
         $iconColor = 'text-red-500';
         $titleColor = 'text-white';
-        $descColor = 'text-gray-400';
+        $descColor = 'text-neutral-400';
     } else {
         $cardBg = 'border-red-200 bg-red-50';
         $iconBg = 'bg-red-100';

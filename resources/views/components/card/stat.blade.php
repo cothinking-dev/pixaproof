@@ -31,8 +31,8 @@ Props:
         $descColor = 'text-neutral-500';
     } elseif ($variant === 'light') {
         $valueColor = 'text-white';
-        $labelColor = 'text-gray-300';
-        $descColor = 'text-gray-400';
+        $labelColor = 'text-neutral-300';
+        $descColor = 'text-neutral-400';
     } else {
         $valueColor = 'text-neutral-900';
         $labelColor = 'text-neutral-700';

@@ -1,26 +1,40 @@
 @extends('layouts.app')
 
 @section('title', 'Contact')
+@section('description', 'Book a demo, discuss your use case, or explore integration options with the PixaProof solutions team.')
 
 @section('content')
-    <section class="py-20 bg-white">
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="inline-flex items-center gap-2 rounded-full bg-primary-50 border border-primary-200 px-4 py-2 mb-6">
-                    <svg class="h-4 w-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                    </svg>
-                    <span class="text-sm font-medium text-primary-700">Contact Sales</span>
-                </div>
-                <h1 class="text-4xl font-bold text-neutral-900">Let's Stop Injection Attacks Together</h1>
-                <p class="mt-4 text-lg text-neutral-600">
-                    Request a demo, discuss implementation, or speak with our technical team about securing your identity verification workflow.
-                </p>
-            </div>
+    {{-- Hero Section --}}
+    <section class="relative isolate overflow-hidden px-4 pt-32 pb-32 lg:pt-40 lg:pb-40">
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-50/50"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#0ea5e910_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e910_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
 
-            <div class="mt-12 rounded border border-neutral-200 bg-white p-8 shadow-sm">
+        <div class="relative z-10 mx-auto max-w-3xl text-center">
+            <div class="inline-flex items-center gap-2 rounded-full border border-primary-500/40 bg-primary-500/10 px-4 py-2 mb-6">
+                <svg class="h-4 w-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <span class="text-sm font-medium text-primary-600">Contact Sales</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Talk to Our Team</h1>
+            <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+                See PixaProof in action. Book a 20-minute demo, discuss your use case, or explore integration options with our solutions team.
+            </p>
+        </div>
+    </section>
+
+    {{-- Form Section --}}
+    <section class="bg-white pb-20">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <div class="-mt-16 relative z-20 rounded border border-neutral-200 bg-white p-8 shadow-lg">
                 <livewire:contact-form />
             </div>
+
+            <p class="mt-6 text-center text-sm text-neutral-500">
+                Built by the team behind 10M+ identity verifications across ASEAN — with ISO 30107-3 certification and 3 granted patents.
+            </p>
 
             <div class="mt-12 grid gap-6 sm:grid-cols-3 text-center">
                 <div class="rounded bg-neutral-50 p-6">

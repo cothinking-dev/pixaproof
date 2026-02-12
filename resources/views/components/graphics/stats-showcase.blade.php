@@ -30,13 +30,13 @@ Enhanced visual display for statistics with animated elements
 
                 {{-- Value --}}
                 <div class="mb-2 flex items-baseline gap-1">
-                    <span class="text-5xl font-bold text-white">500</span>
+                    <span class="text-5xl font-bold text-neutral-900">500</span>
                     <span class="text-3xl font-bold text-primary-600">+</span>
                 </div>
 
                 {{-- Label --}}
-                <p class="text-lg font-medium text-white">Enterprise Clients</p>
-                <p class="mt-1 text-sm text-gray-400">Across ASEAN via EMAS eKYC</p>
+                <p class="text-lg font-medium text-neutral-900">Enterprise Clients</p>
+                <p class="mt-1 text-sm text-neutral-500">Across ASEAN via EMAS eKYC</p>
 
                 {{-- Visual: Mini bar chart --}}
                 <div class="mt-6 flex items-end gap-1">
@@ -63,12 +63,12 @@ Enhanced visual display for statistics with animated elements
 
                 {{-- Value --}}
                 <div class="mb-2 flex items-baseline gap-1">
-                    <span class="text-5xl font-bold text-white">3</span>
+                    <span class="text-5xl font-bold text-neutral-900">3</span>
                 </div>
 
                 {{-- Label --}}
-                <p class="text-lg font-medium text-white">Granted Patents</p>
-                <p class="mt-1 text-sm text-gray-400">In identity authentication</p>
+                <p class="text-lg font-medium text-neutral-900">Granted Patents</p>
+                <p class="mt-1 text-sm text-neutral-500">In identity authentication</p>
 
                 {{-- Visual: Patent badges --}}
                 <div class="mt-6 flex gap-2">
@@ -106,26 +106,26 @@ Enhanced visual display for statistics with animated elements
 
                 {{-- Value --}}
                 <div class="mb-2 flex items-baseline gap-1">
-                    <span class="text-5xl font-bold text-white">99.9</span>
+                    <span class="text-5xl font-bold text-neutral-900">99.9</span>
                     <span class="text-3xl font-bold text-green-500">%</span>
                 </div>
 
                 {{-- Label --}}
-                <p class="text-lg font-medium text-white">Verification Accuracy</p>
-                <p class="mt-1 text-sm text-gray-400">Capture authenticity rate</p>
+                <p class="text-lg font-medium text-neutral-900">Verification Accuracy</p>
+                <p class="mt-1 text-sm text-neutral-500">Capture authenticity rate</p>
 
                 {{-- Visual: Circular progress --}}
                 <div class="mt-6 flex items-center gap-3">
                     <div class="relative h-10 w-10">
                         <svg class="h-10 w-10 -rotate-90" viewBox="0 0 36 36">
-                            <path class="text-neutral-400" stroke-width="3" fill="none" stroke="currentColor"
+                            <path class="text-neutral-200" stroke-width="3" fill="none" stroke="currentColor"
                                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                             <path class="text-green-500" stroke-width="3" stroke-linecap="round" fill="none" stroke="currentColor"
                                   stroke-dasharray="99.9, 100"
                                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                         </svg>
                     </div>
-                    <span class="text-sm text-gray-400">Industry-leading accuracy</span>
+                    <span class="text-sm text-neutral-500">Industry-leading accuracy</span>
                 </div>
             </div>
         </div>

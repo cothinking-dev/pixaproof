@@ -20,10 +20,10 @@ Props:
 ])
 
 @php
-    $homeLink = $variant === 'light' ? 'text-gray-400 hover:text-white' : 'text-neutral-600 hover:text-primary-600';
-    $linkColor = $variant === 'light' ? 'text-gray-400 hover:text-white' : 'text-neutral-600 hover:text-primary-600';
-    $currentColor = $variant === 'light' ? 'text-gray-300' : 'text-neutral-900 font-medium';
-    $iconColor = $variant === 'light' ? 'text-gray-600' : 'text-neutral-400';
+    $homeLink = $variant === 'light' ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-primary-600';
+    $linkColor = $variant === 'light' ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-primary-600';
+    $currentColor = $variant === 'light' ? 'text-neutral-300' : 'text-neutral-900 font-medium';
+    $iconColor = $variant === 'light' ? 'text-neutral-600' : 'text-neutral-400';
 @endphp
 
 <nav {{ $attributes->merge(['class' => 'text-sm mb-6']) }} aria-label="Breadcrumb">

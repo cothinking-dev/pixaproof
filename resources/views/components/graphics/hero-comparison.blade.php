@@ -15,48 +15,21 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
         {{-- Live Capture - Protected --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-green-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
+            <div class="relative flex w-full flex-col items-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
                 {{-- Status Badge --}}
-                <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-green-500/20 px-2 py-1">
-                    <svg class="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-green-100 border border-green-300 px-2 py-1">
+                    <svg class="h-3 w-3 text-green-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <span class="text-xs font-medium text-green-500">Protected</span>
+                    <span class="text-xs font-medium text-green-700">Protected</span>
                 </div>
 
-                {{-- Mini phone mockup --}}
-                <div class="mx-auto w-32">
-                    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
-                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
-                            {{-- Camera UI --}}
-                            <div class="flex h-full flex-col">
-                                <div class="flex-1 flex items-center justify-center p-2">
-                                    <div class="relative h-16 w-24 rounded border border-dashed border-green-500/50">
-                                        <div class="absolute -left-0.5 -top-0.5 h-2 w-2 border-l border-t border-green-500"></div>
-                                        <div class="absolute -right-0.5 -top-0.5 h-2 w-2 border-r border-t border-green-500"></div>
-                                        <div class="absolute -bottom-0.5 -left-0.5 h-2 w-2 border-b border-l border-green-500"></div>
-                                        <div class="absolute -bottom-0.5 -right-0.5 h-2 w-2 border-b border-r border-green-500"></div>
-                                        {{-- ID card placeholder --}}
-                                        <div class="absolute inset-2 rounded bg-neutral-100">
-                                            <div class="absolute left-1 top-1 h-2 w-4 rounded-sm bg-neutral-200"></div>
-                                            <div class="absolute bottom-1 left-1 right-1 space-y-0.5">
-                                                <div class="h-0.5 w-3/4 rounded bg-neutral-200"></div>
-                                                <div class="h-0.5 w-1/2 rounded bg-neutral-200"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-center bg-neutral-50 py-2">
-                                    <div class="h-4 w-4 rounded-full border-2 border-white bg-white/20"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{-- Phone mockup with real image --}}
+                <x-graphics.phone-mockup size="md" image="images/mockups/hero-live-capture.webp" imageAlt="Live camera capture" variant="default" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-white">Live Capture</h4>
-                    <p class="mt-1 text-xs text-gray-400">Real-time camera verification</p>
+                    <h4 class="font-semibold text-neutral-900">Live Capture</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Real-time camera verification</p>
                 </div>
             </div>
         </div>
@@ -64,44 +37,21 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
         {{-- Tampered Photos - Blocked --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-red-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
+            <div class="relative flex w-full flex-col items-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
                 {{-- Status Badge --}}
-                <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-red-500/20 px-2 py-1">
-                    <svg class="h-3 w-3 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-red-100 border border-red-300 px-2 py-1">
+                    <svg class="h-3 w-3 text-red-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
                     </svg>
-                    <span class="text-xs font-medium text-red-500">Blocked</span>
+                    <span class="text-xs font-medium text-red-700">Blocked</span>
                 </div>
 
-                {{-- Mini phone mockup with gallery --}}
-                <div class="mx-auto w-32">
-                    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
-                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
-                            {{-- Gallery grid --}}
-                            <div class="flex h-full flex-col p-2">
-                                <div class="mb-2 text-center text-[8px] text-gray-500">Gallery</div>
-                                <div class="grid flex-1 grid-cols-3 gap-1">
-                                    @for($i = 0; $i < 9; $i++)
-                                        <div class="rounded bg-neutral-100"></div>
-                                    @endfor
-                                </div>
-                                {{-- Block overlay --}}
-                                <div class="absolute inset-0 flex items-center justify-center bg-red-950/80">
-                                    <div class="text-center">
-                                        <svg class="mx-auto h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                                        </svg>
-                                        <p class="mt-1 text-[8px] font-medium text-red-400">BLOCKED</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{-- Phone mockup with gallery image + error overlay --}}
+                <x-graphics.phone-mockup size="md" image="images/mockups/hero-tampered-gallery.webp" imageAlt="Tampered gallery photo" variant="error" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-white">Tampered Photos</h4>
-                    <p class="mt-1 text-xs text-gray-400">Edited or manipulated images blocked</p>
+                    <h4 class="font-semibold text-neutral-900">Tampered Photos</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Edited or manipulated images blocked</p>
                 </div>
             </div>
         </div>
@@ -109,55 +59,21 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
         {{-- AI Generated - Detected --}}
         <div class="group relative flex">
             <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-yellow-500/20 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-            <div class="relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
+            <div class="relative flex w-full flex-col items-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-4">
                 {{-- Status Badge --}}
-                <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-yellow-500/20 px-2 py-1">
-                    <svg class="h-3 w-3 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                <div class="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-amber-100 border border-amber-300 px-2 py-1">
+                    <svg class="h-3 w-3 text-amber-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
                     </svg>
-                    <span class="text-xs font-medium text-yellow-500">Detected</span>
+                    <span class="text-xs font-medium text-amber-700">Detected</span>
                 </div>
 
-                {{-- Mini mockup with AI image --}}
-                <div class="mx-auto w-32">
-                    <div class="rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-1">
-                        <div class="aspect-[9/16] overflow-hidden rounded-xl bg-neutral-100">
-                            {{-- Fake ID with AI warning --}}
-                            <div class="flex h-full flex-col items-center justify-center p-2">
-                                {{-- Synthetic ID card --}}
-                                <div class="relative w-full rounded bg-neutral-100 p-2">
-                                    {{-- Photo area with glitch effect --}}
-                                    <div class="relative mb-2 aspect-square w-8 overflow-hidden rounded bg-neutral-200">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20"></div>
-                                        {{-- Glitch lines --}}
-                                        <div class="absolute inset-x-0 top-1/3 h-0.5 bg-cyan-500/50"></div>
-                                        <div class="absolute inset-x-0 top-2/3 h-0.5 bg-purple-500/50"></div>
-                                    </div>
-                                    <div class="space-y-1">
-                                        <div class="h-1 w-3/4 rounded bg-neutral-200"></div>
-                                        <div class="h-1 w-1/2 rounded bg-neutral-200"></div>
-                                    </div>
-
-                                    {{-- AI detection overlay --}}
-                                    <div class="absolute inset-0 flex items-center justify-center rounded bg-yellow-950/90">
-                                        <div class="text-center">
-                                            <svg class="mx-auto h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                                            </svg>
-                                            <p class="mt-0.5 text-[6px] font-bold text-yellow-500">AI DETECTED</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p class="mt-2 text-[8px] text-gray-400">Synthetic content flagged</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{-- Phone mockup with AI image + scanning overlay --}}
+                <x-graphics.phone-mockup size="md" image="images/mockups/hero-ai-generated-id.webp" imageAlt="AI generated document" variant="scanning" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-white">AI Generated</h4>
-                    <p class="mt-1 text-xs text-gray-400">Deepfakes identified</p>
+                    <h4 class="font-semibold text-neutral-900">AI Generated</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Deepfakes identified</p>
                 </div>
             </div>
         </div>
