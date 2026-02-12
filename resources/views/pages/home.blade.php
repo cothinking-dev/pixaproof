@@ -19,7 +19,7 @@
                 <div>
                     {{-- Eyebrow badge --}}
                     <x-badge variant="enterprise" class="mb-6 border-primary-500/40 text-primary-600 bg-primary-500/10">
-                        Now Available — Built on 10M+ ID Verifications
+                        Now Available
                     </x-badge>
 
                     {{-- Headline with rotating industry keyword --}}

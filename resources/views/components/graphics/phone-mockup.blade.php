@@ -37,7 +37,7 @@ Props:
 
 <div {{ $attributes->merge(['class' => $sizeClass]) }}>
     {{-- Phone bezel --}}
-    <div class="relative rounded-[2rem] border-[3px] border-neutral-800 bg-neutral-900 p-1.5 shadow-xl">
+    <div class="relative overflow-hidden rounded-[2rem] border-[3px] border-neutral-800 bg-neutral-900 p-1.5 shadow-xl">
         {{-- Side buttons (volume + power) --}}
         <div class="absolute -left-[4px] top-[4.5rem] h-6 w-[3px] rounded-l bg-neutral-700"></div>
         <div class="absolute -left-[4px] top-[6.5rem] h-10 w-[3px] rounded-l bg-neutral-700"></div>
@@ -62,7 +62,7 @@ Props:
 
                     {{-- Variant overlays --}}
                     @if($variant === 'scanning')
-                        <div class="absolute inset-0 flex flex-col items-center justify-center {{ $image ? 'bg-neutral-900/70 backdrop-blur-sm' : '' }} p-4">
+                        <div class=" rounded-[1.5rem] absolute inset-0 flex flex-col items-center justify-center {{ $image ? 'bg-neutral-900/70 backdrop-blur-sm' : '' }} p-4">
                             <div class="relative mb-3 h-10 w-10 rounded-full border-2 border-primary-500">
                                 <div class="absolute inset-0 animate-ping rounded-full border-2 border-primary-500 opacity-20"></div>
                                 <div class="flex h-full items-center justify-center">
@@ -76,7 +76,7 @@ Props:
                             <p class="mt-0.5 text-[0.5rem] text-neutral-400">Hold steady...</p>
                         </div>
                     @elseif($variant === 'success')
-                        <div class="absolute inset-0 flex flex-col items-center justify-center {{ $image ? 'bg-neutral-900/70 backdrop-blur-sm' : '' }} p-4">
+                        <div class="absolute inset-0 rounded-[1.5rem] flex flex-col items-center justify-center {{ $image ? 'bg-neutral-900/70 backdrop-blur-sm' : '' }} p-4">
                             <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-green-500/20">
                                 <svg class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -86,7 +86,7 @@ Props:
                             <p class="mt-0.5 text-[0.5rem] text-green-400">Authenticity confirmed</p>
                         </div>
                     @elseif($variant === 'error')
-                        <div class="absolute inset-0 flex flex-col items-center justify-center {{ $image ? 'bg-neutral-900/70 backdrop-blur-sm' : '' }} p-4">
+                        <div class="absolute inset-0 rounded-[1.5rem] flex flex-col items-center justify-center {{ $image ? 'bg-neutral-900/70 backdrop-blur-sm' : '' }} p-4">
                             <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-red-500/20">
                                 <svg class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
