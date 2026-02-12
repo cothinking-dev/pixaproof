@@ -1,0 +1,19 @@
+{
+    "name": "PixaProof",
+    "short_name": "PixaProof",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "type": "image/svg+xml",
+            "sizes": "any"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "type": "image/png",
+            "sizes": "180x180"
+        }
+    ],
+    "theme_color": "#eb883b",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
