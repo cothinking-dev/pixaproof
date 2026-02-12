@@ -30,7 +30,7 @@
 
                     {{-- Subheadline --}}
                     <p class="text-lg text-neutral-600 mb-10 max-w-xl leading-relaxed">
-                        Every manipulated photo that slips through costs your organization time, money, and trust. PixaProof verifies image authenticity at the point of capture — so only real, untampered evidence enters your workflow.
+                        Manually verifying photos manually is slow and expensive, but each fraudulent photo that slipped through costs more. PixaProof verifies image authenticity so only real, untampered evidence enters your workflow.
                     </p>
 
                     {{-- Dual CTA --}}
