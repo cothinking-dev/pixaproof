@@ -44,6 +44,48 @@ window.Motion = {
                 ? { type: spring, stiffness: 300, damping: 20, delay }
                 : { duration: 0.4, delay }
         );
+    },
+
+    // Stagger fade-in for groups of elements
+    staggerFadeIn(elements, options = {}) {
+        const { stagger = 0.08, delay = 0, y = 20 } = options;
+        const els = elements instanceof NodeList ? [...elements] : elements;
+        els.forEach((el, i) => {
+            el.style.opacity = '0';
+            animate(
+                el,
+                { opacity: [0, 1], y: [y, 0] },
+                { duration: 0.4, delay: delay + (i * stagger) }
+            );
+        });
+    },
+
+    // Animated counter with spring overshoot
+    animateCounter(element, target, suffix = '') {
+        const duration = 1200;
+        const overshoot = 1.08;
+        const start = performance.now();
+        const tick = (now) => {
+            const elapsed = now - start;
+            let progress = Math.min(elapsed / duration, 1);
+            // Ease-out with slight spring overshoot
+            if (progress < 0.8) {
+                progress = progress / 0.8;
+                progress = 1 - Math.pow(1 - progress, 3);
+                progress *= overshoot;
+            } else {
+                const remaining = (progress - 0.8) / 0.2;
+                progress = overshoot - (overshoot - 1) * remaining;
+            }
+            const current = Math.round(target * Math.min(progress, 1));
+            element.textContent = current.toLocaleString() + suffix;
+            if (elapsed < duration) {
+                requestAnimationFrame(tick);
+            } else {
+                element.textContent = target.toLocaleString() + suffix;
+            }
+        };
+        requestAnimationFrame(tick);
     }
 };
 

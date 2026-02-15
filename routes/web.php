@@ -40,8 +40,3 @@ Route::permanentRedirect('/enterprise', '/#solutions');
 
 // Legacy route alias for technology page
 Route::redirect('/product', '/#technology', 301);
-
-// Development only routes
-if (app()->environment('local')) {
-    Route::view('/components', 'pages.components')->name('components');
-}

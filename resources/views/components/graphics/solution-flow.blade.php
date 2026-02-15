@@ -46,7 +46,7 @@ Shows the three-pillar flow: Secure Capture → Reliable Transmission → Instan
                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white">1</span>
                 Secure Capture
             </div>
-            <p class="mt-3 text-sm text-neutral-600">SDK enforces live-only capture</p>
+            <p class="mt-3 text-sm text-neutral-600">Web SDK enforces live-only capture. Gallery uploads, virtual cameras, and emulators are blocked at the source.</p>
         </div>
 
         {{-- Step 2: Reliable Transmission --}}

@@ -6,11 +6,54 @@
 @source '../views/**/*.blade.php';
 @source '../js/**/*.js';
 
+/* Century Gothic — self-hosted (commercial license) */
+@font-face {
+    font-family: "Century Gothic";
+    src: url("../fonts/century-gothic-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("../fonts/century-gothic-italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("../fonts/century-gothic-semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("../fonts/century-gothic-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("../fonts/century-gothic-bold-italic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
 /* Custom theme configuration */
 @theme {
     --font-sans:
-        "Inter var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        "Century Gothic", ui-sans-serif, sans-serif;
+
+    --font-heading:
+        "Century Gothic", ui-sans-serif, sans-serif;
 
     /* Primary - Sky Blue (Tailwind sky colors) */
     --color-primary-50: #f0f9ff;
@@ -80,6 +123,31 @@ select:invalid {
 body {
     background-color: white;
     color: var(--color-neutral-700);
+}
+
+/* Heading font utility */
+@utility font-heading {
+    font-family: var(--font-heading);
+}
+
+/* Noise texture overlay */
+@utility noise-overlay {
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        background-size: 256px 256px;
+        pointer-events: none;
+    }
+}
+
+/* Timeline shimmer animation */
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 /* Account for fixed navbar when scrolling to anchor sections */

@@ -1,15 +1,2 @@
 
-You are now a UI/UX & content expert. The goal is to make the website publishingpublic and go-live ready, because the current state of the website is nowhere ready. Use competitor website truepic.com is a source of inspiration. Your job is to chart out a PLAN on how to add/imporve the content of the site namely in the copywriting, content sections (& variety, ie 2 column, timeline seciton, bentobox etc), and visual design. Use the frontend design skill
-
-One major problem identified = We can't show a lot of social proof and statistics (like cleint logos, and usage statistics), as this is a brand new product. This official website aims to officially launch the product. The main social proof is to tie in this product to Innov8tif.com -- who are the creators behind this technology. There is a chance that we need to con        soldiate the pages into a single pagelanding page If there is a lack of content.
-
-For context, our technology supports these checks:
-- Time & Date Verification
-- Location Verification
-- Image Analysis
-- Capture Integrity
-- Text Detection
-
-If you'd like to source royalty free images, use export PEXELS_API_KEY="2uG9sTMNATuO62Mwvr8BLIz4jvvwdbiMMnPS17VBBiase6YO9m1o8JED"
-
-Use subagents to help with your research.
+For this project, change it so that the only fonts used in Century Gothic -- the company has just acquired a license to use the font commercially and insist the entire project uses it.
