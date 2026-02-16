@@ -20,20 +20,20 @@
                     {{-- Eyebrow badge --}}
                     <span class="inline-flex items-center rounded border border-primary-500/40 bg-primary-500/10 px-3 py-1 text-xs font-medium font-heading uppercase tracking-wider text-primary-600 mb-6 transition-all duration-500"
                         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
-                        Web SDK
+                       Now Available
                     </span>
 
                     {{-- Headline with rotating industry keyword --}}
-                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight mb-6 transition-all duration-500 delay-100"
+                    <h1 class="font-heading min-h-[3lh] text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight mb-6 transition-all duration-500 delay-100"
                         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
-                        Prove Every Image Is Real in
-                        <x-rotating-text :words="['Lending', 'Insurance', 'Delivery', 'eKYC']" class="text-primary-600" />
+                        Verify Image Authencity in
+                        <x-rotating-text :words="['Item Lending', 'Insurance Claims', 'Product Delivery', 'eKYC']" class="text-primary-600" />
                     </h1>
 
                     {{-- Subheadline --}}
                     <p class="text-lg text-neutral-600 mb-10 max-w-xl leading-relaxed transition-all duration-500 delay-200"
                         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
-                        Verifying what's in an image is no longer enough — you need to verify where it came from. AI-generated content could make up 90% of all online content by 2026. PixaProof verifies image origin so only real, untampered evidence enters your workflow.
+                        AI-generated content could make up 90% of all online content by 2026, and it's affecting businesses that rely on user image submissions. Pixaproof helps businesses verifies image origin so that only real, untampered evidence enters your workflow.
                     </p>
 
                     {{-- Dual CTA --}}
@@ -61,6 +61,7 @@
     <section class="bg-neutral-100 border-y border-neutral-200 py-5"
         x-data="{ visible: false }" x-intersect.once="visible = true; $nextTick(() => Motion.staggerFadeIn($el.querySelectorAll('[data-trust-item]'), { stagger: 0.06, y: 10 }))">
         <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-4 text-xs text-center text-primary-700 font-bold uppercase tracking-wider mb-3">Built by one of ASEAN's top eKYC providers</p>
             <div class="flex items-center justify-between gap-8 overflow-x-auto py-1 text-sm font-heading font-medium text-neutral-600">
                 <div data-trust-item class="flex items-center gap-2 whitespace-nowrap">
                     <x-heroicon-o-shield-check class="w-5 h-5 text-primary-600 shrink-0" />
@@ -69,10 +70,6 @@
                 <div data-trust-item class="flex items-center gap-2 whitespace-nowrap">
                     <x-heroicon-o-light-bulb class="w-5 h-5 text-primary-600 shrink-0" />
                     <span>3 Patents Granted</span>
-                </div>
-                <div data-trust-item class="flex items-center gap-2 whitespace-nowrap">
-                    <x-heroicon-o-building-office class="w-5 h-5 text-primary-600 shrink-0" />
-                    <span>Bursa Malaysia Listed</span>
                 </div>
                 <div data-trust-item class="flex items-center gap-2 whitespace-nowrap">
                     <x-heroicon-o-clock class="w-5 h-5 text-primary-600 shrink-0" />

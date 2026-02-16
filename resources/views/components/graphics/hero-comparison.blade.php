@@ -28,8 +28,8 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                 <x-graphics.phone-mockup size="md" image="images/mockups/hero-live-capture.webp" imageAlt="Live camera capture" variant="default" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-neutral-900">Live Capture</h4>
-                    <p class="mt-1 text-xs text-neutral-500">Real-time camera verification</p>
+                    <h4 class="font-semibold text-neutral-900">Accept Only Live Capture</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Prevents spoofing and injecting attacks/p>
                 </div>
             </div>
         </div>
@@ -50,8 +50,8 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                 <x-graphics.phone-mockup size="md" image="images/mockups/hero-tampered-gallery.webp" imageAlt="Tampered gallery photo" variant="error" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-neutral-900">Tampered Photos</h4>
-                    <p class="mt-1 text-xs text-neutral-500">Edited or manipulated images blocked</p>
+                    <h4 class="font-semibold text-neutral-900">Block Edited Photos</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Detect tampered or manipulated images</p>
                 </div>
             </div>
         </div>
@@ -72,8 +72,8 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                 <x-graphics.phone-mockup size="md" image="images/mockups/hero-ai-generated-id.webp" imageAlt="AI generated document" variant="scanning" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-neutral-900">AI Generated</h4>
-                    <p class="mt-1 text-xs text-neutral-500">Deepfakes identified</p>
+                    <h4 class="font-semibold text-neutral-900">Prevent AI Image Submissions</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Reject Deepfakes, AI-generated photos</p>
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
+        "@fontsource/inter": "^5.2.8",
         "motion": "^12.23.26"
     }
 }
