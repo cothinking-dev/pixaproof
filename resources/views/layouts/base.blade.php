@@ -58,7 +58,7 @@
         <link rel="manifest" href="{{ asset('site.webmanifest') }}">
         <meta name="theme-color" content="#eb883b">
 
-        <!-- Fonts: Century Gothic (system-installed, commercial license) -->
+        <!-- Fonts: Inter (via @fontsource) -->
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
