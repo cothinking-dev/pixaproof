@@ -352,7 +352,7 @@
                         <x-heroicon-o-chevron-down class="w-5 h-5 transition-transform" x-bind:class="activeTab === 'loan-draw' ? 'rotate-180' : ''" />
                     </button>
                     <div x-show="activeTab === 'loan-draw'" x-collapse class="px-4 pb-4">
-                        <div class="text-2xl font-bold text-primary-600 mb-2">Reduce inspection costs by up to 60%</div>
+                        <div class="text-2xl font-bold text-primary-600 mb-2">Cut Site Visit Costs with Verified Photo Evidence</div>
                         <p class="text-neutral-700 mb-4">Replace physical site visits with verified progress photos. Confirm images were captured on-site with authenticated GPS and timestamps — not uploaded from a gallery.</p>
                         <ul class="space-y-2 text-neutral-700">
                             <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Verified progress photos with authenticated timestamps and GPS</li>
@@ -419,7 +419,7 @@
                     {{-- Loan Draw Inspections --}}
                     <div x-show="activeTab === 'loan-draw'" x-transition class="grid lg:grid-cols-5 gap-8 items-start bg-white rounded-lg border border-neutral-200 p-8">
                         <div class="lg:col-span-3">
-                            <div class="font-heading text-2xl font-bold text-primary-600 mb-3">Reduce inspection costs by up to 60%</div>
+                            <div class="font-heading text-2xl font-bold text-primary-600 mb-3">Cut Site Visit Costs with Verified Photo Evidence</div>
                             <h3 class="text-xl font-semibold text-neutral-900 mb-4">Construction Verification Without Site Visits</h3>
                             <p class="text-neutral-700 mb-6">Replace physical site visits with verified progress photos. Lenders can confirm images were captured on-site with authenticated GPS and timestamps — not uploaded from a gallery or recycled from a previous draw.</p>
                             <ul class="space-y-3 text-neutral-700">
@@ -437,7 +437,8 @@
                     {{-- Insurance Claims --}}
                     <div x-show="activeTab === 'insurance'" x-transition class="grid lg:grid-cols-5 gap-8 items-start bg-white rounded-lg border border-neutral-200 p-8">
                         <div class="lg:col-span-3">
-                            <div class="font-heading text-2xl font-bold text-primary-600 mb-3">67% of insurers concerned about AI-driven fraud</div>
+                            <div class="font-heading text-2xl font-bold text-primary-600 mb-3">Deepfake fraud attempts up 2,137% in three years</div>
+                            <p class="text-xs text-neutral-500 mb-1">— Signicat, <em>The Battle Against AI-Driven Identity Fraud</em>, 2024</p>
                             <h3 class="text-xl font-semibold text-neutral-900 mb-4">Accelerate Legitimate Claims. Flag Suspicious Submissions.</h3>
                             <p class="text-neutral-700 mb-6">Automatically verify claim photos were taken at the reported location and time. Detect AI-generated damage documentation and altered evidence before it reaches an adjuster.</p>
                             <ul class="space-y-3 text-neutral-700">
@@ -448,7 +449,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="scanning" size="lg" image="images/mockups/insurance-car-damage.webp" imageAlt="Insurance claim damage photo" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/insurance-car-damage.webp" imageAlt="Insurance claim damage photo" />
                         </div>
                     </div>
 
@@ -466,7 +467,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="error" size="lg" image="images/mockups/kyc-id-document.webp" imageAlt="KYC identity document verification" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/kyc-id-document.webp" imageAlt="KYC identity document verification" />
                         </div>
                     </div>
 
@@ -484,7 +485,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="success" size="lg" image="images/mockups/asset-warehouse.webp" imageAlt="Asset warehouse inventory verification" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/asset-warehouse.webp" imageAlt="Asset warehouse inventory verification" />
                         </div>
                     </div>
                 </div>
@@ -536,7 +537,8 @@
         </div>
     </section>
 
-    {{-- Section 9: Technology Highlights (Bento Grid) --}}
+    {{-- Section 9: Technology Highlights (Bento Grid) — COMMENTED OUT: data accuracy under review --}}
+    @if(false)
     <section id="technology" class="py-20 lg:py-28 bg-white"
         x-data="{ visible: false }" x-intersect.once="visible = true">
         <div class="max-w-7xl mx-auto px-4 transition-all duration-700 ease-out" :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
@@ -625,6 +627,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     {{-- Section 10: Comparison Table --}}
     <section class="py-20 lg:py-28 bg-neutral-50"
