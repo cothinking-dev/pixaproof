@@ -430,7 +430,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/loan-draw-construction.webp" imageAlt="Construction site progress photo" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/loan-draw-construction.webp?v=2" imageAlt="Construction site progress photo" />
                         </div>
                     </div>
 
@@ -449,7 +449,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/insurance-car-damage.webp" imageAlt="Insurance claim damage photo" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/insurance-car-damage.webp?v=2" imageAlt="Insurance claim damage photo" />
                         </div>
                     </div>
 
@@ -467,7 +467,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/kyc-id-document.webp" imageAlt="KYC identity document verification" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/kyc-id-document.webp?v=2" imageAlt="KYC identity document verification" />
                         </div>
                     </div>
 
@@ -485,7 +485,7 @@
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
-                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/asset-warehouse.webp" imageAlt="Asset warehouse inventory verification" />
+                            <x-graphics.phone-mockup variant="default" size="lg" image="images/mockups/asset-warehouse.webp?v=2" imageAlt="Asset warehouse inventory verification" />
                         </div>
                     </div>
                 </div>
