@@ -24,16 +24,16 @@
                     </span>
 
                     {{-- Headline with rotating industry keyword --}}
-                    <h1 class="font-heading min-h-[3lh] text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight mb-6 transition-all duration-500 delay-100"
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight mb-6 transition-all duration-500 delay-100"
                         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
-                        Verify Image Authencity in
-                        <x-rotating-text :words="['Item Lending', 'Insurance Claims', 'Product Delivery', 'eKYC']" class="text-primary-600" />
+                        Stop Fake Images From Entering Your
+                        <span class="block"><x-rotating-text :words="['Item Lending', 'Insurance Claims', 'Product Delivery', 'eKYC Onboarding']" class="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent" /> Workflows.</span>
                     </h1>
 
                     {{-- Subheadline --}}
                     <p class="text-lg text-neutral-600 mb-10 max-w-xl leading-relaxed transition-all duration-500 delay-200"
                         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
-                        AI-generated content could make up 90% of all online content by 2026, and it's affecting businesses that rely on user image submissions. Pixaproof helps businesses verifies image origin so that only real, untampered evidence enters your workflow.
+                        Fraudulent images cost enterprises millions in false transactions. PixaProof's SDK secures photos at the moment of capture — cryptographically signed, tamper-proof, and verified before they ever reach your system.
                     </p>
 
                     {{-- Dual CTA --}}
@@ -87,87 +87,99 @@
         </div>
     </section>
 
-    {{-- Section 3: Problem Statement --}}
-    <section id="challenge" class="py-20 lg:py-28 bg-white"
-        x-data="{ visible: false }" x-intersect.once="visible = true; $nextTick(() => { Motion.staggerFadeIn($el.querySelectorAll('[data-stat-card]'), { stagger: 0.12, delay: 0.1 }); Motion.staggerFadeIn($el.querySelectorAll('[data-fraud-item]'), { stagger: 0.1, delay: 0.2 }); })">
-        <div class="max-w-7xl mx-auto px-4 transition-all duration-700 ease-out" :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
-            <p class="text-primary-600 font-heading font-semibold uppercase tracking-wider text-sm mb-4">The Problem</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-neutral-900 mb-12">
-                Every Manipulated Photo That Slips Through Has a Price
-            </h2>
+    {{-- Section 3: The Challenge — Scroll-Scrubable --}}
+    <section id="challenge" data-scrub-section class="relative">
+        {{-- Scroll runway: 6 phases × ~83vh each ≈ 500vh. Adjust if phases are added/removed. --}}
+        <div class="h-auto md:h-[500vh]">
+            {{-- Sticky viewport: pinned on desktop, normal flow on mobile --}}
+            <div class="relative md:sticky md:top-16 md:h-[calc(100vh-4rem)] overflow-hidden flex items-center justify-center">
+                {{-- Background color layer --}}
+                <div data-scrub-bg class="absolute inset-0 bg-white"></div>
 
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
-                {{-- Left: Cost callouts --}}
-                <div class="space-y-6">
-                    <div data-stat-card class="p-6 rounded-lg border border-red-200 bg-red-50">
-                        <div class="font-heading text-3xl font-bold text-red-600 mb-1">90%</div>
-                        <p class="text-neutral-700">Predicted share of AI-generated content online by 2026 — making unprotected media indistinguishable from noise</p>
+                {{-- Content viewport --}}
+                <div data-scrub-viewport class="relative z-10 w-full max-w-4xl mx-auto px-4 text-neutral-900">
+
+                    {{-- Phase: Title --}}
+                    <div data-scrub-phase="title" class="py-16 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center text-center md:will-change-[transform,opacity]">
+                        <p class="text-primary-600 font-heading font-semibold uppercase tracking-wider text-sm mb-4">The Problem</p>
+                        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                            Every Manipulated Photo That Slips Through Has a Price
+                        </h2>
                     </div>
-                    <div data-stat-card class="p-6 rounded-lg border border-amber-200 bg-amber-50">
-                        <div class="font-heading text-3xl font-bold text-amber-600 mb-1">67%</div>
-                        <p class="text-neutral-700">Of insurers concerned about generative AI-driven fraud continuing to grow</p>
+
+                    {{-- Phase: Stats (one at a time on desktop, stacked on mobile) --}}
+                    <div data-scrub-stat="0" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center text-center md:will-change-[transform,opacity]">
+                        <div class="font-heading text-7xl md:text-8xl lg:text-9xl font-bold text-red-500 mb-4">
+                            <span data-scrub-counter data-target="90" data-suffix="%">0%</span>
+                        </div>
+                        <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">of online content will be AI-generated by 2026. Without proof of origin and verification, nothing can be trusted. The question isn't whether you'll receive a fake — it's whether you have systems in place to catch it.</p>
+                        <p class="text-xs opacity-50 mt-3">Source: Europol Innovation Lab; Nina Schick</p>
                     </div>
-                    <div data-stat-card class="p-6 rounded-lg border border-neutral-200 bg-neutral-50">
-                        <div class="font-heading text-3xl font-bold text-neutral-800 mb-1">30%</div>
-                        <p class="text-neutral-700">Of enterprises will no longer consider standalone identity verification reliable in isolation by 2026 (Gartner)</p>
+
+                    <div data-scrub-stat="1" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center text-center md:will-change-[transform,opacity]">
+                        <div class="font-heading text-7xl md:text-8xl lg:text-9xl font-bold text-amber-300 mb-4">
+                            <span data-scrub-counter data-target="64" data-suffix="%">0%</span>
+                        </div>
+                        <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">of claims handlers flag generative AI as a growing fraud risk. Claims backed by synthetic photos are already slipping through — and adjusters can't tell the difference.</p>
+                        <p class="text-xs opacity-50 mt-3">Source: ITIJ Claims Handler Survey</p>
                     </div>
+
+                    <div data-scrub-stat="2" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center text-center md:will-change-[transform,opacity]">
+                        <div class="font-heading text-7xl md:text-8xl lg:text-9xl font-bold mb-4">
+                            <span data-scrub-counter data-target="30" data-suffix="%">0%</span>
+                        </div>
+                        <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">of enterprises will drop standalone identity verification by 2026. When the source image itself is fabricated, downstream verification has nothing real to verify. Verification must begin at the point of capture.</p>
+                        <p class="text-xs opacity-50 mt-3">Source: Gartner, Feb 2024</p>
+                    </div>
+
+                    {{-- Phase: Insight --}}
+                    <div data-scrub-phase="insight" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:items-center md:justify-center md:will-change-[transform,opacity]">
+                        <div class="p-8 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm max-w-2xl mx-auto md:bg-white/5">
+                            <p class="text-lg md:text-xl leading-relaxed text-center">
+                                <strong>The root cause:</strong> Verifying what is in an image is no longer enough; you must verify its origin. Organizations currently store "blind" media with no verifiable link to the actual capture environment — leading to massive potential liability.
+                            </p>
+                        </div>
+                    </div>
+
+                    {{-- Phase: Gallery (attack vectors) --}}
+                    <div data-scrub-phase="gallery" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center md:will-change-[transform,opacity]">
+                        <p class="text-red-400 font-heading font-semibold uppercase tracking-wider text-sm mb-3 text-center">Attack Vectors</p>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold mb-8 text-center">How Fraud Gets Through Today</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
+                                <x-heroicon-o-photo class="w-6 h-6 text-red-400 mb-3" />
+                                <h4 class="font-heading font-semibold mb-1">Gallery uploads instead of live photos</h4>
+                                <p class="text-sm opacity-80">Users upload pre-edited images from their camera roll — apps can't tell the difference</p>
+                            </div>
+                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
+                                <x-heroicon-o-cpu-chip class="w-6 h-6 text-red-400 mb-3" />
+                                <h4 class="font-heading font-semibold mb-1">AI-generated documents and deepfakes</h4>
+                                <p class="text-sm opacity-80">Synthetic IDs, fake damage photos, and AI-altered evidence are now trivial to produce</p>
+                            </div>
+                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
+                                <x-heroicon-o-video-camera class="w-6 h-6 text-red-400 mb-3" />
+                                <h4 class="font-heading font-semibold mb-1">Virtual camera injection</h4>
+                                <p class="text-sm opacity-80">Software-based virtual cameras bypass standard capture interfaces, injecting pre-recorded or AI-generated content</p>
+                            </div>
+                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
+                                <x-heroicon-o-computer-desktop class="w-6 h-6 text-red-400 mb-3" />
+                                <h4 class="font-heading font-semibold mb-1">Headless emulator attacks</h4>
+                                <p class="text-sm opacity-80">Fraudsters use emulators to inject thousands of synthetic images simultaneously, bypassing device checks entirely</p>
+                            </div>
+                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
+                                <x-heroicon-o-map-pin class="w-6 h-6 text-red-400 mb-3" />
+                                <h4 class="font-heading font-semibold mb-1">Spoofed location and timestamp data</h4>
+                                <p class="text-sm opacity-80">GPS and date metadata can be changed with free tools before submission</p>
+                            </div>
+                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
+                                <x-heroicon-o-document-duplicate class="w-6 h-6 text-red-400 mb-3" />
+                                <h4 class="font-heading font-semibold mb-1">Recycled photos across multiple claims</h4>
+                                <p class="text-sm opacity-80">The same photo submitted to different insurers or lenders with no detection mechanism</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                {{-- Right: Fraud methods --}}
-                <div>
-                    <h3 class="font-heading text-xl font-semibold text-neutral-900 mb-6">How fraud gets through today</h3>
-                    <div class="space-y-4">
-                        <div data-fraud-item class="flex items-start gap-3">
-                            <x-heroicon-o-exclamation-triangle class="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
-                            <div>
-                                <p class="font-medium text-neutral-900">Gallery uploads instead of live photos</p>
-                                <p class="text-sm text-neutral-600 mt-1">Users upload pre-edited images from their camera roll — apps can't tell the difference</p>
-                            </div>
-                        </div>
-                        <div data-fraud-item class="flex items-start gap-3">
-                            <x-heroicon-o-exclamation-triangle class="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
-                            <div>
-                                <p class="font-medium text-neutral-900">AI-generated documents and deepfakes</p>
-                                <p class="text-sm text-neutral-600 mt-1">Synthetic IDs, fake damage photos, and AI-altered evidence are now trivial to produce</p>
-                            </div>
-                        </div>
-                        <div data-fraud-item class="flex items-start gap-3">
-                            <x-heroicon-o-exclamation-triangle class="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
-                            <div>
-                                <p class="font-medium text-neutral-900">Virtual camera injection</p>
-                                <p class="text-sm text-neutral-600 mt-1">Software-based virtual cameras bypass standard capture interfaces, injecting pre-recorded or AI-generated content</p>
-                            </div>
-                        </div>
-                        <div data-fraud-item class="flex items-start gap-3">
-                            <x-heroicon-o-exclamation-triangle class="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
-                            <div>
-                                <p class="font-medium text-neutral-900">Headless emulator attacks</p>
-                                <p class="text-sm text-neutral-600 mt-1">Fraudsters use emulators to inject thousands of synthetic images simultaneously, bypassing device checks entirely</p>
-                            </div>
-                        </div>
-                        <div data-fraud-item class="flex items-start gap-3">
-                            <x-heroicon-o-exclamation-triangle class="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
-                            <div>
-                                <p class="font-medium text-neutral-900">Spoofed location and timestamp data</p>
-                                <p class="text-sm text-neutral-600 mt-1">GPS and date metadata can be changed with free tools before submission</p>
-                            </div>
-                        </div>
-                        <div data-fraud-item class="flex items-start gap-3">
-                            <x-heroicon-o-exclamation-triangle class="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
-                            <div>
-                                <p class="font-medium text-neutral-900">Recycled photos across multiple claims</p>
-                                <p class="text-sm text-neutral-600 mt-1">The same photo submitted to different insurers or lenders with no detection mechanism</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Insight callout --}}
-            <div class="mt-12 p-6 bg-primary-50 border border-primary-200 rounded-lg">
-                <p class="text-neutral-800 leading-relaxed">
-                    <strong>The root cause:</strong> Verifying what is in an image is no longer enough; you must verify its origin. Organizations currently store "blind" media with no verifiable link to the actual capture environment — leading to massive potential liability.
-                </p>
             </div>
         </div>
     </section>

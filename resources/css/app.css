@@ -117,6 +117,18 @@ body {
     100% { background-position: -200% 0; }
 }
 
+/* GPU compositing hints for scroll-scrubable section */
+[data-scrub-phase],
+[data-scrub-stat],
+[data-scrub-card] {
+    will-change: opacity, transform;
+}
+
+/* Scrub section: no scroll-margin (sticky handles positioning) */
+[data-scrub-section] {
+    scroll-margin-top: 0;
+}
+
 /* Account for fixed navbar when scrolling to anchor sections */
 section[id] {
     scroll-margin-top: 5rem; /* 80px - matches navbar height (h-16 = 64px) plus padding */

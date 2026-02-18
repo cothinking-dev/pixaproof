@@ -35,7 +35,8 @@
             this.isAnimating = false;
         }
     }"
-    {{ $attributes->merge(['class' => $class]) }}
+    class="inline-block"
+    {{ $attributes->except('class') }}
 >
-    <span x-ref="word" x-text="words[currentIndex]"></span>
+    <span x-ref="word" x-text="words[currentIndex]" class="{{ $class }}"></span>
 </span>

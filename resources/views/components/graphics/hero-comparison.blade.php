@@ -24,12 +24,43 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                     <span class="text-xs font-medium text-green-700">Protected</span>
                 </div>
 
-                {{-- Phone mockup with real image --}}
-                <x-graphics.phone-mockup size="md" image="images/mockups/hero-live-capture.webp" imageAlt="Live camera capture" variant="default" />
+                {{-- Phone mockup with camera overlay --}}
+                {{-- Phone mockup with camera overlay --}}
+                <x-graphics.phone-mockup size="md" image="images/mockups/hero-live-capture.webp" imageAlt="Live camera capture of vehicle damage">
+                    <div class="flex h-full w-full flex-col">
+                        {{-- Top bar with dark overlay --}}
+                        <div class="bg-black/70 flex items-center justify-between px-3 pt-5 pb-1">
+                            <svg class="h-3 w-3 text-white/70" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                            <span class="text-[0.5rem] font-medium text-white/90">PixaProof</span>
+                            <div class="w-3"></div>
+                        </div>
+                        <div class="bg-black/70 px-3 pb-2">
+                            <p class="text-center text-[0.45rem] font-medium text-white">Capture photo of vehicle damage</p>
+                        </div>
+
+                        {{-- Square viewfinder --}}
+                        <div class="flex flex-1 items-center justify-center px-4">
+                            <div class="relative aspect-square w-full">
+                                {{-- Corner brackets --}}
+                                <div class="absolute left-0 top-0 h-3 w-3 border-l-2 border-t-2 border-white/80 rounded-tl-sm"></div>
+                                <div class="absolute right-0 top-0 h-3 w-3 border-r-2 border-t-2 border-white/80 rounded-tr-sm"></div>
+                                <div class="absolute bottom-0 left-0 h-3 w-3 border-b-2 border-l-2 border-white/80 rounded-bl-sm"></div>
+                                <div class="absolute bottom-0 right-0 h-3 w-3 border-b-2 border-r-2 border-white/80 rounded-br-sm"></div>
+                            </div>
+                        </div>
+
+                        {{-- Capture button --}}
+                        <div class="flex items-center justify-center py-3">
+                            <div class="h-6 w-6 rounded-full border-[2.5px] border-white bg-white/20"></div>
+                        </div>
+                    </div>
+                </x-graphics.phone-mockup>
 
                 <div class="mt-4 text-center">
                     <h4 class="font-semibold text-neutral-900">Accept Only Live Capture</h4>
-                    <p class="mt-1 text-xs text-neutral-500">Prevents spoofing and injecting attacks/p>
+                    <p class="mt-1 text-xs text-neutral-500">Prevents spoofing and injecting attacks </p>
                 </div>
             </div>
         </div>

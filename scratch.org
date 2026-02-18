@@ -1,2 +1,1 @@
 
-For this project, change it so that the only fonts used in Century Gothic -- the company has just acquired a license to use the font commercially and insist the entire project uses it.
