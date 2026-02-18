@@ -31,6 +31,7 @@ Props:
         'sm' => 'w-32',
         'md' => 'w-40',
         'lg' => 'w-52',
+        'xl' => 'w-64',
     ];
     $sizeClass = $sizes[$size] ?? $sizes['md'];
 @endphp
@@ -132,7 +133,7 @@ Props:
             @else
                 <div class="relative h-full w-full">
                     @if($image)
-                        <img src="{{ asset($image) }}" alt="{{ $imageAlt }}" class="absolute inset-0 h-full w-full object-cover">
+                        <img src="{{ asset($image) }}" alt="{{ $imageAlt }}" class="absolute inset-0 size-full object-cover object-bottom">
                         @if($overlay === 'dark')
                             <div class="absolute inset-0 bg-black/40"></div>
                         @elseif($overlay === 'light')

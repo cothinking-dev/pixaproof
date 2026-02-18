@@ -144,7 +144,7 @@
                     {{-- Phase: Gallery (attack vectors) --}}
                     <div data-scrub-phase="gallery" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center md:will-change-[transform,opacity]">
                         <p class="text-red-400 font-heading font-semibold uppercase tracking-wider text-sm mb-3 text-center">Attack Vectors</p>
-                        <h3 class="font-heading text-2xl md:text-3xl font-bold mb-8 text-center">How Fraud Gets Through Today</h3>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold mb-8 text-center">6 Ways Fraudsters Exploit Your Photo Pipeline</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                             <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
                                 <x-heroicon-o-photo class="w-6 h-6 text-red-400 mb-3" />
@@ -237,8 +237,7 @@
                             <x-heroicon-o-lock-closed class="w-5 h-5 text-primary-600" />
                         </div>
                         <h3 class="font-heading font-semibold text-neutral-900">Source Protection</h3>
-                    </div>
-                    <p class="text-neutral-600">Every capture is sealed with a tamper-evident digital watermark. The system binds media to its environmental data — making unauthorized source-swapping or alterations significantly harder to execute undetected.</p>
+                    </div>              <p class="text-neutral-600">Images are sealed with an invisible, tamper-evident digital watermark. The system binds media to its environmental data — making unauthorized edits or alterations significantly harder.</p>
                 </div>
 
                 {{-- 3. AI & Tampering Detection --}}
@@ -286,7 +285,7 @@
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                     Three Steps to Verified Evidence
                 </h2>
-                <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
+                <p class="text-pretty text-neutral-600 text-lg max-w-2xl mx-auto">
                     Embed our Web SDK in your application. From the moment of capture to your API response — PixaProof secures, transmits, and verifies every image automatically.
                 </p>
             </div>
