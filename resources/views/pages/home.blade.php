@@ -134,9 +134,15 @@
 
                     {{-- Phase: Insight --}}
                     <div data-scrub-phase="insight" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:items-center md:justify-center md:will-change-[transform,opacity]">
-                        <div class="p-8 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm max-w-2xl mx-auto md:bg-white/5">
-                            <p class="text-lg md:text-xl leading-relaxed text-center">
-                                <strong>The root cause:</strong> Verifying what is in an image is no longer enough; you must verify its origin. Organizations currently store "blind" media with no verifiable link to the actual capture environment — leading to massive potential liability.
+                        <div class="max-w-2xl mx-auto border-l-4 border-primary-400 pl-8 relative">
+                            <svg class="absolute -left-4 -top-8 w-16 h-16 text-primary-400/20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.69 11 13.198 11 15c0 1.857-1.344 3.5-3.2 3.5-1.296 0-2.541-.673-3.217-1.179zm12 0C15.553 16.227 15 15 15 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C21.591 11.69 23 13.198 23 15c0 1.857-1.344 3.5-3.2 3.5-1.296 0-2.541-.673-3.217-1.179z"/>
+                            </svg>
+                            <p class="font-heading text-2xl md:text-3xl font-bold leading-snug mb-4">
+                                Verifying what is in an image is no longer enough — you must verify its origin.
+                            </p>
+                            <p class="text-lg leading-relaxed opacity-80">
+                                Organizations currently store "blind" media with no verifiable link to the actual capture environment — leading to massive potential liability.
                             </p>
                         </div>
                     </div>
@@ -144,8 +150,8 @@
                     {{-- Phase: Gallery (attack vectors) --}}
                     <div data-scrub-phase="gallery" class="py-12 md:py-0 md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center md:will-change-[transform,opacity]">
                         <p class="text-red-400 font-heading font-semibold uppercase tracking-wider text-sm mb-3 text-center">Attack Vectors</p>
-                        <h3 class="font-heading text-2xl md:text-3xl font-bold mb-8 text-center">6 Ways Fraudsters Exploit Your Photo Pipeline</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold mb-8 text-center">5 Ways Fraudsters Exploit Your Photo Pipeline</h3>
+                        <div class="flex flex-wrap justify-center gap-4 w-full [&>div]:w-full [&>div]:md:w-[calc(50%-0.5rem)] [&>div]:lg:w-[calc(33.333%-0.75rem)]">
                             <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
                                 <x-heroicon-o-photo class="w-6 h-6 text-red-400 mb-3" />
                                 <h4 class="font-heading font-semibold mb-1">Gallery uploads instead of live photos</h4>
@@ -170,11 +176,6 @@
                                 <x-heroicon-o-map-pin class="w-6 h-6 text-red-400 mb-3" />
                                 <h4 class="font-heading font-semibold mb-1">Spoofed location and timestamp data</h4>
                                 <p class="text-sm opacity-80">GPS and date metadata can be changed with free tools before submission</p>
-                            </div>
-                            <div data-scrub-card class="p-5 rounded-lg border border-white/10 bg-white/5 md:will-change-[transform,opacity]">
-                                <x-heroicon-o-document-duplicate class="w-6 h-6 text-red-400 mb-3" />
-                                <h4 class="font-heading font-semibold mb-1">Recycled photos across multiple claims</h4>
-                                <p class="text-sm opacity-80">The same photo submitted to different insurers or lenders with no detection mechanism</p>
                             </div>
                         </div>
                     </div>
@@ -227,7 +228,7 @@
                         </div>
                         <h3 class="font-heading font-semibold text-neutral-900">Capture Integrity</h3>
                     </div>
-                    <p class="text-neutral-600">Flags virtual camera drivers, emulator sessions, and automated scripts. Gallery uploads, screenshots, and file injections are blocked — only genuine device captures pass through.</p>
+                    <p class="text-neutral-600">Flags virtual camera drivers, emulator sessions, and automated scripts. Gallery uploads, screenshots, and file injections are detected and flagged — with full capture environment forensics on every submission.</p>
                 </div>
 
                 {{-- 2. Source Protection --}}

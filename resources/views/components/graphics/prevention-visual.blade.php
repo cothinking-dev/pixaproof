@@ -118,19 +118,19 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                     <svg class="h-4 w-4 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span>Gallery uploads accepted</span>
+                    <span>Gallery uploads easily bypass security</span>
                 </div>
                 <div class="flex items-center gap-2 text-sm text-neutral-700">
                     <svg class="h-4 w-4 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span>No capture verification</span>
+                    <span>No origin authenticity check</span>
                 </div>
                 <div class="flex items-center gap-2 text-sm text-neutral-700">
                     <svg class="h-4 w-4 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span>Post-submission analysis only</span>
+                    <span>Basic analysis of image content only</span>
                 </div>
             </div>
         </div>
@@ -158,20 +158,22 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                                 </div>
                             </div>
 
-                            {{-- Blocked overlay --}}
+                            {{-- Analysis results overlay --}}
                             <div class="flex flex-1 flex-col items-center justify-center bg-neutral-900/60 backdrop-blur-sm p-5">
-                                <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-red-500/20">
-                                    <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                {{-- Scanning animation ring --}}
+                                <div class="mb-3 flex h-14 w-14 items-center justify-center rounded-full border-2 border-amber-400 bg-amber-400/10">
+                                    <svg class="h-7 w-7 text-amber-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
                                     </svg>
                                 </div>
-                                <p class="text-center text-sm font-semibold text-white">Gallery Blocked</p>
-                                <p class="mt-1 text-center text-[0.7rem] text-neutral-400">Live camera only</p>
+                                <p class="text-center text-sm font-semibold text-white">Gallery Upload Detected</p>
+                                <p class="mt-1 text-center text-[0.7rem] text-neutral-400">Capture environment not verified</p>
 
-                                {{-- Action button --}}
-                                <button class="mt-4 rounded-lg bg-green-500 px-5 py-2 text-[0.7rem] font-medium text-white">
-                                    Use Camera
-                                </button>
+                                {{-- Forensic detail chips --}}
+                                <div class="mt-3 flex flex-wrap justify-center gap-1.5">
+                                    <span class="rounded-full bg-amber-500/20 px-2 py-0.5 text-[0.55rem] text-amber-300">No PIEA signature</span>
+                                    <span class="rounded-full bg-amber-500/20 px-2 py-0.5 text-[0.55rem] text-amber-300">Non-live source</span>
+                                </div>
                             </div>
 
                             {{-- SDK badge --}}
@@ -192,7 +194,7 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                             <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>Fraud prevented</span>
+                            <span>Fraud flagged</span>
                         </div>
                     </div>
                 </div>
@@ -204,19 +206,19 @@ Shows side-by-side comparison of Traditional vs PixaProof approach with phone mo
                     <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Gallery uploads blocked</span>
+                    <span>Flags injected gallery uploads</span>
                 </div>
                 <div class="flex items-center gap-2 text-sm text-neutral-700">
                     <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>PIEA signature embedded</span>
+                    <span>Cryptographic PIEA signature embedded</span>
                 </div>
                 <div class="flex items-center gap-2 text-sm text-neutral-700">
                     <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>At-capture security</span>
+                    <span>Capture environment forensics</span>
                 </div>
             </div>
         </div>

@@ -74,15 +74,15 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                     <svg class="h-3 w-3 text-red-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
                     </svg>
-                    <span class="text-xs font-medium text-red-700">Blocked</span>
+                    <span class="text-xs font-medium text-red-700">Flagged</span>
                 </div>
 
                 {{-- Phone mockup with gallery image + error overlay --}}
                 <x-graphics.phone-mockup size="md" image="images/mockups/hero-tampered-gallery.webp" imageAlt="Tampered gallery photo" variant="error" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-neutral-900">Block Edited Photos</h4>
-                    <p class="mt-1 text-xs text-neutral-500">Detect tampered or manipulated images</p>
+                    <h4 class="font-semibold text-neutral-900">Detect Edited Photos</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Tampered or manipulated images</p>
                 </div>
             </div>
         </div>
@@ -103,8 +103,8 @@ Shows three-panel comparison: Live Capture (Protected) vs Tampered Photos (Block
                 <x-graphics.phone-mockup size="md" image="images/mockups/hero-ai-generated-id.webp" imageAlt="AI generated document" variant="scanning" />
 
                 <div class="mt-4 text-center">
-                    <h4 class="font-semibold text-neutral-900">Prevent AI Image Submissions</h4>
-                    <p class="mt-1 text-xs text-neutral-500">Reject Deepfakes, AI-generated photos</p>
+                    <h4 class="font-semibold text-neutral-900">Flag AI Image Submissions</h4>
+                    <p class="mt-1 text-xs text-neutral-500">Detect Deepfakes, AI-generated photos</p>
                 </div>
             </div>
         </div>
