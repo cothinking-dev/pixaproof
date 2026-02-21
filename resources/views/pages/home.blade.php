@@ -205,21 +205,21 @@
         </div>
     </section>
 
-    {{-- Section 5: Four Layers of Protection --}}
+    {{-- Section 5: Three Layers of Protection --}}
     <section id="solution" class="py-20 lg:py-28 bg-white"
         x-data="{ visible: false }" x-intersect.once="visible = true; $nextTick(() => Motion.staggerFadeIn($el.querySelectorAll('[data-layer-card]'), { stagger: 0.1, delay: 0.15 }))">
         <div class="max-w-7xl mx-auto px-4 transition-all duration-700 ease-out" :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
             <div class="text-center mb-16">
                 <p class="text-primary-600 font-heading font-semibold uppercase tracking-wider text-sm mb-4">The Solution</p>
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-                    Four Layers of Protection in Every Image
+                    Three Layers of Protection in Every Image
                 </h2>
                 <p class="text-neutral-700 text-lg max-w-3xl mx-auto">
-                    PixaProof doesn't just detect fraud after the fact — it prevents it at the source, then verifies every image through four independent checks.
+                    PixaProof doesn't just detect fraud after the fact — it prevents it at the source, then verifies every image through three independent checks.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto [&>div]:w-full [&>div]:md:w-[calc(50%-0.75rem)]">
                 {{-- 1. Capture Integrity --}}
                 <div data-layer-card class="p-6 bg-white rounded-lg border border-neutral-200 transition-transform hover:-translate-y-1">
                     <div class="flex items-center gap-3 mb-4">
@@ -252,16 +252,6 @@
                     <p class="text-neutral-600">Identifies synthetic media injection, AI-generated content, and pixel-level manipulation that manual review would miss.</p>
                 </div>
 
-                {{-- 4. Audit Trail --}}
-                <div data-layer-card class="p-6 bg-white rounded-lg border border-neutral-200 transition-transform hover:-translate-y-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center shrink-0">
-                            <x-heroicon-o-shield-check class="w-5 h-5 text-primary-600" />
-                        </div>
-                        <h3 class="font-heading font-semibold text-neutral-900">Audit Trail</h3>
-                    </div>
-                    <p class="text-neutral-600">Unbreakable chain of evidence from capture to review — every verification result timestamped, signed, and ready for compliance or dispute resolution.</p>
-                </div>
             </div>
 
             {{-- Summary card --}}
@@ -272,7 +262,7 @@
                     </div>
                     <h3 class="font-heading font-semibold">All in Under 500ms</h3>
                 </div>
-                <p class="text-primary-100">Every image runs through all four checks automatically — results returned via Web SDK and API before your user finishes the next step.</p>
+                <p class="text-primary-100">Every image runs through all three checks automatically — results returned via Web SDK and API before your user finishes the next step.</p>
             </div>
         </div>
     </section>
@@ -393,7 +383,6 @@
                             <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> ID photos confirmed as live capture, not uploaded</li>
                             <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Document tampering and digital manipulation detected</li>
                             <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Capture environment metadata bound to each session for fraud risk scoring</li>
-                            <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Compliance-ready audit trails for regulatory review</li>
                         </ul>
                     </div>
 
@@ -408,9 +397,7 @@
                         <p class="text-neutral-700 mb-4">Confirm collateral and inventory documentation with timestamped, geolocated photography that can't be recycled or manipulated.</p>
                         <ul class="space-y-2 text-neutral-700">
                             <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Timestamped, geolocated asset photography</li>
-                            <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Unique capture confirmed — no duplicated imagery</li>
                             <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Photo manipulation and staging detection</li>
-                            <li class="flex items-start gap-2"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Chain of custody for audit requirements</li>
                         </ul>
                     </div>
                 </div>
@@ -464,7 +451,6 @@
                                 <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> ID photos confirmed as live capture, not uploaded</li>
                                 <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Document tampering and digital manipulation detected</li>
                                 <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Capture environment metadata bound to each session for fraud risk scoring</li>
-                                <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Compliance-ready audit trails for regulatory review</li>
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
@@ -480,9 +466,7 @@
                             <p class="text-neutral-700 mb-6">From proof of delivery to car rental damage inspection to property listings — confirm field documentation with timestamped, geolocated photography that can't be recycled or manipulated.</p>
                             <ul class="space-y-3 text-neutral-700">
                                 <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Timestamped, geolocated asset photography</li>
-                                <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Unique capture confirmed — no duplicated imagery</li>
                                 <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Photo manipulation and staging detection</li>
-                                <li class="flex items-start gap-3"><x-heroicon-s-check class="w-5 h-5 text-primary-600 mt-0.5 shrink-0" /> Chain of custody documentation for audit requirements</li>
                             </ul>
                         </div>
                         <div class="lg:col-span-2 flex justify-center">
@@ -648,7 +632,6 @@
                         <tr class="bg-neutral-100">
                             <th class="px-6 py-4 text-left font-heading font-semibold text-neutral-900">Capability</th>
                             <th class="px-6 py-4 text-center font-heading font-semibold text-neutral-500">Manual Review</th>
-                            <th class="px-6 py-4 text-center font-heading font-semibold text-neutral-500">Basic Metadata</th>
                             <th class="px-6 py-4 text-center font-heading font-semibold text-primary-700 bg-primary-100 border-l-2 border-l-primary-500">PixaProof</th>
                         </tr>
                     </thead>
@@ -656,56 +639,42 @@
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Detect gallery uploads</td>
                             <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Detect virtual cameras</td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Detect emulator attacks</td>
                             <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Verify GPS authenticity</td>
                             <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
-                            <td class="px-6 py-4 text-center text-neutral-500">Partial</td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Detect AI-generated content</td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Detect pixel-level edits</td>
                             <td class="px-6 py-4 text-center text-neutral-500">Subjective</td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">End-to-end integrity (MITM)</td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500"><x-heroicon-s-check class="w-5 h-5 text-green-500 mx-auto" /></td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 text-neutral-700">Time to verify</td>
                             <td class="px-6 py-4 text-center text-neutral-500">Hours–Days</td>
-                            <td class="px-6 py-4 text-center text-neutral-500">Minutes</td>
                             <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500 font-semibold text-primary-700">&lt;500ms</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 text-neutral-700">Audit trail</td>
-                            <td class="px-6 py-4 text-center text-neutral-500">Manual</td>
-                            <td class="px-6 py-4 text-center"><x-heroicon-o-x-mark class="w-5 h-5 text-red-400 mx-auto" /></td>
-                            <td class="px-6 py-4 text-center bg-primary-50 border-l-2 border-l-primary-500 font-semibold text-primary-700">Automatic</td>
                         </tr>
                     </tbody>
                 </table>
@@ -716,28 +685,23 @@
                 x-intersect.once="$nextTick(() => Motion.staggerFadeIn($el.children, { stagger: 0.06, y: 15 }))">
                 @php
                     $comparisons = [
-                        ['label' => 'Detect gallery uploads', 'manual' => 'No', 'metadata' => 'No', 'pixaproof' => 'Yes'],
-                        ['label' => 'Detect virtual cameras', 'manual' => 'No', 'metadata' => 'No', 'pixaproof' => 'Yes'],
-                        ['label' => 'Detect emulator attacks', 'manual' => 'No', 'metadata' => 'No', 'pixaproof' => 'Yes'],
-                        ['label' => 'Verify GPS authenticity', 'manual' => 'No', 'metadata' => 'Partial', 'pixaproof' => 'Yes'],
-                        ['label' => 'Detect AI content', 'manual' => 'No', 'metadata' => 'No', 'pixaproof' => 'Yes'],
-                        ['label' => 'Detect pixel edits', 'manual' => 'Subjective', 'metadata' => 'No', 'pixaproof' => 'Yes'],
-                        ['label' => 'End-to-end integrity', 'manual' => 'No', 'metadata' => 'No', 'pixaproof' => 'Yes'],
-                        ['label' => 'Time to verify', 'manual' => 'Hours', 'metadata' => 'Minutes', 'pixaproof' => '<500ms'],
-                        ['label' => 'Audit trail', 'manual' => 'Manual', 'metadata' => 'None', 'pixaproof' => 'Automatic'],
+                        ['label' => 'Detect gallery uploads', 'manual' => 'No', 'pixaproof' => 'Yes'],
+                        ['label' => 'Detect virtual cameras', 'manual' => 'No', 'pixaproof' => 'Yes'],
+                        ['label' => 'Detect emulator attacks', 'manual' => 'No', 'pixaproof' => 'Yes'],
+                        ['label' => 'Verify GPS authenticity', 'manual' => 'No', 'pixaproof' => 'Yes'],
+                        ['label' => 'Detect AI content', 'manual' => 'No', 'pixaproof' => 'Yes'],
+                        ['label' => 'Detect pixel edits', 'manual' => 'Subjective', 'pixaproof' => 'Yes'],
+                        ['label' => 'End-to-end integrity', 'manual' => 'No', 'pixaproof' => 'Yes'],
+                        ['label' => 'Time to verify', 'manual' => 'Hours', 'pixaproof' => '<500ms'],
                     ];
                 @endphp
                 @foreach($comparisons as $row)
                     <div class="rounded-lg border border-neutral-200 p-4">
                         <div class="font-semibold text-neutral-900 mb-3">{{ $row['label'] }}</div>
-                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                        <div class="grid grid-cols-2 gap-2 text-center text-sm">
                             <div>
                                 <div class="text-neutral-500 text-xs mb-1">Manual</div>
                                 <div class="text-neutral-600">{{ $row['manual'] }}</div>
-                            </div>
-                            <div>
-                                <div class="text-neutral-500 text-xs mb-1">Metadata</div>
-                                <div class="text-neutral-600">{{ $row['metadata'] }}</div>
                             </div>
                             <div class="bg-primary-50 rounded p-1">
                                 <div class="text-primary-600 text-xs mb-1 font-semibold">PixaProof</div>
@@ -751,11 +715,11 @@
     </section>
 
     {{-- Section 11: Credibility / Heritage --}}
-    <section id="about" class="py-20 lg:py-28 bg-neutral-100 border-t-4 border-primary-500"
+    <section id="about" class="py-20 lg:py-28 bg-neutral-100"
         x-data="{ visible: false }" x-intersect.once="visible = true">
         <div class="max-w-7xl mx-auto px-4 transition-all duration-700 ease-out" :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
             <div class="text-center mb-16">
-                <p class="text-primary-600 font-heading font-semibold uppercase tracking-wider text-sm mb-4">Heritage</p>
+                <p class="text-primary-600 font-heading font-semibold uppercase tracking-wider text-sm mb-4">Proven Expertise</p>
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                     Built by Southeast Asia's Most Experienced Identity Verification Team
                 </h2>
@@ -871,15 +835,11 @@
                         ],
                         [
                             'q' => 'What deployment options are available?',
-                            'a' => 'Cloud-hosted (SaaS), private cloud, and on-premise deployments. On-premise options support data residency requirements and air-gapped infrastructure. All options include the same verification capabilities.',
+                            'a' => 'We offer a fully managed, cloud-hosted (SaaS) API. By handling the backend infrastructure on our end, we ensure you always have access to our fastest, most up-to-date verification capabilities with zero maintenance required on your side.',
                         ],
                         [
                             'q' => 'What happens when manipulation is detected?',
-                            'a' => 'The API response includes detailed flags indicating specific anomalies — whether it\'s a gallery upload, GPS spoofing, virtual camera injection, pixel manipulation, or AI-generated content. Your organization configures thresholds and routing rules for flagged submissions.',
-                        ],
-                        [
-                            'q' => 'What happens if a user denies camera or location permissions?',
-                            'a' => 'If denied, the user can still proceed with the capture, but the verification result will show failed for the missing data. For maximum security, all permissions should be granted.',
+                            'a' => 'The API response includes detailed flags indicating specific anomalies — whether it\'s a gallery upload, GPS spoofing, virtual camera injection, pixel manipulation, or AI-generated content.',
                         ],
                         [
                             'q' => 'What metadata does PixaProof collect?',
@@ -891,7 +851,7 @@
                         ],
                         [
                             'q' => 'How is data handled and protected?',
-                            'a' => 'PixaProof supports international data protection standards including GDPR. Verification metadata retention is configurable per organizational policy. All data is encrypted in transit (TLS 1.3) and at rest. Full audit trails are maintained for compliance and dispute resolution.',
+                            'a' => 'PixaProof supports international data protection standards including GDPR. Verification metadata retention is configurable per organizational policy. All data is encrypted in transit (TLS 1.3) and at rest.',
                         ],
                     ];
                 @endphp
@@ -925,7 +885,7 @@
                 Every Unverified Image Is a Liability
             </h2>
             <p class="text-xl text-neutral-600 mb-10 max-w-2xl mx-auto">
-                See PixaProof verify a live capture in under 500 milliseconds. Our Web SDK integrates in hours.
+                Watch PixaProof verify live captures in under 500ms. Integrate our Web SDK in hours.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">

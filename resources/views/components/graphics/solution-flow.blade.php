@@ -20,7 +20,7 @@
             Secure Capture
         </div>
         {{-- Description --}}
-        <p class="mt-3 text-sm text-neutral-700">Web SDK enforces live-only capture. Gallery uploads, virtual cameras, and emulators are blocked at the source.</p>
+        <p class="mt-3 text-sm text-neutral-700">The Web SDK captures device metadata to verify live photos and flag gallery uploads or emulators.</p>
     </div>
 
     {{-- Arrow 1→2 --}}
