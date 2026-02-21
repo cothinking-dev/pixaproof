@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title', 'Contact')
-@section('description', 'Book a demo, discuss your use case, or explore integration options with the PixaProof solutions team.')
+@section('description', 'Get in touch with the PixaProof team. Email our sales team to book a demo, discuss your use case, or explore integration options.')
 
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative isolate overflow-hidden px-4 pt-32 pb-32 lg:pt-40 lg:pb-40">
+    <section class="relative isolate overflow-hidden px-4 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div class="absolute inset-0 -z-10">
             <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-50/50"></div>
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#0ea5e910_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e910_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -19,46 +19,116 @@
                 <span class="text-sm font-medium text-primary-600">Contact Sales</span>
             </div>
             <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Talk to Our Team</h1>
-            <p class="text-lg text-neutral-600 max-w-xl mx-auto">
-                See PixaProof in action. Book a 20-minute demo, discuss your use case, or explore integration options with our solutions team.
+            <p class="text-lg text-neutral-600 max-w-xl mx-auto mb-10">
+                Book a demo, discuss your use case, or explore integration options with our solutions team.
             </p>
+
+            {{-- Email CTA --}}
+            <a href="mailto:sales@innov8tif.com" class="inline-flex items-center gap-3 rounded-lg bg-accent-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-accent-600 hover:shadow-xl">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                Email sales@innov8tif.com
+            </a>
+
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500">
+                <div class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Mon–Fri, 9 AM – 5 PM (GMT+8)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>We respond within 3 working days</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    {{-- Form Section --}}
-    <section class="bg-white pb-20">
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div class="-mt-16 relative z-20 rounded border border-neutral-200 bg-white p-8 shadow-lg">
-                <livewire:contact-form />
+    {{-- Office Locations --}}
+    <section class="bg-white py-20 lg:py-28">
+        <div class="mx-auto max-w-5xl px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Offices</h2>
+                <p class="text-neutral-600">
+                    Innov8tif Solutions serves 500+ clients across 10+ countries from our regional offices.
+                </p>
             </div>
 
-            <p class="mt-6 text-center text-sm text-neutral-500">
-                Built by the team behind 10M+ identity verifications across ASEAN — with ISO 30107-3 certification and 3 granted patents.
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {{-- Malaysia (HQ) --}}
+                <div class="rounded-lg border border-neutral-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-lg">🇲🇾</span>
+                        <h3 class="font-heading font-semibold text-neutral-900">Malaysia (HQ)</h3>
+                    </div>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                        Innov8tif Solutions Sdn Bhd<br>
+                        L9-2, Wisma Conlay,<br>
+                        1, Jalan USJ 10/1,<br>
+                        47620 Subang Jaya, Selangor
+                    </p>
+                </div>
+
+                {{-- Singapore --}}
+                <div class="rounded-lg border border-neutral-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-lg">🇸🇬</span>
+                        <h3 class="font-heading font-semibold text-neutral-900">Singapore</h3>
+                    </div>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                        Innov8tif Solutions Pte Ltd<br>
+                        120 Robinson Road, #15-01,<br>
+                        Singapore 068913
+                    </p>
+                </div>
+
+                {{-- Indonesia --}}
+                <div class="rounded-lg border border-neutral-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-lg">🇮🇩</span>
+                        <h3 class="font-heading font-semibold text-neutral-900">Indonesia</h3>
+                    </div>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                        PT. Innov8tif Karta Solusi<br>
+                        Xin Building, Jl. Kapten Tendean No.52,<br>
+                        Bandung City, West Java 40141
+                    </p>
+                </div>
+
+                {{-- Cambodia --}}
+                <div class="rounded-lg border border-neutral-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-lg">🇰🇭</span>
+                        <h3 class="font-heading font-semibold text-neutral-900">Cambodia</h3>
+                    </div>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                        Innov8tif Solutions Co., Ltd.<br>
+                        No. 206D, Street Preah Norodom,<br>
+                        Sangkat Tonle Bassac, Phnom Penh
+                    </p>
+                </div>
+
+                {{-- Philippines --}}
+                <div class="rounded-lg border border-neutral-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-lg">🇵🇭</span>
+                        <h3 class="font-heading font-semibold text-neutral-900">Philippines</h3>
+                    </div>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                        7F, Finman Centre Building,<br>
+                        131 Tordesillas, Salcedo Village,<br>
+                        Makati City
+                    </p>
+                </div>
+            </div>
+
+            <p class="mt-10 text-center text-sm text-neutral-500">
+                Built by the team behind 10M+ identity verifications across ASEAN — with ISO 27001:2022 certification and 3 granted patents.
             </p>
-
-            <div class="mt-12 grid gap-6 sm:grid-cols-3 text-center">
-                <div class="rounded bg-neutral-50 p-6">
-                    <svg class="mx-auto h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <p class="mt-3 text-sm font-medium text-neutral-900">24-Hour Response</p>
-                    <p class="mt-1 text-xs text-neutral-500">We reply within one business day</p>
-                </div>
-                <div class="rounded bg-neutral-50 p-6">
-                    <svg class="mx-auto h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                    </svg>
-                    <p class="mt-3 text-sm font-medium text-neutral-900">Technical Demo</p>
-                    <p class="mt-1 text-xs text-neutral-500">See PixaProof in action</p>
-                </div>
-                <div class="rounded bg-neutral-50 p-6">
-                    <svg class="mx-auto h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                    </svg>
-                    <p class="mt-3 text-sm font-medium text-neutral-900">Enterprise Support</p>
-                    <p class="mt-1 text-xs text-neutral-500">Dedicated account management</p>
-                </div>
-            </div>
         </div>
     </section>
 @endsection
