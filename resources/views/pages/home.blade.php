@@ -839,7 +839,7 @@
                         ],
                         [
                             'q' => 'What happens when manipulation is detected?',
-                            'a' => 'The API response includes detailed flags indicating specific anomalies — whether it\'s a gallery upload, GPS spoofing, virtual camera injection, pixel manipulation, or AI-generated content.',
+                            'a' => 'The API response indicates the verification as failed and provides supplementary information on geolocation.',
                         ],
                         [
                             'q' => 'What metadata does PixaProof collect?',
