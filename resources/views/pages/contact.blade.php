@@ -81,7 +81,7 @@
                     </div>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                         Innov8tif Solutions Pte Ltd<br>
-                        120 Robinson Road, #15-01,<br>
+                        120 Robinson Road, #12-01,<br>
                         Singapore 068913
                     </p>
                 </div>
