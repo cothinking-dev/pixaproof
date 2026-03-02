@@ -39,20 +39,12 @@ set('forward_agent', false);
 // ═══════════════════════════════════════════════════════════════════════════
 
 host('prod')
-    ->setHostname('ssh.moojing-global.com')
+    ->setHostname('47.237.191.213')
     ->set('remote_user', 'deployer')
     ->set('deploy_path', '/home/deployer/pixaproof')
     ->set('branch', 'main')
     ->set('labels', ['stage' => 'prod'])
     ->set('url', 'pixaproof.cothink.ing');
-
-host('staging')
-    ->setHostname('ssh.moojing-global.com')
-    ->set('remote_user', 'deployer')
-    ->set('deploy_path', '/home/deployer/pixaproof-staging')
-    ->set('branch', 'main')
-    ->set('labels', ['stage' => 'staging'])
-    ->set('url', 'staging-pixaproof.cothink.ing');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SHARED RESOURCES
