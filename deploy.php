@@ -44,7 +44,7 @@ host('prod')
     ->set('deploy_path', '/home/deployer/pixaproof')
     ->set('branch', 'main')
     ->set('labels', ['stage' => 'prod'])
-    ->set('url', 'pixaproof.cothink.ing');
+    ->set('url', 'https://pixaproof.innov8tif.com');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SHARED RESOURCES
@@ -71,7 +71,7 @@ set('storage_links', [
 ]);
 
 // Queue worker name for Supervisor
-set('queue_worker_name', fn () => 'pixaproof-staging'.getStage().'-worker');
+set('queue_worker_name', fn () => 'pixaproof-'.getStage().'-worker');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // DATABASE PATHS
