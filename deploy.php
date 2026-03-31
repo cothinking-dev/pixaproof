@@ -34,6 +34,9 @@ set('writable_use_sudo', false);
 
 set('forward_agent', false);
 
+// Use clone strategy so git-lfs files are resolved during deployment
+set('update_code_strategy', 'clone');
+
 // ═══════════════════════════════════════════════════════════════════════════
 // HOSTS
 // ═══════════════════════════════════════════════════════════════════════════

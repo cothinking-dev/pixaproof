@@ -285,7 +285,122 @@
         </div>
     </section>
 
-    {{-- Section 7: Industry Solutions (Tabbed) --}}
+    {{-- Section 7: Video Demos --}}
+    <section id="demos" class="py-20 lg:py-28 bg-white"
+        x-data="{
+            visible: false,
+            open: false,
+            activeVideo: null,
+            activeLabel: '',
+            activeResult: '',
+            activeGenuine: false,
+            play(video) {
+                this.activeVideo = video.file;
+                this.activeLabel = video.label;
+                this.activeResult = video.result;
+                this.activeGenuine = video.genuine;
+                this.open = true;
+                this.$nextTick(() => { this.$refs.lightboxVideo && this.$refs.lightboxVideo.play(); });
+            },
+            close() {
+                this.open = false;
+                this.$refs.lightboxVideo && this.$refs.lightboxVideo.pause();
+                this.activeVideo = null;
+            }
+        }"
+        x-intersect.once="visible = true"
+        @keydown.escape.window="close()">
+        <div class="max-w-7xl mx-auto px-4 transition-all duration-700 ease-out"
+            :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
+            <div class="text-center mb-12">
+                <p class="text-primary-600 font-heading font-semibold uppercase tracking-wider text-sm mb-4">See It In Action</p>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+                    PixaProof Detects Every Attack Vector
+                </h2>
+                <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
+                    Watch how PixaProof identifies genuine captures and flags simulated sources in real time.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6 lg:gap-8">
+                @foreach([
+                    ['file' => 'genuine-device', 'label' => 'Phone Capture', 'result' => 'Detected as genuine capture', 'genuine' => true],
+                    ['file' => 'virtual-camera', 'label' => 'Virtual Camera', 'result' => 'Detected as simulated source', 'genuine' => false],
+                    ['file' => 'emulator', 'label' => 'Emulator', 'result' => 'Detected as simulated source', 'genuine' => false],
+                    ['file' => 'device-farm', 'label' => 'Device Farm', 'result' => 'Detected as simulated source', 'genuine' => false],
+                ] as $video)
+                    <div class="rounded-xl border border-neutral-200 overflow-hidden bg-neutral-50 cursor-pointer group"
+                        @click="play({{ Js::from($video) }})">
+                        <div class="relative aspect-video bg-neutral-900">
+                            <img
+                                src="/videos/{{ $video['file'] }}-poster.webp"
+                                alt="{{ $video['label'] }} demo"
+                                class="w-full h-full object-contain"
+                                loading="lazy"
+                            >
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                                <span class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 text-neutral-900 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full shrink-0 {{ $video['genuine'] ? 'bg-green-500' : 'bg-red-500' }}"></span>
+                            <p class="text-sm font-heading font-medium text-neutral-700">
+                                {{ $video['label'] }} &mdash;
+                                <span class="{{ $video['genuine'] ? 'text-green-600' : 'text-red-600' }}">{{ $video['result'] }}</span>
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Lightbox Modal --}}
+        <template x-teleport="body">
+            <div x-show="open" x-transition.opacity.duration.200ms
+                class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                @click.self="close()">
+                <div class="absolute inset-0 bg-black/80"></div>
+                <div class="relative z-10 w-full max-w-3xl" @click.stop>
+                    {{-- Close button --}}
+                    <button @click="close()" class="absolute -top-10 right-0 text-white/70 hover:text-white transition-colors cursor-pointer">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    {{-- Video --}}
+                    <template x-if="activeVideo">
+                        <div class="rounded-xl overflow-hidden bg-black">
+                            <video
+                                x-ref="lightboxVideo"
+                                class="w-full h-auto max-h-[80vh]"
+                                controls
+                                playsinline
+                                muted
+                                preload="none"
+                                :poster="'/videos/' + activeVideo + '-poster.webp'"
+                            >
+                                <source :src="'/videos/' + activeVideo + '.webm'" type="video/webm">
+                                <source :src="'/videos/' + activeVideo + '.mp4'" type="video/mp4">
+                            </video>
+                            <div class="px-4 py-3 flex items-center gap-2 bg-neutral-900">
+                                <span class="w-2 h-2 rounded-full shrink-0" :class="activeGenuine ? 'bg-green-500' : 'bg-red-500'"></span>
+                                <p class="text-sm font-heading font-medium text-neutral-200">
+                                    <span x-text="activeLabel"></span> &mdash;
+                                    <span :class="activeGenuine ? 'text-green-400' : 'text-red-400'" x-text="activeResult"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </section>
+
+    {{-- Section 8: Industry Solutions (Tabbed) --}}
     <section id="solutions" class="py-20 lg:py-28 bg-neutral-50"
         x-data="{ visible: false }" x-intersect.once="visible = true">
         <div class="max-w-7xl mx-auto px-4 transition-all duration-700 ease-out" :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
